@@ -1,0 +1,31 @@
+# Quartus generated
+qdb/
+tmp-clearbox/
+
+# Imported / helper metadata
+dni/
+output_files/ipg_report
+
+# Logs, reports, backups
+*.log
+*.rpt
+*.summary
+*.smsg
+*.qmsg
+*.bak
+*.history
+*.txt
+
+# Programming outputs
+*.pof
+*.jic
+*.rbf
+*.done
+*.pin
+*.sld
+
+# Local helper/info files
+board.info
+serv_req_info.txt
+golden_top_final_save_view.txt
+IpUpgradeLog.xml
