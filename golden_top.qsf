@@ -777,10 +777,11 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name VHDL_FILE golden_top.vhd
+set_instance_assignment -name PARTITION_COLOUR 4294961828 -to golden_top -entity golden_top
+set_global_assignment -name SDC_FILE golden_top.sdc
 set_global_assignment -name QSYS_FILE qsrc/qsys/HPS_QSYS.qsys -tag "vds::HPS_QSYS"
 set_global_assignment -name IP_FILE qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_intel_agilex_5_soc_0.ip -tag "vds::HPS_QSYS"
 set_global_assignment -name IP_FILE qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_intel_onchip_memory_0.ip -tag "vds::HPS_QSYS"
 set_global_assignment -name IP_FILE qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_iopll_0.ip -tag "vds::HPS_QSYS"
 set_global_assignment -name IP_FILE qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_reset_bridge_0.ip -tag "vds::HPS_QSYS"
-set_instance_assignment -name PARTITION_COLOUR 4294961828 -to golden_top -entity golden_top
-set_global_assignment -name SDC_FILE golden_top.sdc
+set_global_assignment -name IP_FILE qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_s10_user_rst_clkgate_0.ip -tag "vds::HPS_QSYS"

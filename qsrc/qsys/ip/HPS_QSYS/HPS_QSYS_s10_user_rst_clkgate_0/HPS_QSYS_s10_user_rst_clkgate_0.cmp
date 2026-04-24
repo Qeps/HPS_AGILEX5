@@ -1,0 +1,6 @@
+	component HPS_QSYS_s10_user_rst_clkgate_0 is
+		port (
+			ninit_done : out std_logic   -- ninit_done
+		);
+	end component HPS_QSYS_s10_user_rst_clkgate_0;
+

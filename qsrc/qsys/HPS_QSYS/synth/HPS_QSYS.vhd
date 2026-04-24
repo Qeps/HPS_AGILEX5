@@ -7,6 +7,7 @@ library HPS_QSYS_intel_agilex_5_soc_0;
 library HPS_QSYS_intel_onchip_memory_0;
 library HPS_QSYS_iopll_0;
 library HPS_QSYS_reset_bridge_0;
+library HPS_QSYS_s10_user_rst_clkgate_0;
 library altera_mm_interconnect_1920;
 library altera_reset_controller_1924;
 use IEEE.std_logic_1164.all;
@@ -14,46 +15,47 @@ use IEEE.numeric_std.all;
 
 entity HPS_QSYS is
 	port (
-		hps2fpga_awid    : out   std_logic_vector(3 downto 0);                      -- hps2fpga.awid
-		hps2fpga_awaddr  : out   std_logic_vector(27 downto 0);                     --         .awaddr
-		hps2fpga_awlen   : out   std_logic_vector(7 downto 0);                      --         .awlen
-		hps2fpga_awsize  : out   std_logic_vector(2 downto 0);                      --         .awsize
-		hps2fpga_awburst : out   std_logic_vector(1 downto 0);                      --         .awburst
-		hps2fpga_awlock  : out   std_logic;                                         --         .awlock
-		hps2fpga_awcache : out   std_logic_vector(3 downto 0);                      --         .awcache
-		hps2fpga_awprot  : out   std_logic_vector(2 downto 0);                      --         .awprot
-		hps2fpga_awvalid : out   std_logic;                                         --         .awvalid
-		hps2fpga_awready : in    std_logic                      := '0';             --         .awready
-		hps2fpga_wdata   : out   std_logic_vector(127 downto 0);                    --         .wdata
-		hps2fpga_wstrb   : out   std_logic_vector(15 downto 0);                     --         .wstrb
-		hps2fpga_wlast   : out   std_logic;                                         --         .wlast
-		hps2fpga_wvalid  : out   std_logic;                                         --         .wvalid
-		hps2fpga_wready  : in    std_logic                      := '0';             --         .wready
-		hps2fpga_bid     : in    std_logic_vector(3 downto 0)   := (others => '0'); --         .bid
-		hps2fpga_bresp   : in    std_logic_vector(1 downto 0)   := (others => '0'); --         .bresp
-		hps2fpga_bvalid  : in    std_logic                      := '0';             --         .bvalid
-		hps2fpga_bready  : out   std_logic;                                         --         .bready
-		hps2fpga_arid    : out   std_logic_vector(3 downto 0);                      --         .arid
-		hps2fpga_araddr  : out   std_logic_vector(27 downto 0);                     --         .araddr
-		hps2fpga_arlen   : out   std_logic_vector(7 downto 0);                      --         .arlen
-		hps2fpga_arsize  : out   std_logic_vector(2 downto 0);                      --         .arsize
-		hps2fpga_arburst : out   std_logic_vector(1 downto 0);                      --         .arburst
-		hps2fpga_arlock  : out   std_logic;                                         --         .arlock
-		hps2fpga_arcache : out   std_logic_vector(3 downto 0);                      --         .arcache
-		hps2fpga_arprot  : out   std_logic_vector(2 downto 0);                      --         .arprot
-		hps2fpga_arvalid : out   std_logic;                                         --         .arvalid
-		hps2fpga_arready : in    std_logic                      := '0';             --         .arready
-		hps2fpga_rid     : in    std_logic_vector(3 downto 0)   := (others => '0'); --         .rid
-		hps2fpga_rdata   : in    std_logic_vector(127 downto 0) := (others => '0'); --         .rdata
-		hps2fpga_rresp   : in    std_logic_vector(1 downto 0)   := (others => '0'); --         .rresp
-		hps2fpga_rlast   : in    std_logic                      := '0';             --         .rlast
-		hps2fpga_rvalid  : in    std_logic                      := '0';             --         .rvalid
-		hps2fpga_rready  : out   std_logic;                                         --         .rready
-		hps_io_gpio41    : inout std_logic                      := '0';             --   hps_io.gpio41
-		refclk_clk       : in    std_logic                      := '0';             --   refclk.clk
-		locked_export    : out   std_logic;                                         --   locked.export
-		reset_reset      : in    std_logic                      := '0';             --    reset.reset
-		in_reset_reset_n : in    std_logic                      := '0'              -- in_reset.reset_n
+		hps2fpga_awid         : out   std_logic_vector(3 downto 0);                      --   hps2fpga.awid
+		hps2fpga_awaddr       : out   std_logic_vector(27 downto 0);                     --           .awaddr
+		hps2fpga_awlen        : out   std_logic_vector(7 downto 0);                      --           .awlen
+		hps2fpga_awsize       : out   std_logic_vector(2 downto 0);                      --           .awsize
+		hps2fpga_awburst      : out   std_logic_vector(1 downto 0);                      --           .awburst
+		hps2fpga_awlock       : out   std_logic;                                         --           .awlock
+		hps2fpga_awcache      : out   std_logic_vector(3 downto 0);                      --           .awcache
+		hps2fpga_awprot       : out   std_logic_vector(2 downto 0);                      --           .awprot
+		hps2fpga_awvalid      : out   std_logic;                                         --           .awvalid
+		hps2fpga_awready      : in    std_logic                      := '0';             --           .awready
+		hps2fpga_wdata        : out   std_logic_vector(127 downto 0);                    --           .wdata
+		hps2fpga_wstrb        : out   std_logic_vector(15 downto 0);                     --           .wstrb
+		hps2fpga_wlast        : out   std_logic;                                         --           .wlast
+		hps2fpga_wvalid       : out   std_logic;                                         --           .wvalid
+		hps2fpga_wready       : in    std_logic                      := '0';             --           .wready
+		hps2fpga_bid          : in    std_logic_vector(3 downto 0)   := (others => '0'); --           .bid
+		hps2fpga_bresp        : in    std_logic_vector(1 downto 0)   := (others => '0'); --           .bresp
+		hps2fpga_bvalid       : in    std_logic                      := '0';             --           .bvalid
+		hps2fpga_bready       : out   std_logic;                                         --           .bready
+		hps2fpga_arid         : out   std_logic_vector(3 downto 0);                      --           .arid
+		hps2fpga_araddr       : out   std_logic_vector(27 downto 0);                     --           .araddr
+		hps2fpga_arlen        : out   std_logic_vector(7 downto 0);                      --           .arlen
+		hps2fpga_arsize       : out   std_logic_vector(2 downto 0);                      --           .arsize
+		hps2fpga_arburst      : out   std_logic_vector(1 downto 0);                      --           .arburst
+		hps2fpga_arlock       : out   std_logic;                                         --           .arlock
+		hps2fpga_arcache      : out   std_logic_vector(3 downto 0);                      --           .arcache
+		hps2fpga_arprot       : out   std_logic_vector(2 downto 0);                      --           .arprot
+		hps2fpga_arvalid      : out   std_logic;                                         --           .arvalid
+		hps2fpga_arready      : in    std_logic                      := '0';             --           .arready
+		hps2fpga_rid          : in    std_logic_vector(3 downto 0)   := (others => '0'); --           .rid
+		hps2fpga_rdata        : in    std_logic_vector(127 downto 0) := (others => '0'); --           .rdata
+		hps2fpga_rresp        : in    std_logic_vector(1 downto 0)   := (others => '0'); --           .rresp
+		hps2fpga_rlast        : in    std_logic                      := '0';             --           .rlast
+		hps2fpga_rvalid       : in    std_logic                      := '0';             --           .rvalid
+		hps2fpga_rready       : out   std_logic;                                         --           .rready
+		hps_io_gpio41         : inout std_logic                      := '0';             --     hps_io.gpio41
+		refclk_clk            : in    std_logic                      := '0';             --     refclk.clk
+		locked_export         : out   std_logic;                                         --     locked.export
+		reset_reset           : in    std_logic                      := '0';             --      reset.reset
+		in_reset_reset_n      : in    std_logic                      := '0';             --   in_reset.reset_n
+		ninit_done_ninit_done : out   std_logic                                          -- ninit_done.ninit_done
 	);
 end entity HPS_QSYS;
 
@@ -191,6 +193,12 @@ architecture rtl of HPS_QSYS is
 			out_reset_n : out std_logic         -- reset_n
 		);
 	end component HPS_QSYS_reset_bridge_0_cmp;
+
+	component HPS_QSYS_s10_user_rst_clkgate_0_cmp is
+		port (
+			ninit_done : out std_logic   -- ninit_done
+		);
+	end component HPS_QSYS_s10_user_rst_clkgate_0_cmp;
 
 	component HPS_QSYS_altera_mm_interconnect_1920_474ciwq_cmp is
 		port (
@@ -409,6 +417,8 @@ architecture rtl of HPS_QSYS is
 		use entity HPS_QSYS_iopll_0.HPS_QSYS_iopll_0;
 	for reset_bridge_0 : HPS_QSYS_reset_bridge_0_cmp
 		use entity HPS_QSYS_reset_bridge_0.HPS_QSYS_reset_bridge_0;
+	for s10_user_rst_clkgate_0 : HPS_QSYS_s10_user_rst_clkgate_0_cmp
+		use entity HPS_QSYS_s10_user_rst_clkgate_0.HPS_QSYS_s10_user_rst_clkgate_0;
 	for mm_interconnect_0 : HPS_QSYS_altera_mm_interconnect_1920_474ciwq_cmp
 		use entity altera_mm_interconnect_1920.HPS_QSYS_altera_mm_interconnect_1920_474ciwq;
 	for rst_controller : altera_reset_controller_cmp
@@ -545,6 +555,11 @@ begin
 			clk         => iopll_0_outclk0_clk,            --       clk.clk
 			in_reset_n  => in_reset_reset_n,               --  in_reset.reset_n
 			out_reset_n => reset_bridge_0_out_reset_reset  -- out_reset.reset_n
+		);
+
+	s10_user_rst_clkgate_0 : component HPS_QSYS_s10_user_rst_clkgate_0_cmp
+		port map (
+			ninit_done => ninit_done_ninit_done  -- ninit_done.ninit_done
 		);
 
 	mm_interconnect_0 : component HPS_QSYS_altera_mm_interconnect_1920_474ciwq_cmp
