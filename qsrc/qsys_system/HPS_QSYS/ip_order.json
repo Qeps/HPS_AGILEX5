@@ -15,6 +15,14 @@
         {
             "ip_name": "reset_bridge_0",
             "ip_order": 3
+        },
+        {
+            "ip_name": "s10_user_rst_clkgate_0",
+            "ip_order": 4
+        },
+        {
+            "ip_name": "rtl_inst",
+            "ip_order": 5
         }
     ]
 }

@@ -13,7 +13,7 @@
 
 `timescale 1 ps / 1 ps
 
-module  HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby  (
+module  HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i  (
     clk,
     reset,
     reset_req,
@@ -56,24 +56,24 @@ module  HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby  (
     input        	reset_req;
     input  [11:0]	s1_araddr;
     input  [1:0]	s1_arburst;
-    input  [3:0]	s1_arid;
+    input  [5:0]	s1_arid;
     input  [7:0]	s1_arlen;
     output        	s1_arready;
     input  [2:0]	s1_arsize;
     input        	s1_arvalid;
     input  [11:0]	s1_awaddr;
     input  [1:0]	s1_awburst;
-    input  [3:0]	s1_awid;
+    input  [5:0]	s1_awid;
     input  [7:0]	s1_awlen;
     output        	s1_awready;
     input  [2:0]	s1_awsize;
     input        	s1_awvalid;
-    output [3:0]	s1_bid;
+    output [5:0]	s1_bid;
     input        	s1_bready;
     output [1:0]	s1_bresp;
     output        	s1_bvalid;
     output [31:0]	s1_rdata;
-    output [3:0]	s1_rid;
+    output [5:0]	s1_rid;
     output        	s1_rlast;
     input        	s1_rready;
     output [1:0]	s1_rresp;
@@ -100,9 +100,9 @@ module  HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby  (
 
 
 
-    HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_axi_bursting_adapter  #(
+    HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_axi_bursting_adapter  #(
         .DATA_WIDTH(32),
-        .AXI_ID_WIDTH(4)
+        .AXI_ID_WIDTH(6)
     ) s1_axi_bursting_adapter (
         .clk                (clk),
         .reset              (reset),

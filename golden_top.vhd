@@ -7,6 +7,7 @@ entity golden_top is
         -- clocks / keys / leds
         CLOCK1_50        : in    std_logic;
         KEY              : in    std_logic_vector(1 downto 0);
+        LED              : out   std_logic_vector(7 downto 0);
         
         -- HPS dedicated I/O
 --		  HPS_CLK_25		 	: in std_logic;
@@ -81,6 +82,8 @@ architecture rtl of golden_top is
 			locked_export         : out   std_logic;                                         -- export
 			reset_reset           : in    std_logic                      := 'X';             -- reset
 			in_reset_reset_n      : in    std_logic                      := 'X';             -- reset_n
+			read_bt               : in    std_logic                      := 'X';             -- read_bt
+			test_complete         : out   std_logic;                                         -- test_complete
 			ninit_done_ninit_done : out   std_logic                                          -- ninit_done
 		);
 	end component HPS_QSYS;
@@ -93,9 +96,14 @@ architecture rtl of golden_top is
     signal fabric_reset    : std_logic;  -- active high, for the rest of the system
     signal fabric_reset_n  : std_logic;  -- active low version for in_reset_reset_n
 
+    signal read_test       : std_logic;
+    signal test_result     : std_logic;
+
 begin
 
     user_reset <= not KEY(0);
+    read_test  <= KEY(1);
+    LED(0)     <= not test_result;
     pll_reset <= user_reset or ninit_done;
     fabric_reset   <= user_reset or ninit_done or (not pll_locked);
     fabric_reset_n <= not fabric_reset;
@@ -142,6 +150,8 @@ begin
             locked_export      => open,
             reset_reset        => pll_reset,
             in_reset_reset_n   => fabric_reset_n,
+            read_bt            => read_test,
+			test_complete      => test_result,
             ninit_done_ninit_done => ninit_done
 		);
 

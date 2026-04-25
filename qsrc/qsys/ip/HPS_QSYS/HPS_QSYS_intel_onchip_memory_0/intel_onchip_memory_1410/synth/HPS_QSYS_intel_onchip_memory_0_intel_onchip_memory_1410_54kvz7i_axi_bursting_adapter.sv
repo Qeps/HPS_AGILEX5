@@ -13,7 +13,7 @@
 
 `timescale 1 ps / 1 ps
 
-module  HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_axi_bursting_adapter  #(
+module  HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_axi_bursting_adapter  #(
     parameter  DATA_WIDTH       = 32,
     parameter  AXI_ID_WIDTH     = 1,
     localparam BYTE_WIDTH       = DATA_WIDTH/8,

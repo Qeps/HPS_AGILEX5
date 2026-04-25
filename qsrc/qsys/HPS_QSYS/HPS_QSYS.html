@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2026.04.23.21:02:57</td>
+    <td class="l">2026.04.25.20:38:33</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -97,10 +97,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_intel_agilex_5_soc_0"><b>intel_agilex_5_soc_0</b>
      </a>
     </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_rtl_inst"><b>rtl_inst</b>
+     </a>
+    </td>
    </tr>
    <tr>
     <td class="masterl">&#160;hps2fpga</td>
     <td class="masterr">&#160;lwhps2fpga</td>
+    <td class="masterlr">&#160;axi_m</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -109,10 +114,12 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">axi_s1&#160;</td>
     <td class="empty"></td>
+    <td>0x0000_0000 - 0x0000_0fff</td>
     <td>0x0000_0000 - 0x0000_0fff</td>
    </tr>
   </table>
@@ -192,10 +199,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <table class="connectionboxes">
      <tr>
       <td class="neighbor" rowspan="2">
+       <a href="#module_rtl_inst">rtl_inst</a>
+      </td>
+      <td class="from">axi_m&#160;&#160;</td>
+      <td class="main" rowspan="11">intel_onchip_memory_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;axi_s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
        <a href="#module_intel_agilex_5_soc_0">intel_agilex_5_soc_0</a>
       </td>
       <td class="from">lwhps2fpga&#160;&#160;</td>
-      <td class="main" rowspan="8">intel_onchip_memory_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;axi_s1</td>
@@ -346,10 +365,26 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_iopll_0">iopll_0</a>
       </td>
       <td class="from">outclk0&#160;&#160;</td>
-      <td class="main" rowspan="4">reset_bridge_0</td>
+      <td class="main" rowspan="7">reset_bridge_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_rtl_inst">rtl_inst</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;aresetn</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
      </tr>
      <tr>
       <td></td>
@@ -373,6 +408,76 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <td class="parametersbox">
       <h2>Parameters</h2>
       <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_rtl_inst"> </a>
+  <div>
+   <hr/>
+   <h2>rtl_inst</h2>axi4_master v2.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_iopll_0">iopll_0</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="main" rowspan="7">rtl_inst</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;aclk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_reset_bridge_0">reset_bridge_0</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;aresetn</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">axi_m&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_intel_onchip_memory_0">intel_onchip_memory_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;axi_s1</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
        <tr>
         <td class="parametername">generateLegacySim</td>
         <td class="parametervalue">false</td>
@@ -418,7 +523,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0,01 seconds</td>
-    <td class="r">rendering took 0,07 seconds</td>
+    <td class="r">rendering took 0,05 seconds</td>
    </tr>
   </table>
  </body>

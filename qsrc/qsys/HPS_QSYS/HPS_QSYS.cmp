@@ -40,6 +40,8 @@
 			locked_export         : out   std_logic;                                         -- export
 			reset_reset           : in    std_logic                      := 'X';             -- reset
 			in_reset_reset_n      : in    std_logic                      := 'X';             -- reset_n
+			read_bt               : in    std_logic                      := 'X';             -- read_bt
+			test_complete         : out   std_logic;                                         -- test_complete
 			ninit_done_ninit_done : out   std_logic                                          -- ninit_done
 		);
 	end component HPS_QSYS;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.04.23.21:02:56"
+ date="2026.04.25.20:38:27"
  outputDirectory="C:/trumpf/hps_ip_agilex5/qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_intel_onchip_memory_0/">
  <perimeter>
   <parameter
@@ -103,21 +103,21 @@
    <property name="dfhFeatureId" value="35" />
    <property name="dfhFeatureType" value="3" />
    <property name="noNarrowTransfer" value="false" />
-   <port name="s1_arid" direction="input" role="arid" width="4" />
+   <port name="s1_arid" direction="input" role="arid" width="6" />
    <port name="s1_araddr" direction="input" role="araddr" width="12" />
    <port name="s1_arlen" direction="input" role="arlen" width="8" />
    <port name="s1_arsize" direction="input" role="arsize" width="3" />
    <port name="s1_arburst" direction="input" role="arburst" width="2" />
    <port name="s1_arready" direction="output" role="arready" width="1" />
    <port name="s1_arvalid" direction="input" role="arvalid" width="1" />
-   <port name="s1_awid" direction="input" role="awid" width="4" />
+   <port name="s1_awid" direction="input" role="awid" width="6" />
    <port name="s1_awaddr" direction="input" role="awaddr" width="12" />
    <port name="s1_awlen" direction="input" role="awlen" width="8" />
    <port name="s1_awsize" direction="input" role="awsize" width="3" />
    <port name="s1_awburst" direction="input" role="awburst" width="2" />
    <port name="s1_awready" direction="output" role="awready" width="1" />
    <port name="s1_awvalid" direction="input" role="awvalid" width="1" />
-   <port name="s1_rid" direction="output" role="rid" width="4" />
+   <port name="s1_rid" direction="output" role="rid" width="6" />
    <port name="s1_rdata" direction="output" role="rdata" width="32" />
    <port name="s1_rlast" direction="output" role="rlast" width="1" />
    <port name="s1_rready" direction="input" role="rready" width="1" />
@@ -128,7 +128,7 @@
    <port name="s1_wlast" direction="input" role="wlast" width="1" />
    <port name="s1_wready" direction="output" role="wready" width="1" />
    <port name="s1_wvalid" direction="input" role="wvalid" width="1" />
-   <port name="s1_bid" direction="output" role="bid" width="4" />
+   <port name="s1_bid" direction="output" role="bid" width="6" />
    <port name="s1_bresp" direction="output" role="bresp" width="2" />
    <port name="s1_bready" direction="input" role="bready" width="1" />
    <port name="s1_bvalid" direction="output" role="bvalid" width="1" />
@@ -173,17 +173,17 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="HPS_QSYS_intel_onchip_memory_0">"Generating: HPS_QSYS_intel_onchip_memory_0"</message>
-   <message level="Info" culprit="HPS_QSYS_intel_onchip_memory_0">"Generating: HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_onchip_memory_0">"Generating: HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i"</message>
   </messages>
  </entity>
  <entity
    kind="intel_onchip_memory"
    version="1.4.10"
-   name="HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby">
+   name="HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i">
   <parameter name="readDuringWriteMode_Mixed" value="DONT_CARE" />
   <parameter name="derived_singleClockOperation" value="true" />
   <parameter name="poison_enable" value="false" />
-  <parameter name="idWidth2" value="4" />
+  <parameter name="idWidth2" value="6" />
   <parameter name="ecc_check" value="false" />
   <parameter name="derived_ecc_bits" value="0" />
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
@@ -224,7 +224,7 @@
   <parameter name="derived_debugaccess" value="false" />
   <parameter name="derived_set_axiaddr_width" value="12" />
   <parameter name="derived_set_data_width2" value="32" />
-  <parameter name="idWidth" value="4" />
+  <parameter name="idWidth" value="6" />
   <parameter name="derived_ecc_bits2" value="0" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="resetrequest_enabled" value="false" />
@@ -241,24 +241,24 @@
   <parameter name="abs_path" value="false" />
   <generatedFiles>
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby.sv"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i.sv"
        attributes="" />
    <file
        path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_0.hex"
        attributes="" />
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_axi_bursting_adapter.sv"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_axi_bursting_adapter.sv"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby.sv"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i.sv"
        attributes="" />
    <file
        path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_0.hex"
        attributes="" />
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_axi_bursting_adapter.sv"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_onchip_memory_0\intel_onchip_memory_1410\synth\HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_axi_bursting_adapter.sv"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -270,7 +270,7 @@
      instantiator="HPS_QSYS_intel_onchip_memory_0"
      as="intel_onchip_memory_0" />
   <messages>
-   <message level="Info" culprit="HPS_QSYS_intel_onchip_memory_0">"Generating: HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_onchip_memory_0">"Generating: HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i"</message>
   </messages>
  </entity>
 </deploy>

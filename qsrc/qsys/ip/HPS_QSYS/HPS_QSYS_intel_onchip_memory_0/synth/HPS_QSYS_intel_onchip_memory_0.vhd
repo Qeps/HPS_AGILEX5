@@ -10,21 +10,21 @@ use IEEE.numeric_std.all;
 entity HPS_QSYS_intel_onchip_memory_0 is
 	port (
 		clk        : in  std_logic                     := '0';             --   clk1.clk
-		s1_arid    : in  std_logic_vector(3 downto 0)  := (others => '0'); -- axi_s1.arid
+		s1_arid    : in  std_logic_vector(5 downto 0)  := (others => '0'); -- axi_s1.arid
 		s1_araddr  : in  std_logic_vector(11 downto 0) := (others => '0'); --       .araddr
 		s1_arlen   : in  std_logic_vector(7 downto 0)  := (others => '0'); --       .arlen
 		s1_arsize  : in  std_logic_vector(2 downto 0)  := (others => '0'); --       .arsize
 		s1_arburst : in  std_logic_vector(1 downto 0)  := (others => '0'); --       .arburst
 		s1_arready : out std_logic;                                        --       .arready
 		s1_arvalid : in  std_logic                     := '0';             --       .arvalid
-		s1_awid    : in  std_logic_vector(3 downto 0)  := (others => '0'); --       .awid
+		s1_awid    : in  std_logic_vector(5 downto 0)  := (others => '0'); --       .awid
 		s1_awaddr  : in  std_logic_vector(11 downto 0) := (others => '0'); --       .awaddr
 		s1_awlen   : in  std_logic_vector(7 downto 0)  := (others => '0'); --       .awlen
 		s1_awsize  : in  std_logic_vector(2 downto 0)  := (others => '0'); --       .awsize
 		s1_awburst : in  std_logic_vector(1 downto 0)  := (others => '0'); --       .awburst
 		s1_awready : out std_logic;                                        --       .awready
 		s1_awvalid : in  std_logic                     := '0';             --       .awvalid
-		s1_rid     : out std_logic_vector(3 downto 0);                     --       .rid
+		s1_rid     : out std_logic_vector(5 downto 0);                     --       .rid
 		s1_rdata   : out std_logic_vector(31 downto 0);                    --       .rdata
 		s1_rlast   : out std_logic;                                        --       .rlast
 		s1_rready  : in  std_logic                     := '0';             --       .rready
@@ -35,7 +35,7 @@ entity HPS_QSYS_intel_onchip_memory_0 is
 		s1_wlast   : in  std_logic                     := '0';             --       .wlast
 		s1_wready  : out std_logic;                                        --       .wready
 		s1_wvalid  : in  std_logic                     := '0';             --       .wvalid
-		s1_bid     : out std_logic_vector(3 downto 0);                     --       .bid
+		s1_bid     : out std_logic_vector(5 downto 0);                     --       .bid
 		s1_bresp   : out std_logic_vector(1 downto 0);                     --       .bresp
 		s1_bready  : in  std_logic                     := '0';             --       .bready
 		s1_bvalid  : out std_logic;                                        --       .bvalid
@@ -44,28 +44,28 @@ entity HPS_QSYS_intel_onchip_memory_0 is
 end entity HPS_QSYS_intel_onchip_memory_0;
 
 architecture rtl of HPS_QSYS_intel_onchip_memory_0 is
-	component HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_cmp is
+	component HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_cmp is
 		generic (
 			deviceFamily : string := "NONE";
 			INIT_FILE    : string := ""
 		);
 		port (
 			clk        : in  std_logic                     := 'X';             -- clk
-			s1_arid    : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arid
+			s1_arid    : in  std_logic_vector(5 downto 0)  := (others => 'X'); -- arid
 			s1_araddr  : in  std_logic_vector(11 downto 0) := (others => 'X'); -- araddr
 			s1_arlen   : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- arlen
 			s1_arsize  : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arsize
 			s1_arburst : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- arburst
 			s1_arready : out std_logic;                                        -- arready
 			s1_arvalid : in  std_logic                     := 'X';             -- arvalid
-			s1_awid    : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awid
+			s1_awid    : in  std_logic_vector(5 downto 0)  := (others => 'X'); -- awid
 			s1_awaddr  : in  std_logic_vector(11 downto 0) := (others => 'X'); -- awaddr
 			s1_awlen   : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- awlen
 			s1_awsize  : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awsize
 			s1_awburst : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- awburst
 			s1_awready : out std_logic;                                        -- awready
 			s1_awvalid : in  std_logic                     := 'X';             -- awvalid
-			s1_rid     : out std_logic_vector(3 downto 0);                     -- rid
+			s1_rid     : out std_logic_vector(5 downto 0);                     -- rid
 			s1_rdata   : out std_logic_vector(31 downto 0);                    -- rdata
 			s1_rlast   : out std_logic;                                        -- rlast
 			s1_rready  : in  std_logic                     := 'X';             -- rready
@@ -76,20 +76,20 @@ architecture rtl of HPS_QSYS_intel_onchip_memory_0 is
 			s1_wlast   : in  std_logic                     := 'X';             -- wlast
 			s1_wready  : out std_logic;                                        -- wready
 			s1_wvalid  : in  std_logic                     := 'X';             -- wvalid
-			s1_bid     : out std_logic_vector(3 downto 0);                     -- bid
+			s1_bid     : out std_logic_vector(5 downto 0);                     -- bid
 			s1_bresp   : out std_logic_vector(1 downto 0);                     -- bresp
 			s1_bready  : in  std_logic                     := 'X';             -- bready
 			s1_bvalid  : out std_logic;                                        -- bvalid
 			reset      : in  std_logic                     := 'X';             -- reset
 			reset_req  : in  std_logic                     := 'X'              -- reset_req
 		);
-	end component HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_cmp;
+	end component HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_cmp;
 
-	for intel_onchip_memory_0 : HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_cmp
-		use entity intel_onchip_memory_1410.HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby;
+	for intel_onchip_memory_0 : HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_cmp
+		use entity intel_onchip_memory_1410.HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i;
 begin
 
-	intel_onchip_memory_0 : component HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby_cmp
+	intel_onchip_memory_0 : component HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i_cmp
 		generic map (
 			deviceFamily => "Agilex 5",
 			INIT_FILE    => "HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_0.hex"

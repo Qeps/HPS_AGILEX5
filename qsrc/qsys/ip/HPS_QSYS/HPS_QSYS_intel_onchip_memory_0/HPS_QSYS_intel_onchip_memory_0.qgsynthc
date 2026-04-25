@@ -154,11 +154,11 @@
           </parameter>
           <parameter>
             <name>idWidth</name>
-            <value>4</value>
+            <value>6</value>
           </parameter>
           <parameter>
             <name>idWidth2</name>
-            <value>4</value>
+            <value>6</value>
           </parameter>
           <parameter>
             <name>initMemContent</name>
@@ -233,7 +233,7 @@
         <className>intel_onchip_memory</className>
         <version>1.4.10</version>
         <name>intel_onchip_memory_0</name>
-        <uniqueName>HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby</uniqueName>
+        <uniqueName>HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>HPS_QSYS_intel_onchip_memory_0.intel_onchip_memory_0</path>

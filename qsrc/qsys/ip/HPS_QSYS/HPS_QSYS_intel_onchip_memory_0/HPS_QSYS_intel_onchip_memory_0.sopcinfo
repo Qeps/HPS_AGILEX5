@@ -5,7 +5,7 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 25.3.1 100 (Future versions may contain additional information.) -->
- <!-- 2026.04.23.21:02:56 -->
+ <!-- 2026.04.25.20:38:27 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -122,7 +122,7 @@
    name="intel_onchip_memory_0"
    kind="intel_onchip_memory"
    version="1.4.10"
-   entity="HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_rrnzwby"
+   entity="HPS_QSYS_intel_onchip_memory_0_intel_onchip_memory_1410_54kvz7i"
    library="intel_onchip_memory_1410"
    path="intel_onchip_memory_0"
    hpath="intel_onchip_memory_0"
@@ -343,7 +343,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="idWidth">
    <type>int</type>
-   <value>4</value>
+   <value>6</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -351,7 +351,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="idWidth2">
    <type>int</type>
-   <value>4</value>
+   <value>6</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1004,7 +1004,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s1_arid</name>
     <direction>Input</direction>
-    <width>4</width>
+    <width>6</width>
     <role>arid</role>
    </port>
    <port>
@@ -1046,7 +1046,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s1_awid</name>
     <direction>Input</direction>
-    <width>4</width>
+    <width>6</width>
     <role>awid</role>
    </port>
    <port>
@@ -1088,7 +1088,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s1_rid</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>6</width>
     <role>rid</role>
    </port>
    <port>
@@ -1154,7 +1154,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s1_bid</name>
     <direction>Output</direction>
-    <width>4</width>
+    <width>6</width>
     <role>bid</role>
    </port>
    <port>
