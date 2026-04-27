@@ -12,6 +12,14 @@ set_global_assignment -entity "HPS_QSYS" -library "HPS_QSYS" -name IP_QSYS_MODE 
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "HPS_QSYS" -name MISC_FILE [file join $::quartus(qip_path) "../HPS_QSYS.qsys"]
 
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_NAME "ZGVib3VuY2Vy"
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_DISPLAY_NAME "R2VuZXJpYyBDb21wb25lbnQ="
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_DESCRIPTION "QSBkeW5hbWljIGNvbXBvbmVudCB3aGVyZSB5b3UgY2FuIGFkZCwgbW9kaWZ5IG9yIHJlbW92ZSBpbnRlcmZhY2VzIGFuZCBwb3J0cyBvbiB0aGUgZmx5"
+set_global_assignment -entity "debouncer" -library "debouncer_debounce" -name IP_COMPONENT_GROUP "R2VuZXJpYyBDb21wb25lbnQ="
 set_global_assignment -entity "HPS_QSYS_intel_agilex_5_soc_0" -library "HPS_QSYS_intel_agilex_5_soc_0" -name IP_COMPONENT_NAME "SFBTX1FTWVNfaW50ZWxfYWdpbGV4XzVfc29jXzA="
 set_global_assignment -entity "HPS_QSYS_intel_agilex_5_soc_0" -library "HPS_QSYS_intel_agilex_5_soc_0" -name IP_COMPONENT_DISPLAY_NAME "R2VuZXJpYyBDb21wb25lbnQ="
 set_global_assignment -entity "HPS_QSYS_intel_agilex_5_soc_0" -library "HPS_QSYS_intel_agilex_5_soc_0" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
@@ -250,6 +258,7 @@ set_global_assignment -entity "HPS_QSYS" -library "HPS_QSYS" -name IP_COMPONENT_
 set_global_assignment -entity "HPS_QSYS" -library "HPS_QSYS" -name IP_COMPONENT_VERSION "MS4w"
 
 
+set_global_assignment -library "debouncer_debounce" -name VHDL_FILE [file join $::quartus(qip_path) "debouncer_debounce/synth/debouncer.vhd"]
 set_global_assignment -library "axi4_master_rtl_inst" -name VHDL_FILE [file join $::quartus(qip_path) "axi4_master_rtl_inst/synth/axi4_master.vhd"]
 set_global_assignment -library "altera_merlin_axi_translator_1986" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_merlin_axi_translator_1986/synth/HPS_QSYS_altera_merlin_axi_translator_1986_4khp5ei.sv"]
 set_global_assignment -library "altera_merlin_axi_master_ni_19116" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "altera_merlin_axi_master_ni_19116/synth/altera_merlin_address_alignment.sv"]

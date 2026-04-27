@@ -776,6 +776,7 @@ set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VHDL_FILE vhdl/debouncer.vhd
 set_global_assignment -name VHDL_FILE golden_top.vhd
 set_instance_assignment -name PARTITION_COLOUR 4294961828 -to golden_top -entity golden_top
 set_global_assignment -name SDC_FILE golden_top.sdc

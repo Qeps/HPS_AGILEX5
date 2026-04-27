@@ -1,4 +1,5 @@
 module HPS_QSYS (
+		input  wire         button_in,             //     button_in.button_in
 		output wire [3:0]   hps2fpga_awid,         //      hps2fpga.awid
 		output wire [27:0]  hps2fpga_awaddr,       //              .awaddr
 		output wire [7:0]   hps2fpga_awlen,        //              .awlen
@@ -39,7 +40,6 @@ module HPS_QSYS (
 		output wire         locked_export,         //        locked.export
 		input  wire         reset_reset,           //         reset.reset
 		input  wire         in_reset_reset_n,      //      in_reset.reset_n
-		input  wire         read_bt,               //       read_bt.read_bt
 		output wire         test_complete,         // test_complete.test_complete
 		output wire         ninit_done_ninit_done  //    ninit_done.ninit_done
 	);

@@ -1,5 +1,6 @@
 	component HPS_QSYS is
 		port (
+			button_in             : in    std_logic                      := 'X';             -- button_in
 			hps2fpga_awid         : out   std_logic_vector(3 downto 0);                      -- awid
 			hps2fpga_awaddr       : out   std_logic_vector(27 downto 0);                     -- awaddr
 			hps2fpga_awlen        : out   std_logic_vector(7 downto 0);                      -- awlen
@@ -40,7 +41,6 @@
 			locked_export         : out   std_logic;                                         -- export
 			reset_reset           : in    std_logic                      := 'X';             -- reset
 			in_reset_reset_n      : in    std_logic                      := 'X';             -- reset_n
-			read_bt               : in    std_logic                      := 'X';             -- read_bt
 			test_complete         : out   std_logic;                                         -- test_complete
 			ninit_done_ninit_done : out   std_logic                                          -- ninit_done
 		);
@@ -48,6 +48,7 @@
 
 	u0 : component HPS_QSYS
 		port map (
+			button_in             => CONNECTED_TO_button_in,             --     button_in.button_in
 			hps2fpga_awid         => CONNECTED_TO_hps2fpga_awid,         --      hps2fpga.awid
 			hps2fpga_awaddr       => CONNECTED_TO_hps2fpga_awaddr,       --              .awaddr
 			hps2fpga_awlen        => CONNECTED_TO_hps2fpga_awlen,        --              .awlen
@@ -88,7 +89,6 @@
 			locked_export         => CONNECTED_TO_locked_export,         --        locked.export
 			reset_reset           => CONNECTED_TO_reset_reset,           --         reset.reset
 			in_reset_reset_n      => CONNECTED_TO_in_reset_reset_n,      --      in_reset.reset_n
-			read_bt               => CONNECTED_TO_read_bt,               --       read_bt.read_bt
 			test_complete         => CONNECTED_TO_test_complete,         -- test_complete.test_complete
 			ninit_done_ninit_done => CONNECTED_TO_ninit_done_ninit_done  --    ninit_done.ninit_done
 		);

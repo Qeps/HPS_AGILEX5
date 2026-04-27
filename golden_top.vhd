@@ -42,6 +42,7 @@ architecture rtl of golden_top is
 
     component HPS_QSYS is
 		port (
+			button_in             : in    std_logic                      := 'X';             -- button_in
 			hps2fpga_awid         : out   std_logic_vector(3 downto 0);                      -- awid
 			hps2fpga_awaddr       : out   std_logic_vector(27 downto 0);                     -- awaddr
 			hps2fpga_awlen        : out   std_logic_vector(7 downto 0);                      -- awlen
@@ -82,7 +83,6 @@ architecture rtl of golden_top is
 			locked_export         : out   std_logic;                                         -- export
 			reset_reset           : in    std_logic                      := 'X';             -- reset
 			in_reset_reset_n      : in    std_logic                      := 'X';             -- reset_n
-			read_bt               : in    std_logic                      := 'X';             -- read_bt
 			test_complete         : out   std_logic;                                         -- test_complete
 			ninit_done_ninit_done : out   std_logic                                          -- ninit_done
 		);
@@ -101,15 +101,17 @@ architecture rtl of golden_top is
 
 begin
 
-    user_reset <= not KEY(0);
-    read_test  <= KEY(1);
-    LED(0)     <= not test_result;
-    pll_reset <= user_reset or ninit_done;
+    user_reset 	 <= not KEY(0);
+	 pll_reset 		 <= user_reset or ninit_done;
     fabric_reset   <= user_reset or ninit_done or (not pll_locked);
     fabric_reset_n <= not fabric_reset;
+    read_test  	 <= KEY(1);
+    LED(0)     	 <= not test_result;
+    
 
     u0 : component HPS_QSYS
 		port map (
+			button_in             => read_test,
 			hps2fpga_awid      => open,
             hps2fpga_awaddr    => open,
             hps2fpga_awlen     => open,
@@ -150,7 +152,6 @@ begin
             locked_export      => open,
             reset_reset        => pll_reset,
             in_reset_reset_n   => fabric_reset_n,
-            read_bt            => read_test,
 			test_complete      => test_result,
             ninit_done_ninit_done => ninit_done
 		);

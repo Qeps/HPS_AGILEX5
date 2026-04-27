@@ -1,4 +1,5 @@
 	HPS_QSYS u0 (
+		.button_in             (_connected_to_button_in_),             //   input,    width = 1,     button_in.button_in
 		.hps2fpga_awid         (_connected_to_hps2fpga_awid_),         //  output,    width = 4,      hps2fpga.awid
 		.hps2fpga_awaddr       (_connected_to_hps2fpga_awaddr_),       //  output,   width = 28,              .awaddr
 		.hps2fpga_awlen        (_connected_to_hps2fpga_awlen_),        //  output,    width = 8,              .awlen
@@ -39,7 +40,6 @@
 		.locked_export         (_connected_to_locked_export_),         //  output,    width = 1,        locked.export
 		.reset_reset           (_connected_to_reset_reset_),           //   input,    width = 1,         reset.reset
 		.in_reset_reset_n      (_connected_to_in_reset_reset_n_),      //   input,    width = 1,      in_reset.reset_n
-		.read_bt               (_connected_to_read_bt_),               //   input,    width = 1,       read_bt.read_bt
 		.test_complete         (_connected_to_test_complete_),         //  output,    width = 1, test_complete.test_complete
 		.ninit_done_ninit_done (_connected_to_ninit_done_ninit_done_)  //  output,    width = 1,    ninit_done.ninit_done
 	);
