@@ -8,8 +8,8 @@ library HPS_QSYS_intel_agilex_5_soc_0;
 library HPS_QSYS_intel_onchip_memory_0;
 library HPS_QSYS_iopll_0;
 library HPS_QSYS_reset_bridge_0;
-library axi4_master_rtl_inst;
 library HPS_QSYS_s10_user_rst_clkgate_0;
+library axi4_master_test_lwh2f;
 library altera_mm_interconnect_1920;
 library altera_reset_controller_1924;
 use IEEE.std_logic_1164.all;
@@ -58,8 +58,8 @@ entity HPS_QSYS is
 		locked_export         : out   std_logic;                                         --        locked.export
 		reset_reset           : in    std_logic                      := '0';             --         reset.reset
 		in_reset_reset_n      : in    std_logic                      := '0';             --      in_reset.reset_n
-		test_complete         : out   std_logic;                                         -- test_complete.test_complete
-		ninit_done_ninit_done : out   std_logic                                          --    ninit_done.ninit_done
+		ninit_done_ninit_done : out   std_logic;                                         --    ninit_done.ninit_done
+		test_complete         : out   std_logic                                          -- test_complete.test_complete
 	);
 end entity HPS_QSYS;
 
@@ -210,6 +210,12 @@ architecture rtl of HPS_QSYS is
 		);
 	end component HPS_QSYS_reset_bridge_0_cmp;
 
+	component HPS_QSYS_s10_user_rst_clkgate_0_cmp is
+		port (
+			ninit_done : out std_logic   -- ninit_done
+		);
+	end component HPS_QSYS_s10_user_rst_clkgate_0_cmp;
+
 	component axi4_master_cmp is
 		generic (
 			AXI_ADDR_WIDTH : integer := 30;
@@ -221,91 +227,85 @@ architecture rtl of HPS_QSYS is
 			test_complete : out std_logic;                                        -- test_complete
 			aresetn       : in  std_logic                     := 'X';             -- reset_n
 			aclk          : in  std_logic                     := 'X';             -- clk
-			awvalid       : out std_logic;                                        -- awvalid
-			wdata         : out std_logic_vector(31 downto 0);                    -- wdata
-			awsize        : out std_logic_vector(2 downto 0);                     -- awsize
-			rdata         : in  std_logic_vector(31 downto 0) := (others => 'X'); -- rdata
-			awprot        : out std_logic_vector(2 downto 0);                     -- awprot
-			awburst       : out std_logic_vector(1 downto 0);                     -- awburst
-			arsize        : out std_logic_vector(2 downto 0);                     -- arsize
-			rready        : out std_logic;                                        -- rready
-			rlast         : in  std_logic                     := 'X';             -- rlast
-			wstrb         : out std_logic_vector(3 downto 0);                     -- wstrb
-			arlock        : out std_logic;                                        -- arlock
-			araddr        : out std_logic_vector(29 downto 0);                    -- araddr
-			arready       : in  std_logic                     := 'X';             -- arready
+			bresp         : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- bresp
 			awlen         : out std_logic_vector(7 downto 0);                     -- awlen
-			arlen         : out std_logic_vector(7 downto 0);                     -- arlen
-			awready       : in  std_logic                     := 'X';             -- awready
-			rvalid        : in  std_logic                     := 'X';             -- rvalid
-			awid          : out std_logic_vector(3 downto 0);                     -- awid
-			bvalid        : in  std_logic                     := 'X';             -- bvalid
-			awqos         : out std_logic_vector(3 downto 0);                     -- awqos
-			rid           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- rid
-			arqos         : out std_logic_vector(3 downto 0);                     -- arqos
-			arid          : out std_logic_vector(3 downto 0);                     -- arid
-			bready        : out std_logic;                                        -- bready
-			awlock        : out std_logic;                                        -- awlock
-			awcache       : out std_logic_vector(3 downto 0);                     -- awcache
-			awaddr        : out std_logic_vector(29 downto 0);                    -- awaddr
-			wvalid        : out std_logic;                                        -- wvalid
-			arprot        : out std_logic_vector(2 downto 0);                     -- arprot
-			rresp         : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rresp
-			arburst       : out std_logic_vector(1 downto 0);                     -- arburst
-			arcache       : out std_logic_vector(3 downto 0);                     -- arcache
 			wready        : in  std_logic                     := 'X';             -- wready
+			arlock        : out std_logic;                                        -- arlock
+			awburst       : out std_logic_vector(1 downto 0);                     -- awburst
+			awready       : in  std_logic                     := 'X';             -- awready
+			arqos         : out std_logic_vector(3 downto 0);                     -- arqos
+			arprot        : out std_logic_vector(2 downto 0);                     -- arprot
+			rready        : out std_logic;                                        -- rready
+			araddr        : out std_logic_vector(29 downto 0);                    -- araddr
+			awlock        : out std_logic;                                        -- awlock
+			rlast         : in  std_logic                     := 'X';             -- rlast
+			wdata         : out std_logic_vector(31 downto 0);                    -- wdata
+			awid          : out std_logic_vector(3 downto 0);                     -- awid
+			awcache       : out std_logic_vector(3 downto 0);                     -- awcache
+			awprot        : out std_logic_vector(2 downto 0);                     -- awprot
+			rdata         : in  std_logic_vector(31 downto 0) := (others => 'X'); -- rdata
+			awvalid       : out std_logic;                                        -- awvalid
+			awqos         : out std_logic_vector(3 downto 0);                     -- awqos
+			awsize        : out std_logic_vector(2 downto 0);                     -- awsize
 			wlast         : out std_logic;                                        -- wlast
 			arvalid       : out std_logic;                                        -- arvalid
+			awaddr        : out std_logic_vector(29 downto 0);                    -- awaddr
+			arburst       : out std_logic_vector(1 downto 0);                     -- arburst
+			arcache       : out std_logic_vector(3 downto 0);                     -- arcache
+			rresp         : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rresp
 			bid           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- bid
-			bresp         : in  std_logic_vector(1 downto 0)  := (others => 'X')  -- bresp
+			bready        : out std_logic;                                        -- bready
+			rvalid        : in  std_logic                     := 'X';             -- rvalid
+			arsize        : out std_logic_vector(2 downto 0);                     -- arsize
+			arready       : in  std_logic                     := 'X';             -- arready
+			wvalid        : out std_logic;                                        -- wvalid
+			arlen         : out std_logic_vector(7 downto 0);                     -- arlen
+			arid          : out std_logic_vector(3 downto 0);                     -- arid
+			bvalid        : in  std_logic                     := 'X';             -- bvalid
+			wstrb         : out std_logic_vector(3 downto 0);                     -- wstrb
+			rid           : in  std_logic_vector(3 downto 0)  := (others => 'X')  -- rid
 		);
 	end component axi4_master_cmp;
 
-	component HPS_QSYS_s10_user_rst_clkgate_0_cmp is
+	component HPS_QSYS_altera_mm_interconnect_1920_irwpsda_cmp is
 		port (
-			ninit_done : out std_logic   -- ninit_done
-		);
-	end component HPS_QSYS_s10_user_rst_clkgate_0_cmp;
-
-	component HPS_QSYS_altera_mm_interconnect_1920_hc7knly_cmp is
-		port (
-			rtl_inst_axi_m_awid                                                              : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awid
-			rtl_inst_axi_m_awaddr                                                            : in  std_logic_vector(29 downto 0) := (others => 'X'); -- awaddr
-			rtl_inst_axi_m_awlen                                                             : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- awlen
-			rtl_inst_axi_m_awsize                                                            : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awsize
-			rtl_inst_axi_m_awburst                                                           : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- awburst
-			rtl_inst_axi_m_awlock                                                            : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- awlock
-			rtl_inst_axi_m_awcache                                                           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awcache
-			rtl_inst_axi_m_awprot                                                            : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
-			rtl_inst_axi_m_awqos                                                             : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awqos
-			rtl_inst_axi_m_awvalid                                                           : in  std_logic                     := 'X';             -- awvalid
-			rtl_inst_axi_m_awready                                                           : out std_logic;                                        -- awready
-			rtl_inst_axi_m_wdata                                                             : in  std_logic_vector(31 downto 0) := (others => 'X'); -- wdata
-			rtl_inst_axi_m_wstrb                                                             : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- wstrb
-			rtl_inst_axi_m_wlast                                                             : in  std_logic                     := 'X';             -- wlast
-			rtl_inst_axi_m_wvalid                                                            : in  std_logic                     := 'X';             -- wvalid
-			rtl_inst_axi_m_wready                                                            : out std_logic;                                        -- wready
-			rtl_inst_axi_m_bid                                                               : out std_logic_vector(3 downto 0);                     -- bid
-			rtl_inst_axi_m_bresp                                                             : out std_logic_vector(1 downto 0);                     -- bresp
-			rtl_inst_axi_m_bvalid                                                            : out std_logic;                                        -- bvalid
-			rtl_inst_axi_m_bready                                                            : in  std_logic                     := 'X';             -- bready
-			rtl_inst_axi_m_arid                                                              : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arid
-			rtl_inst_axi_m_araddr                                                            : in  std_logic_vector(29 downto 0) := (others => 'X'); -- araddr
-			rtl_inst_axi_m_arlen                                                             : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- arlen
-			rtl_inst_axi_m_arsize                                                            : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arsize
-			rtl_inst_axi_m_arburst                                                           : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- arburst
-			rtl_inst_axi_m_arlock                                                            : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- arlock
-			rtl_inst_axi_m_arcache                                                           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arcache
-			rtl_inst_axi_m_arprot                                                            : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
-			rtl_inst_axi_m_arqos                                                             : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arqos
-			rtl_inst_axi_m_arvalid                                                           : in  std_logic                     := 'X';             -- arvalid
-			rtl_inst_axi_m_arready                                                           : out std_logic;                                        -- arready
-			rtl_inst_axi_m_rid                                                               : out std_logic_vector(3 downto 0);                     -- rid
-			rtl_inst_axi_m_rdata                                                             : out std_logic_vector(31 downto 0);                    -- rdata
-			rtl_inst_axi_m_rresp                                                             : out std_logic_vector(1 downto 0);                     -- rresp
-			rtl_inst_axi_m_rlast                                                             : out std_logic;                                        -- rlast
-			rtl_inst_axi_m_rvalid                                                            : out std_logic;                                        -- rvalid
-			rtl_inst_axi_m_rready                                                            : in  std_logic                     := 'X';             -- rready
+			test_lwh2f_axi_m_awid                                                            : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awid
+			test_lwh2f_axi_m_awaddr                                                          : in  std_logic_vector(29 downto 0) := (others => 'X'); -- awaddr
+			test_lwh2f_axi_m_awlen                                                           : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- awlen
+			test_lwh2f_axi_m_awsize                                                          : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awsize
+			test_lwh2f_axi_m_awburst                                                         : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- awburst
+			test_lwh2f_axi_m_awlock                                                          : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- awlock
+			test_lwh2f_axi_m_awcache                                                         : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awcache
+			test_lwh2f_axi_m_awprot                                                          : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- awprot
+			test_lwh2f_axi_m_awqos                                                           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awqos
+			test_lwh2f_axi_m_awvalid                                                         : in  std_logic                     := 'X';             -- awvalid
+			test_lwh2f_axi_m_awready                                                         : out std_logic;                                        -- awready
+			test_lwh2f_axi_m_wdata                                                           : in  std_logic_vector(31 downto 0) := (others => 'X'); -- wdata
+			test_lwh2f_axi_m_wstrb                                                           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- wstrb
+			test_lwh2f_axi_m_wlast                                                           : in  std_logic                     := 'X';             -- wlast
+			test_lwh2f_axi_m_wvalid                                                          : in  std_logic                     := 'X';             -- wvalid
+			test_lwh2f_axi_m_wready                                                          : out std_logic;                                        -- wready
+			test_lwh2f_axi_m_bid                                                             : out std_logic_vector(3 downto 0);                     -- bid
+			test_lwh2f_axi_m_bresp                                                           : out std_logic_vector(1 downto 0);                     -- bresp
+			test_lwh2f_axi_m_bvalid                                                          : out std_logic;                                        -- bvalid
+			test_lwh2f_axi_m_bready                                                          : in  std_logic                     := 'X';             -- bready
+			test_lwh2f_axi_m_arid                                                            : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arid
+			test_lwh2f_axi_m_araddr                                                          : in  std_logic_vector(29 downto 0) := (others => 'X'); -- araddr
+			test_lwh2f_axi_m_arlen                                                           : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- arlen
+			test_lwh2f_axi_m_arsize                                                          : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arsize
+			test_lwh2f_axi_m_arburst                                                         : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- arburst
+			test_lwh2f_axi_m_arlock                                                          : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- arlock
+			test_lwh2f_axi_m_arcache                                                         : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arcache
+			test_lwh2f_axi_m_arprot                                                          : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- arprot
+			test_lwh2f_axi_m_arqos                                                           : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- arqos
+			test_lwh2f_axi_m_arvalid                                                         : in  std_logic                     := 'X';             -- arvalid
+			test_lwh2f_axi_m_arready                                                         : out std_logic;                                        -- arready
+			test_lwh2f_axi_m_rid                                                             : out std_logic_vector(3 downto 0);                     -- rid
+			test_lwh2f_axi_m_rdata                                                           : out std_logic_vector(31 downto 0);                    -- rdata
+			test_lwh2f_axi_m_rresp                                                           : out std_logic_vector(1 downto 0);                     -- rresp
+			test_lwh2f_axi_m_rlast                                                           : out std_logic;                                        -- rlast
+			test_lwh2f_axi_m_rvalid                                                          : out std_logic;                                        -- rvalid
+			test_lwh2f_axi_m_rready                                                          : in  std_logic                     := 'X';             -- rready
 			intel_agilex_5_soc_0_lwhps2fpga_awid                                             : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- awid
 			intel_agilex_5_soc_0_lwhps2fpga_awaddr                                           : in  std_logic_vector(23 downto 0) := (others => 'X'); -- awaddr
 			intel_agilex_5_soc_0_lwhps2fpga_awlen                                            : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- awlen
@@ -370,11 +370,11 @@ architecture rtl of HPS_QSYS is
 			intel_onchip_memory_0_axi_s1_rlast                                               : in  std_logic                     := 'X';             -- rlast
 			intel_onchip_memory_0_axi_s1_rvalid                                              : in  std_logic                     := 'X';             -- rvalid
 			intel_onchip_memory_0_axi_s1_rready                                              : out std_logic;                                        -- rready
-			rtl_inst_axi_m_translator_clk_reset_reset_bridge_in_reset_reset                  : in  std_logic                     := 'X';             -- reset
+			test_lwh2f_axi_m_translator_clk_reset_reset_bridge_in_reset_reset                : in  std_logic                     := 'X';             -- reset
 			intel_agilex_5_soc_0_lwhps2fpga_translator_clk_reset_reset_bridge_in_reset_reset : in  std_logic                     := 'X';             -- reset
 			iopll_0_outclk0_clk                                                              : in  std_logic                     := 'X'              -- clk
 		);
-	end component HPS_QSYS_altera_mm_interconnect_1920_hc7knly_cmp;
+	end component HPS_QSYS_altera_mm_interconnect_1920_irwpsda_cmp;
 
 	component altera_reset_controller_cmp is
 		generic (
@@ -442,47 +442,47 @@ architecture rtl of HPS_QSYS is
 		);
 	end component altera_reset_controller_cmp;
 
-	signal iopll_0_outclk0_clk                                    : std_logic;                     -- iopll_0:outclk_0 -> [debounce:clk, intel_agilex_5_soc_0:hps2fpga_axi_clock_clk, intel_agilex_5_soc_0:lwhps2fpga_axi_clock_clk, intel_onchip_memory_0:clk, mm_interconnect_0:iopll_0_outclk0_clk, reset_bridge_0:clk, rst_controller:clk, rst_controller_001:clk, rtl_inst:aclk]
-	signal debounce_button_out_button_out                         : std_logic;                     -- debounce:button_out -> rtl_inst:read_bt
+	signal iopll_0_outclk0_clk                                    : std_logic;                     -- iopll_0:outclk_0 -> [debounce:clk, intel_agilex_5_soc_0:hps2fpga_axi_clock_clk, intel_agilex_5_soc_0:lwhps2fpga_axi_clock_clk, intel_onchip_memory_0:clk, mm_interconnect_0:iopll_0_outclk0_clk, reset_bridge_0:clk, rst_controller:clk, rst_controller_001:clk, test_lwh2f:aclk]
+	signal debounce_button_out_button_out                         : std_logic;                     -- debounce:button_out -> test_lwh2f:read_bt
 	signal intel_agilex_5_soc_0_h2f_reset_reset                   : std_logic;                     -- intel_agilex_5_soc_0:h2f_reset_reset -> [intel_agilex_5_soc_0:hps2fpga_axi_reset_reset, intel_agilex_5_soc_0:lwhps2fpga_axi_reset_reset, rst_controller_001:reset_in0]
-	signal reset_bridge_0_out_reset_reset                         : std_logic;                     -- reset_bridge_0:out_reset_n -> [debounce:resetn, reset_bridge_0_out_reset_reset:in, rtl_inst:aresetn]
-	signal rtl_inst_axi_m_awburst                                 : std_logic_vector(1 downto 0);  -- rtl_inst:awburst -> mm_interconnect_0:rtl_inst_axi_m_awburst
-	signal rtl_inst_axi_m_arlen                                   : std_logic_vector(7 downto 0);  -- rtl_inst:arlen -> mm_interconnect_0:rtl_inst_axi_m_arlen
-	signal rtl_inst_axi_m_arqos                                   : std_logic_vector(3 downto 0);  -- rtl_inst:arqos -> mm_interconnect_0:rtl_inst_axi_m_arqos
-	signal rtl_inst_axi_m_wstrb                                   : std_logic_vector(3 downto 0);  -- rtl_inst:wstrb -> mm_interconnect_0:rtl_inst_axi_m_wstrb
-	signal rtl_inst_axi_m_wready                                  : std_logic;                     -- mm_interconnect_0:rtl_inst_axi_m_wready -> rtl_inst:wready
-	signal rtl_inst_axi_m_rid                                     : std_logic_vector(3 downto 0);  -- mm_interconnect_0:rtl_inst_axi_m_rid -> rtl_inst:rid
-	signal rtl_inst_axi_m_rready                                  : std_logic;                     -- rtl_inst:rready -> mm_interconnect_0:rtl_inst_axi_m_rready
-	signal rtl_inst_axi_m_awlen                                   : std_logic_vector(7 downto 0);  -- rtl_inst:awlen -> mm_interconnect_0:rtl_inst_axi_m_awlen
-	signal rtl_inst_axi_m_awqos                                   : std_logic_vector(3 downto 0);  -- rtl_inst:awqos -> mm_interconnect_0:rtl_inst_axi_m_awqos
-	signal rtl_inst_axi_m_arcache                                 : std_logic_vector(3 downto 0);  -- rtl_inst:arcache -> mm_interconnect_0:rtl_inst_axi_m_arcache
-	signal rtl_inst_axi_m_araddr                                  : std_logic_vector(29 downto 0); -- rtl_inst:araddr -> mm_interconnect_0:rtl_inst_axi_m_araddr
-	signal rtl_inst_axi_m_wvalid                                  : std_logic;                     -- rtl_inst:wvalid -> mm_interconnect_0:rtl_inst_axi_m_wvalid
-	signal rtl_inst_axi_m_arprot                                  : std_logic_vector(2 downto 0);  -- rtl_inst:arprot -> mm_interconnect_0:rtl_inst_axi_m_arprot
-	signal rtl_inst_axi_m_wdata                                   : std_logic_vector(31 downto 0); -- rtl_inst:wdata -> mm_interconnect_0:rtl_inst_axi_m_wdata
-	signal rtl_inst_axi_m_awprot                                  : std_logic_vector(2 downto 0);  -- rtl_inst:awprot -> mm_interconnect_0:rtl_inst_axi_m_awprot
-	signal rtl_inst_axi_m_arvalid                                 : std_logic;                     -- rtl_inst:arvalid -> mm_interconnect_0:rtl_inst_axi_m_arvalid
-	signal rtl_inst_axi_m_arid                                    : std_logic_vector(3 downto 0);  -- rtl_inst:arid -> mm_interconnect_0:rtl_inst_axi_m_arid
-	signal rtl_inst_axi_m_awcache                                 : std_logic_vector(3 downto 0);  -- rtl_inst:awcache -> mm_interconnect_0:rtl_inst_axi_m_awcache
-	signal rtl_inst_axi_m_arlock                                  : std_logic;                     -- rtl_inst:arlock -> mm_interconnect_0:rtl_inst_axi_m_arlock
-	signal rtl_inst_axi_m_awlock                                  : std_logic;                     -- rtl_inst:awlock -> mm_interconnect_0:rtl_inst_axi_m_awlock
-	signal rtl_inst_axi_m_awaddr                                  : std_logic_vector(29 downto 0); -- rtl_inst:awaddr -> mm_interconnect_0:rtl_inst_axi_m_awaddr
-	signal rtl_inst_axi_m_arready                                 : std_logic;                     -- mm_interconnect_0:rtl_inst_axi_m_arready -> rtl_inst:arready
-	signal rtl_inst_axi_m_bresp                                   : std_logic_vector(1 downto 0);  -- mm_interconnect_0:rtl_inst_axi_m_bresp -> rtl_inst:bresp
-	signal rtl_inst_axi_m_rdata                                   : std_logic_vector(31 downto 0); -- mm_interconnect_0:rtl_inst_axi_m_rdata -> rtl_inst:rdata
-	signal rtl_inst_axi_m_awready                                 : std_logic;                     -- mm_interconnect_0:rtl_inst_axi_m_awready -> rtl_inst:awready
-	signal rtl_inst_axi_m_arburst                                 : std_logic_vector(1 downto 0);  -- rtl_inst:arburst -> mm_interconnect_0:rtl_inst_axi_m_arburst
-	signal rtl_inst_axi_m_arsize                                  : std_logic_vector(2 downto 0);  -- rtl_inst:arsize -> mm_interconnect_0:rtl_inst_axi_m_arsize
-	signal rtl_inst_axi_m_rlast                                   : std_logic;                     -- mm_interconnect_0:rtl_inst_axi_m_rlast -> rtl_inst:rlast
-	signal rtl_inst_axi_m_bready                                  : std_logic;                     -- rtl_inst:bready -> mm_interconnect_0:rtl_inst_axi_m_bready
-	signal rtl_inst_axi_m_wlast                                   : std_logic;                     -- rtl_inst:wlast -> mm_interconnect_0:rtl_inst_axi_m_wlast
-	signal rtl_inst_axi_m_rresp                                   : std_logic_vector(1 downto 0);  -- mm_interconnect_0:rtl_inst_axi_m_rresp -> rtl_inst:rresp
-	signal rtl_inst_axi_m_awid                                    : std_logic_vector(3 downto 0);  -- rtl_inst:awid -> mm_interconnect_0:rtl_inst_axi_m_awid
-	signal rtl_inst_axi_m_bid                                     : std_logic_vector(3 downto 0);  -- mm_interconnect_0:rtl_inst_axi_m_bid -> rtl_inst:bid
-	signal rtl_inst_axi_m_bvalid                                  : std_logic;                     -- mm_interconnect_0:rtl_inst_axi_m_bvalid -> rtl_inst:bvalid
-	signal rtl_inst_axi_m_awvalid                                 : std_logic;                     -- rtl_inst:awvalid -> mm_interconnect_0:rtl_inst_axi_m_awvalid
-	signal rtl_inst_axi_m_awsize                                  : std_logic_vector(2 downto 0);  -- rtl_inst:awsize -> mm_interconnect_0:rtl_inst_axi_m_awsize
-	signal rtl_inst_axi_m_rvalid                                  : std_logic;                     -- mm_interconnect_0:rtl_inst_axi_m_rvalid -> rtl_inst:rvalid
+	signal reset_bridge_0_out_reset_reset                         : std_logic;                     -- reset_bridge_0:out_reset_n -> [debounce:resetn, reset_bridge_0_out_reset_reset:in, test_lwh2f:aresetn]
+	signal test_lwh2f_axi_m_awburst                               : std_logic_vector(1 downto 0);  -- test_lwh2f:awburst -> mm_interconnect_0:test_lwh2f_axi_m_awburst
+	signal test_lwh2f_axi_m_arqos                                 : std_logic_vector(3 downto 0);  -- test_lwh2f:arqos -> mm_interconnect_0:test_lwh2f_axi_m_arqos
+	signal test_lwh2f_axi_m_arlen                                 : std_logic_vector(7 downto 0);  -- test_lwh2f:arlen -> mm_interconnect_0:test_lwh2f_axi_m_arlen
+	signal test_lwh2f_axi_m_wready                                : std_logic;                     -- mm_interconnect_0:test_lwh2f_axi_m_wready -> test_lwh2f:wready
+	signal test_lwh2f_axi_m_wstrb                                 : std_logic_vector(3 downto 0);  -- test_lwh2f:wstrb -> mm_interconnect_0:test_lwh2f_axi_m_wstrb
+	signal test_lwh2f_axi_m_rid                                   : std_logic_vector(3 downto 0);  -- mm_interconnect_0:test_lwh2f_axi_m_rid -> test_lwh2f:rid
+	signal test_lwh2f_axi_m_rready                                : std_logic;                     -- test_lwh2f:rready -> mm_interconnect_0:test_lwh2f_axi_m_rready
+	signal test_lwh2f_axi_m_awlen                                 : std_logic_vector(7 downto 0);  -- test_lwh2f:awlen -> mm_interconnect_0:test_lwh2f_axi_m_awlen
+	signal test_lwh2f_axi_m_awqos                                 : std_logic_vector(3 downto 0);  -- test_lwh2f:awqos -> mm_interconnect_0:test_lwh2f_axi_m_awqos
+	signal test_lwh2f_axi_m_arcache                               : std_logic_vector(3 downto 0);  -- test_lwh2f:arcache -> mm_interconnect_0:test_lwh2f_axi_m_arcache
+	signal test_lwh2f_axi_m_araddr                                : std_logic_vector(29 downto 0); -- test_lwh2f:araddr -> mm_interconnect_0:test_lwh2f_axi_m_araddr
+	signal test_lwh2f_axi_m_wvalid                                : std_logic;                     -- test_lwh2f:wvalid -> mm_interconnect_0:test_lwh2f_axi_m_wvalid
+	signal test_lwh2f_axi_m_arprot                                : std_logic_vector(2 downto 0);  -- test_lwh2f:arprot -> mm_interconnect_0:test_lwh2f_axi_m_arprot
+	signal test_lwh2f_axi_m_wdata                                 : std_logic_vector(31 downto 0); -- test_lwh2f:wdata -> mm_interconnect_0:test_lwh2f_axi_m_wdata
+	signal test_lwh2f_axi_m_awprot                                : std_logic_vector(2 downto 0);  -- test_lwh2f:awprot -> mm_interconnect_0:test_lwh2f_axi_m_awprot
+	signal test_lwh2f_axi_m_arvalid                               : std_logic;                     -- test_lwh2f:arvalid -> mm_interconnect_0:test_lwh2f_axi_m_arvalid
+	signal test_lwh2f_axi_m_awcache                               : std_logic_vector(3 downto 0);  -- test_lwh2f:awcache -> mm_interconnect_0:test_lwh2f_axi_m_awcache
+	signal test_lwh2f_axi_m_arid                                  : std_logic_vector(3 downto 0);  -- test_lwh2f:arid -> mm_interconnect_0:test_lwh2f_axi_m_arid
+	signal test_lwh2f_axi_m_arlock                                : std_logic;                     -- test_lwh2f:arlock -> mm_interconnect_0:test_lwh2f_axi_m_arlock
+	signal test_lwh2f_axi_m_awlock                                : std_logic;                     -- test_lwh2f:awlock -> mm_interconnect_0:test_lwh2f_axi_m_awlock
+	signal test_lwh2f_axi_m_awaddr                                : std_logic_vector(29 downto 0); -- test_lwh2f:awaddr -> mm_interconnect_0:test_lwh2f_axi_m_awaddr
+	signal test_lwh2f_axi_m_bresp                                 : std_logic_vector(1 downto 0);  -- mm_interconnect_0:test_lwh2f_axi_m_bresp -> test_lwh2f:bresp
+	signal test_lwh2f_axi_m_arready                               : std_logic;                     -- mm_interconnect_0:test_lwh2f_axi_m_arready -> test_lwh2f:arready
+	signal test_lwh2f_axi_m_rdata                                 : std_logic_vector(31 downto 0); -- mm_interconnect_0:test_lwh2f_axi_m_rdata -> test_lwh2f:rdata
+	signal test_lwh2f_axi_m_awready                               : std_logic;                     -- mm_interconnect_0:test_lwh2f_axi_m_awready -> test_lwh2f:awready
+	signal test_lwh2f_axi_m_arburst                               : std_logic_vector(1 downto 0);  -- test_lwh2f:arburst -> mm_interconnect_0:test_lwh2f_axi_m_arburst
+	signal test_lwh2f_axi_m_arsize                                : std_logic_vector(2 downto 0);  -- test_lwh2f:arsize -> mm_interconnect_0:test_lwh2f_axi_m_arsize
+	signal test_lwh2f_axi_m_rlast                                 : std_logic;                     -- mm_interconnect_0:test_lwh2f_axi_m_rlast -> test_lwh2f:rlast
+	signal test_lwh2f_axi_m_bready                                : std_logic;                     -- test_lwh2f:bready -> mm_interconnect_0:test_lwh2f_axi_m_bready
+	signal test_lwh2f_axi_m_wlast                                 : std_logic;                     -- test_lwh2f:wlast -> mm_interconnect_0:test_lwh2f_axi_m_wlast
+	signal test_lwh2f_axi_m_rresp                                 : std_logic_vector(1 downto 0);  -- mm_interconnect_0:test_lwh2f_axi_m_rresp -> test_lwh2f:rresp
+	signal test_lwh2f_axi_m_awid                                  : std_logic_vector(3 downto 0);  -- test_lwh2f:awid -> mm_interconnect_0:test_lwh2f_axi_m_awid
+	signal test_lwh2f_axi_m_bid                                   : std_logic_vector(3 downto 0);  -- mm_interconnect_0:test_lwh2f_axi_m_bid -> test_lwh2f:bid
+	signal test_lwh2f_axi_m_bvalid                                : std_logic;                     -- mm_interconnect_0:test_lwh2f_axi_m_bvalid -> test_lwh2f:bvalid
+	signal test_lwh2f_axi_m_awvalid                               : std_logic;                     -- test_lwh2f:awvalid -> mm_interconnect_0:test_lwh2f_axi_m_awvalid
+	signal test_lwh2f_axi_m_awsize                                : std_logic_vector(2 downto 0);  -- test_lwh2f:awsize -> mm_interconnect_0:test_lwh2f_axi_m_awsize
+	signal test_lwh2f_axi_m_rvalid                                : std_logic;                     -- mm_interconnect_0:test_lwh2f_axi_m_rvalid -> test_lwh2f:rvalid
 	signal intel_agilex_5_soc_0_lwhps2fpga_awburst                : std_logic_vector(1 downto 0);  -- intel_agilex_5_soc_0:lwhps2fpga_awburst -> mm_interconnect_0:intel_agilex_5_soc_0_lwhps2fpga_awburst
 	signal intel_agilex_5_soc_0_lwhps2fpga_arlen                  : std_logic_vector(7 downto 0);  -- intel_agilex_5_soc_0:lwhps2fpga_arlen -> mm_interconnect_0:intel_agilex_5_soc_0_lwhps2fpga_arlen
 	signal intel_agilex_5_soc_0_lwhps2fpga_wstrb                  : std_logic_vector(3 downto 0);  -- intel_agilex_5_soc_0:lwhps2fpga_wstrb -> mm_interconnect_0:intel_agilex_5_soc_0_lwhps2fpga_wstrb
@@ -547,7 +547,7 @@ architecture rtl of HPS_QSYS is
 	signal mm_interconnect_0_intel_onchip_memory_0_axi_s1_awsize  : std_logic_vector(2 downto 0);  -- mm_interconnect_0:intel_onchip_memory_0_axi_s1_awsize -> intel_onchip_memory_0:s1_awsize
 	signal mm_interconnect_0_intel_onchip_memory_0_axi_s1_awvalid : std_logic;                     -- mm_interconnect_0:intel_onchip_memory_0_axi_s1_awvalid -> intel_onchip_memory_0:s1_awvalid
 	signal mm_interconnect_0_intel_onchip_memory_0_axi_s1_rvalid  : std_logic;                     -- intel_onchip_memory_0:s1_rvalid -> mm_interconnect_0:intel_onchip_memory_0_axi_s1_rvalid
-	signal rst_controller_reset_out_reset                         : std_logic;                     -- rst_controller:reset_out -> mm_interconnect_0:rtl_inst_axi_m_translator_clk_reset_reset_bridge_in_reset_reset
+	signal rst_controller_reset_out_reset                         : std_logic;                     -- rst_controller:reset_out -> mm_interconnect_0:test_lwh2f_axi_m_translator_clk_reset_reset_bridge_in_reset_reset
 	signal rst_controller_001_reset_out_reset                     : std_logic;                     -- rst_controller_001:reset_out -> mm_interconnect_0:intel_agilex_5_soc_0_lwhps2fpga_translator_clk_reset_reset_bridge_in_reset_reset
 	signal reset_bridge_0_out_reset_reset_ports_inv               : std_logic;                     -- reset_bridge_0_out_reset_reset:inv -> [intel_onchip_memory_0:reset, rst_controller:reset_in0]
 
@@ -561,12 +561,12 @@ architecture rtl of HPS_QSYS is
 		use entity HPS_QSYS_iopll_0.HPS_QSYS_iopll_0;
 	for reset_bridge_0 : HPS_QSYS_reset_bridge_0_cmp
 		use entity HPS_QSYS_reset_bridge_0.HPS_QSYS_reset_bridge_0;
-	for rtl_inst : axi4_master_cmp
-		use entity axi4_master_rtl_inst.axi4_master;
 	for s10_user_rst_clkgate_0 : HPS_QSYS_s10_user_rst_clkgate_0_cmp
 		use entity HPS_QSYS_s10_user_rst_clkgate_0.HPS_QSYS_s10_user_rst_clkgate_0;
-	for mm_interconnect_0 : HPS_QSYS_altera_mm_interconnect_1920_hc7knly_cmp
-		use entity altera_mm_interconnect_1920.HPS_QSYS_altera_mm_interconnect_1920_hc7knly;
+	for test_lwh2f : axi4_master_cmp
+		use entity axi4_master_test_lwh2f.axi4_master;
+	for mm_interconnect_0 : HPS_QSYS_altera_mm_interconnect_1920_irwpsda_cmp
+		use entity altera_mm_interconnect_1920.HPS_QSYS_altera_mm_interconnect_1920_irwpsda;
 	for rst_controller : altera_reset_controller_cmp
 		use entity altera_reset_controller_1924.altera_reset_controller;
 	for rst_controller_001 : altera_reset_controller_cmp
@@ -714,7 +714,12 @@ begin
 			out_reset_n => reset_bridge_0_out_reset_reset  -- out_reset.reset_n
 		);
 
-	rtl_inst : component axi4_master_cmp
+	s10_user_rst_clkgate_0 : component HPS_QSYS_s10_user_rst_clkgate_0_cmp
+		port map (
+			ninit_done => ninit_done_ninit_done  -- ninit_done.ninit_done
+		);
+
+	test_lwh2f : component axi4_master_cmp
 		generic map (
 			AXI_ADDR_WIDTH => 30,
 			AXI_DATA_WIDTH => 32,
@@ -725,89 +730,84 @@ begin
 			test_complete => test_complete,                  -- test_complete.test_complete
 			aresetn       => reset_bridge_0_out_reset_reset, --       aresetn.reset_n
 			aclk          => iopll_0_outclk0_clk,            --          aclk.clk
-			awvalid       => rtl_inst_axi_m_awvalid,         --         axi_m.awvalid
-			wdata         => rtl_inst_axi_m_wdata,           --              .wdata
-			awsize        => rtl_inst_axi_m_awsize,          --              .awsize
-			rdata         => rtl_inst_axi_m_rdata,           --              .rdata
-			awprot        => rtl_inst_axi_m_awprot,          --              .awprot
-			awburst       => rtl_inst_axi_m_awburst,         --              .awburst
-			arsize        => rtl_inst_axi_m_arsize,          --              .arsize
-			rready        => rtl_inst_axi_m_rready,          --              .rready
-			rlast         => rtl_inst_axi_m_rlast,           --              .rlast
-			wstrb         => rtl_inst_axi_m_wstrb,           --              .wstrb
-			arlock        => rtl_inst_axi_m_arlock,          --              .arlock
-			araddr        => rtl_inst_axi_m_araddr,          --              .araddr
-			arready       => rtl_inst_axi_m_arready,         --              .arready
-			awlen         => rtl_inst_axi_m_awlen,           --              .awlen
-			arlen         => rtl_inst_axi_m_arlen,           --              .arlen
-			awready       => rtl_inst_axi_m_awready,         --              .awready
-			rvalid        => rtl_inst_axi_m_rvalid,          --              .rvalid
-			awid          => rtl_inst_axi_m_awid,            --              .awid
-			bvalid        => rtl_inst_axi_m_bvalid,          --              .bvalid
-			awqos         => rtl_inst_axi_m_awqos,           --              .awqos
-			rid           => rtl_inst_axi_m_rid,             --              .rid
-			arqos         => rtl_inst_axi_m_arqos,           --              .arqos
-			arid          => rtl_inst_axi_m_arid,            --              .arid
-			bready        => rtl_inst_axi_m_bready,          --              .bready
-			awlock        => rtl_inst_axi_m_awlock,          --              .awlock
-			awcache       => rtl_inst_axi_m_awcache,         --              .awcache
-			awaddr        => rtl_inst_axi_m_awaddr,          --              .awaddr
-			wvalid        => rtl_inst_axi_m_wvalid,          --              .wvalid
-			arprot        => rtl_inst_axi_m_arprot,          --              .arprot
-			rresp         => rtl_inst_axi_m_rresp,           --              .rresp
-			arburst       => rtl_inst_axi_m_arburst,         --              .arburst
-			arcache       => rtl_inst_axi_m_arcache,         --              .arcache
-			wready        => rtl_inst_axi_m_wready,          --              .wready
-			wlast         => rtl_inst_axi_m_wlast,           --              .wlast
-			arvalid       => rtl_inst_axi_m_arvalid,         --              .arvalid
-			bid           => rtl_inst_axi_m_bid,             --              .bid
-			bresp         => rtl_inst_axi_m_bresp            --              .bresp
+			bresp         => test_lwh2f_axi_m_bresp,         --         axi_m.bresp
+			awlen         => test_lwh2f_axi_m_awlen,         --              .awlen
+			wready        => test_lwh2f_axi_m_wready,        --              .wready
+			arlock        => test_lwh2f_axi_m_arlock,        --              .arlock
+			awburst       => test_lwh2f_axi_m_awburst,       --              .awburst
+			awready       => test_lwh2f_axi_m_awready,       --              .awready
+			arqos         => test_lwh2f_axi_m_arqos,         --              .arqos
+			arprot        => test_lwh2f_axi_m_arprot,        --              .arprot
+			rready        => test_lwh2f_axi_m_rready,        --              .rready
+			araddr        => test_lwh2f_axi_m_araddr,        --              .araddr
+			awlock        => test_lwh2f_axi_m_awlock,        --              .awlock
+			rlast         => test_lwh2f_axi_m_rlast,         --              .rlast
+			wdata         => test_lwh2f_axi_m_wdata,         --              .wdata
+			awid          => test_lwh2f_axi_m_awid,          --              .awid
+			awcache       => test_lwh2f_axi_m_awcache,       --              .awcache
+			awprot        => test_lwh2f_axi_m_awprot,        --              .awprot
+			rdata         => test_lwh2f_axi_m_rdata,         --              .rdata
+			awvalid       => test_lwh2f_axi_m_awvalid,       --              .awvalid
+			awqos         => test_lwh2f_axi_m_awqos,         --              .awqos
+			awsize        => test_lwh2f_axi_m_awsize,        --              .awsize
+			wlast         => test_lwh2f_axi_m_wlast,         --              .wlast
+			arvalid       => test_lwh2f_axi_m_arvalid,       --              .arvalid
+			awaddr        => test_lwh2f_axi_m_awaddr,        --              .awaddr
+			arburst       => test_lwh2f_axi_m_arburst,       --              .arburst
+			arcache       => test_lwh2f_axi_m_arcache,       --              .arcache
+			rresp         => test_lwh2f_axi_m_rresp,         --              .rresp
+			bid           => test_lwh2f_axi_m_bid,           --              .bid
+			bready        => test_lwh2f_axi_m_bready,        --              .bready
+			rvalid        => test_lwh2f_axi_m_rvalid,        --              .rvalid
+			arsize        => test_lwh2f_axi_m_arsize,        --              .arsize
+			arready       => test_lwh2f_axi_m_arready,       --              .arready
+			wvalid        => test_lwh2f_axi_m_wvalid,        --              .wvalid
+			arlen         => test_lwh2f_axi_m_arlen,         --              .arlen
+			arid          => test_lwh2f_axi_m_arid,          --              .arid
+			bvalid        => test_lwh2f_axi_m_bvalid,        --              .bvalid
+			wstrb         => test_lwh2f_axi_m_wstrb,         --              .wstrb
+			rid           => test_lwh2f_axi_m_rid            --              .rid
 		);
 
-	s10_user_rst_clkgate_0 : component HPS_QSYS_s10_user_rst_clkgate_0_cmp
+	mm_interconnect_0 : component HPS_QSYS_altera_mm_interconnect_1920_irwpsda_cmp
 		port map (
-			ninit_done => ninit_done_ninit_done  -- ninit_done.ninit_done
-		);
-
-	mm_interconnect_0 : component HPS_QSYS_altera_mm_interconnect_1920_hc7knly_cmp
-		port map (
-			rtl_inst_axi_m_awid                                                              => rtl_inst_axi_m_awid,                                    --                                                             rtl_inst_axi_m.awid
-			rtl_inst_axi_m_awaddr                                                            => rtl_inst_axi_m_awaddr,                                  --                                                                           .awaddr
-			rtl_inst_axi_m_awlen                                                             => rtl_inst_axi_m_awlen,                                   --                                                                           .awlen
-			rtl_inst_axi_m_awsize                                                            => rtl_inst_axi_m_awsize,                                  --                                                                           .awsize
-			rtl_inst_axi_m_awburst                                                           => rtl_inst_axi_m_awburst,                                 --                                                                           .awburst
-			rtl_inst_axi_m_awlock(0)                                                         => rtl_inst_axi_m_awlock,                                  --                                                                           .awlock
-			rtl_inst_axi_m_awcache                                                           => rtl_inst_axi_m_awcache,                                 --                                                                           .awcache
-			rtl_inst_axi_m_awprot                                                            => rtl_inst_axi_m_awprot,                                  --                                                                           .awprot
-			rtl_inst_axi_m_awqos                                                             => rtl_inst_axi_m_awqos,                                   --                                                                           .awqos
-			rtl_inst_axi_m_awvalid                                                           => rtl_inst_axi_m_awvalid,                                 --                                                                           .awvalid
-			rtl_inst_axi_m_awready                                                           => rtl_inst_axi_m_awready,                                 --                                                                           .awready
-			rtl_inst_axi_m_wdata                                                             => rtl_inst_axi_m_wdata,                                   --                                                                           .wdata
-			rtl_inst_axi_m_wstrb                                                             => rtl_inst_axi_m_wstrb,                                   --                                                                           .wstrb
-			rtl_inst_axi_m_wlast                                                             => rtl_inst_axi_m_wlast,                                   --                                                                           .wlast
-			rtl_inst_axi_m_wvalid                                                            => rtl_inst_axi_m_wvalid,                                  --                                                                           .wvalid
-			rtl_inst_axi_m_wready                                                            => rtl_inst_axi_m_wready,                                  --                                                                           .wready
-			rtl_inst_axi_m_bid                                                               => rtl_inst_axi_m_bid,                                     --                                                                           .bid
-			rtl_inst_axi_m_bresp                                                             => rtl_inst_axi_m_bresp,                                   --                                                                           .bresp
-			rtl_inst_axi_m_bvalid                                                            => rtl_inst_axi_m_bvalid,                                  --                                                                           .bvalid
-			rtl_inst_axi_m_bready                                                            => rtl_inst_axi_m_bready,                                  --                                                                           .bready
-			rtl_inst_axi_m_arid                                                              => rtl_inst_axi_m_arid,                                    --                                                                           .arid
-			rtl_inst_axi_m_araddr                                                            => rtl_inst_axi_m_araddr,                                  --                                                                           .araddr
-			rtl_inst_axi_m_arlen                                                             => rtl_inst_axi_m_arlen,                                   --                                                                           .arlen
-			rtl_inst_axi_m_arsize                                                            => rtl_inst_axi_m_arsize,                                  --                                                                           .arsize
-			rtl_inst_axi_m_arburst                                                           => rtl_inst_axi_m_arburst,                                 --                                                                           .arburst
-			rtl_inst_axi_m_arlock(0)                                                         => rtl_inst_axi_m_arlock,                                  --                                                                           .arlock
-			rtl_inst_axi_m_arcache                                                           => rtl_inst_axi_m_arcache,                                 --                                                                           .arcache
-			rtl_inst_axi_m_arprot                                                            => rtl_inst_axi_m_arprot,                                  --                                                                           .arprot
-			rtl_inst_axi_m_arqos                                                             => rtl_inst_axi_m_arqos,                                   --                                                                           .arqos
-			rtl_inst_axi_m_arvalid                                                           => rtl_inst_axi_m_arvalid,                                 --                                                                           .arvalid
-			rtl_inst_axi_m_arready                                                           => rtl_inst_axi_m_arready,                                 --                                                                           .arready
-			rtl_inst_axi_m_rid                                                               => rtl_inst_axi_m_rid,                                     --                                                                           .rid
-			rtl_inst_axi_m_rdata                                                             => rtl_inst_axi_m_rdata,                                   --                                                                           .rdata
-			rtl_inst_axi_m_rresp                                                             => rtl_inst_axi_m_rresp,                                   --                                                                           .rresp
-			rtl_inst_axi_m_rlast                                                             => rtl_inst_axi_m_rlast,                                   --                                                                           .rlast
-			rtl_inst_axi_m_rvalid                                                            => rtl_inst_axi_m_rvalid,                                  --                                                                           .rvalid
-			rtl_inst_axi_m_rready                                                            => rtl_inst_axi_m_rready,                                  --                                                                           .rready
+			test_lwh2f_axi_m_awid                                                            => test_lwh2f_axi_m_awid,                                  --                                                           test_lwh2f_axi_m.awid
+			test_lwh2f_axi_m_awaddr                                                          => test_lwh2f_axi_m_awaddr,                                --                                                                           .awaddr
+			test_lwh2f_axi_m_awlen                                                           => test_lwh2f_axi_m_awlen,                                 --                                                                           .awlen
+			test_lwh2f_axi_m_awsize                                                          => test_lwh2f_axi_m_awsize,                                --                                                                           .awsize
+			test_lwh2f_axi_m_awburst                                                         => test_lwh2f_axi_m_awburst,                               --                                                                           .awburst
+			test_lwh2f_axi_m_awlock(0)                                                       => test_lwh2f_axi_m_awlock,                                --                                                                           .awlock
+			test_lwh2f_axi_m_awcache                                                         => test_lwh2f_axi_m_awcache,                               --                                                                           .awcache
+			test_lwh2f_axi_m_awprot                                                          => test_lwh2f_axi_m_awprot,                                --                                                                           .awprot
+			test_lwh2f_axi_m_awqos                                                           => test_lwh2f_axi_m_awqos,                                 --                                                                           .awqos
+			test_lwh2f_axi_m_awvalid                                                         => test_lwh2f_axi_m_awvalid,                               --                                                                           .awvalid
+			test_lwh2f_axi_m_awready                                                         => test_lwh2f_axi_m_awready,                               --                                                                           .awready
+			test_lwh2f_axi_m_wdata                                                           => test_lwh2f_axi_m_wdata,                                 --                                                                           .wdata
+			test_lwh2f_axi_m_wstrb                                                           => test_lwh2f_axi_m_wstrb,                                 --                                                                           .wstrb
+			test_lwh2f_axi_m_wlast                                                           => test_lwh2f_axi_m_wlast,                                 --                                                                           .wlast
+			test_lwh2f_axi_m_wvalid                                                          => test_lwh2f_axi_m_wvalid,                                --                                                                           .wvalid
+			test_lwh2f_axi_m_wready                                                          => test_lwh2f_axi_m_wready,                                --                                                                           .wready
+			test_lwh2f_axi_m_bid                                                             => test_lwh2f_axi_m_bid,                                   --                                                                           .bid
+			test_lwh2f_axi_m_bresp                                                           => test_lwh2f_axi_m_bresp,                                 --                                                                           .bresp
+			test_lwh2f_axi_m_bvalid                                                          => test_lwh2f_axi_m_bvalid,                                --                                                                           .bvalid
+			test_lwh2f_axi_m_bready                                                          => test_lwh2f_axi_m_bready,                                --                                                                           .bready
+			test_lwh2f_axi_m_arid                                                            => test_lwh2f_axi_m_arid,                                  --                                                                           .arid
+			test_lwh2f_axi_m_araddr                                                          => test_lwh2f_axi_m_araddr,                                --                                                                           .araddr
+			test_lwh2f_axi_m_arlen                                                           => test_lwh2f_axi_m_arlen,                                 --                                                                           .arlen
+			test_lwh2f_axi_m_arsize                                                          => test_lwh2f_axi_m_arsize,                                --                                                                           .arsize
+			test_lwh2f_axi_m_arburst                                                         => test_lwh2f_axi_m_arburst,                               --                                                                           .arburst
+			test_lwh2f_axi_m_arlock(0)                                                       => test_lwh2f_axi_m_arlock,                                --                                                                           .arlock
+			test_lwh2f_axi_m_arcache                                                         => test_lwh2f_axi_m_arcache,                               --                                                                           .arcache
+			test_lwh2f_axi_m_arprot                                                          => test_lwh2f_axi_m_arprot,                                --                                                                           .arprot
+			test_lwh2f_axi_m_arqos                                                           => test_lwh2f_axi_m_arqos,                                 --                                                                           .arqos
+			test_lwh2f_axi_m_arvalid                                                         => test_lwh2f_axi_m_arvalid,                               --                                                                           .arvalid
+			test_lwh2f_axi_m_arready                                                         => test_lwh2f_axi_m_arready,                               --                                                                           .arready
+			test_lwh2f_axi_m_rid                                                             => test_lwh2f_axi_m_rid,                                   --                                                                           .rid
+			test_lwh2f_axi_m_rdata                                                           => test_lwh2f_axi_m_rdata,                                 --                                                                           .rdata
+			test_lwh2f_axi_m_rresp                                                           => test_lwh2f_axi_m_rresp,                                 --                                                                           .rresp
+			test_lwh2f_axi_m_rlast                                                           => test_lwh2f_axi_m_rlast,                                 --                                                                           .rlast
+			test_lwh2f_axi_m_rvalid                                                          => test_lwh2f_axi_m_rvalid,                                --                                                                           .rvalid
+			test_lwh2f_axi_m_rready                                                          => test_lwh2f_axi_m_rready,                                --                                                                           .rready
 			intel_agilex_5_soc_0_lwhps2fpga_awid                                             => intel_agilex_5_soc_0_lwhps2fpga_awid,                   --                                            intel_agilex_5_soc_0_lwhps2fpga.awid
 			intel_agilex_5_soc_0_lwhps2fpga_awaddr                                           => intel_agilex_5_soc_0_lwhps2fpga_awaddr,                 --                                                                           .awaddr
 			intel_agilex_5_soc_0_lwhps2fpga_awlen                                            => intel_agilex_5_soc_0_lwhps2fpga_awlen,                  --                                                                           .awlen
@@ -872,7 +872,7 @@ begin
 			intel_onchip_memory_0_axi_s1_rlast                                               => mm_interconnect_0_intel_onchip_memory_0_axi_s1_rlast,   --                                                                           .rlast
 			intel_onchip_memory_0_axi_s1_rvalid                                              => mm_interconnect_0_intel_onchip_memory_0_axi_s1_rvalid,  --                                                                           .rvalid
 			intel_onchip_memory_0_axi_s1_rready                                              => mm_interconnect_0_intel_onchip_memory_0_axi_s1_rready,  --                                                                           .rready
-			rtl_inst_axi_m_translator_clk_reset_reset_bridge_in_reset_reset                  => rst_controller_reset_out_reset,                         --                  rtl_inst_axi_m_translator_clk_reset_reset_bridge_in_reset.reset
+			test_lwh2f_axi_m_translator_clk_reset_reset_bridge_in_reset_reset                => rst_controller_reset_out_reset,                         --                test_lwh2f_axi_m_translator_clk_reset_reset_bridge_in_reset.reset
 			intel_agilex_5_soc_0_lwhps2fpga_translator_clk_reset_reset_bridge_in_reset_reset => rst_controller_001_reset_out_reset,                     -- intel_agilex_5_soc_0_lwhps2fpga_translator_clk_reset_reset_bridge_in_reset.reset
 			iopll_0_outclk0_clk                                                              => iopll_0_outclk0_clk                                     --                                                            iopll_0_outclk0.clk
 		);

@@ -40,7 +40,7 @@
 		.locked_export         (_connected_to_locked_export_),         //  output,    width = 1,        locked.export
 		.reset_reset           (_connected_to_reset_reset_),           //   input,    width = 1,         reset.reset
 		.in_reset_reset_n      (_connected_to_in_reset_reset_n_),      //   input,    width = 1,      in_reset.reset_n
-		.test_complete         (_connected_to_test_complete_),         //  output,    width = 1, test_complete.test_complete
-		.ninit_done_ninit_done (_connected_to_ninit_done_ninit_done_)  //  output,    width = 1,    ninit_done.ninit_done
+		.ninit_done_ninit_done (_connected_to_ninit_done_ninit_done_), //  output,    width = 1,    ninit_done.ninit_done
+		.test_complete         (_connected_to_test_complete_)          //  output,    width = 1, test_complete.test_complete
 	);
 

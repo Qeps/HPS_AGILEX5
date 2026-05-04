@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="HPS_QSYS" kind="HPS_QSYS" version="1.0" fabric="QSYS">
  <!-- Format version 25.3.1 100 (Future versions may contain additional information.) -->
- <!-- 2026.04.27.15:23:30 -->
+ <!-- 2026.05.04.11:11:34 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -7114,9 +7114,9 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>rtl_inst</moduleName>
+    <moduleName>test_lwh2f</moduleName>
     <slaveName>aclk</slaveName>
-    <name>rtl_inst.aclk</name>
+    <name>test_lwh2f.aclk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -7774,13 +7774,362 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <module
-   name="rtl_inst"
+   name="s10_user_rst_clkgate_0"
+   kind="altera_s10_user_rst_clkgate"
+   version="19.4.9"
+   entity="HPS_QSYS_s10_user_rst_clkgate_0"
+   library="HPS_QSYS_s10_user_rst_clkgate_0"
+   path="s10_user_rst_clkgate_0"
+   hpath="s10_user_rst_clkgate_0"
+   className="altera_generic_component">
+  <!-- Describes a single module. Module parameters are
+the requested settings for a module instance. -->
+  <parameter name="componentDefinition">
+   <type>com.altera.qsys.blackboxmodule.definitions.ComponentDefinition</type>
+   <value><![CDATA[<componentDefinition>
+    <boundary>
+        <interfaces>
+            <interface>
+                <name>ninit_done</name>
+                <type>conduit</type>
+                <isStart>false</isStart>
+                <ports>
+                    <port>
+                        <name>ninit_done</name>
+                        <role>ninit_done</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                </ports>
+                <assignments>
+                    <assignmentValueMap/>
+                </assignments>
+                <parameters>
+                    <parameterValueMap>
+                        <entry>
+                            <key>associatedClock</key>
+                        </entry>
+                        <entry>
+                            <key>associatedReset</key>
+                        </entry>
+                        <entry>
+                            <key>prSafe</key>
+                            <value>false</value>
+                        </entry>
+                    </parameterValueMap>
+                </parameters>
+            </interface>
+        </interfaces>
+    </boundary>
+    <originalModuleInfo>
+        <className>altera_s10_user_rst_clkgate</className>
+        <version>19.4.9</version>
+        <displayName>Reset Release IP</displayName>
+    </originalModuleInfo>
+    <systemInfoParameterDescriptors>
+        <descriptors>
+            <descriptor>
+                <parameterDefaultValue></parameterDefaultValue>
+                <parameterName>DEVICE_FAMILY</parameterName>
+                <parameterType>java.lang.String</parameterType>
+                <systemInfotype>DEVICE_FAMILY</systemInfotype>
+            </descriptor>
+        </descriptors>
+    </systemInfoParameterDescriptors>
+    <systemInfos>
+        <connPtSystemInfos/>
+    </systemInfos>
+</componentDefinition>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generationInfoDefinition">
+   <type>com.altera.qsys.blackboxmodule.definitions.GenerationInfoDefinition</type>
+   <value><![CDATA[<generationInfoDefinition>
+    <hdlLibraryName>HPS_QSYS_s10_user_rst_clkgate_0</hdlLibraryName>
+    <fileSets>
+        <fileSet>
+            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
+            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
+            <fileSetKind>QUARTUS_SYNTH</fileSetKind>
+            <fileSetFiles/>
+            <fileSetFileChangeDefs/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
+            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
+            <fileSetKind>SIM_VERILOG</fileSetKind>
+            <fileSetFiles/>
+            <fileSetFileChangeDefs/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
+            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
+            <fileSetKind>SIM_VHDL</fileSetKind>
+            <fileSetFiles/>
+            <fileSetFileChangeDefs/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
+            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
+            <fileSetKind>CDC</fileSetKind>
+            <fileSetFiles/>
+            <fileSetFileChangeDefs/>
+        </fileSet>
+        <fileSet>
+            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
+            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
+            <fileSetKind>CDC_VHDL</fileSetKind>
+            <fileSetFiles/>
+            <fileSetFileChangeDefs/>
+        </fileSet>
+    </fileSets>
+</generationInfoDefinition>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hlsFile">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="logicalView">
+   <type>java.lang.String</type>
+   <value>ip/HPS_QSYS/HPS_QSYS_s10_user_rst_clkgate_0.ip</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultBoundary">
+   <type>com.altera.sopcmodel.definition.BoundaryDefinition</type>
+   <value><![CDATA[<boundaryDefinition>
+    <interfaces>
+        <interface>
+            <name>ninit_done</name>
+            <type>conduit</type>
+            <isStart>false</isStart>
+            <ports>
+                <port>
+                    <name>ninit_done</name>
+                    <role>ninit_done</role>
+                    <direction>Output</direction>
+                    <width>1</width>
+                    <lowerBound>0</lowerBound>
+                    <vhdlType>STD_LOGIC</vhdlType>
+                    <terminationValue>0</terminationValue>
+                </port>
+            </ports>
+            <assignments>
+                <assignmentValueMap/>
+            </assignments>
+            <parameters>
+                <parameterValueMap>
+                    <entry>
+                        <key>associatedClock</key>
+                    </entry>
+                    <entry>
+                        <key>associatedReset</key>
+                    </entry>
+                    <entry>
+                        <key>prSafe</key>
+                        <value>false</value>
+                    </entry>
+                </parameterValueMap>
+            </parameters>
+        </interface>
+    </interfaces>
+</boundaryDefinition>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="moduleAssignmentDefinition">
+   <type>com.altera.sopcmodel.definition.AssignmentDefinition</type>
+   <value><![CDATA[<assignmentDefinition>
+    <assignmentValueMap/>
+</assignmentDefinition>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="svInterfaceDefinition">
+   <type>com.altera.qsys.blackboxmodule.definitions.ModuleSvInterfaceDefinition</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hdlParameters">
+   <type>com.altera.qsys.blackboxmodule.definitions.HdlParameterDescriptorDefinitionList</type>
+   <value><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="transformParameters">
+   <type>com.altera.qsys.blackboxmodule.definitions.TransformParameterDescriptorDefinitionList</type>
+   <value><![CDATA[<transformParameterDescriptorDefinitionList/>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cpuInfo">
+   <type>com.altera.sopcmodel.ensemble.cpuinfo.serializable.CpuInfoDefinition</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="bspCpu">
+   <type>java.lang.Boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="liveModuleName">
+   <type>java.lang.String</type>
+   <value>s10_user_rst_clkgate_0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cpuHashInfo">
+   <type>com.altera.sopcmodel.definition.CpuHashInfoDefinition</type>
+   <value><![CDATA[<cpuHashInfoDefinition>
+    <cpuHashInfoMap/>
+</cpuHashInfoDefinition>]]></value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="DEVICE_FAMILY">
+   <type>java.lang.String</type>
+   <value>Agilex 5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="AUTO_DEVICE_FAMILY">
+   <type>java.lang.String</type>
+   <value>Agilex 5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="AUTO_DEVICE">
+   <type>java.lang.String</type>
+   <value>A5EB013BB23BE4SCS</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE</sysinfo_type>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>Agilex 5</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <interface name="ninit_done" kind="conduit_end" version="25.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <span>0</span>
+   <isStart>false</isStart>
+   <port>
+    <name>ninit_done</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>ninit_done</role>
+   </port>
+  </interface>
+ </module>
+ <module
+   name="test_lwh2f"
    kind="axi4_master"
    version="2.0"
    entity="axi4_master"
-   library="axi4_master_rtl_inst"
-   path="rtl_inst"
-   hpath="rtl_inst"
+   library="axi4_master_test_lwh2f"
+   path="test_lwh2f"
+   hpath="test_lwh2f"
    className="altera_generic_component">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
@@ -7930,48 +8279,39 @@ the requested settings for a module instance. -->
                 <isStart>true</isStart>
                 <ports>
                     <port>
-                        <name>awvalid</name>
-                        <role>awvalid</role>
+                        <name>bresp</name>
+                        <role>bresp</role>
+                        <direction>Input</direction>
+                        <width>2</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>awlen</name>
+                        <role>awlen</role>
                         <direction>Output</direction>
+                        <width>8</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>wready</name>
+                        <role>wready</role>
+                        <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>wdata</name>
-                        <role>wdata</role>
+                        <name>arlock</name>
+                        <role>arlock</role>
                         <direction>Output</direction>
-                        <width>32</width>
+                        <width>1</width>
                         <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>awsize</name>
-                        <role>awsize</role>
-                        <direction>Output</direction>
-                        <width>3</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>rdata</name>
-                        <role>rdata</role>
-                        <direction>Input</direction>
-                        <width>32</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>awprot</name>
-                        <role>awprot</role>
-                        <direction>Output</direction>
-                        <width>3</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <vhdlType>STD_LOGIC</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
@@ -7984,8 +8324,26 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>arsize</name>
-                        <role>arsize</role>
+                        <name>awready</name>
+                        <role>awready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arqos</name>
+                        <role>arqos</role>
+                        <direction>Output</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arprot</name>
+                        <role>arprot</role>
                         <direction>Output</direction>
                         <width>3</width>
                         <lowerBound>0</lowerBound>
@@ -8002,33 +8360,6 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>rlast</name>
-                        <role>rlast</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>wstrb</name>
-                        <role>wstrb</role>
-                        <direction>Output</direction>
-                        <width>4</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>arlock</name>
-                        <role>arlock</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
                         <name>araddr</name>
                         <role>araddr</role>
                         <direction>Output</direction>
@@ -8038,8 +8369,17 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>arready</name>
-                        <role>arready</role>
+                        <name>awlock</name>
+                        <role>awlock</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>rlast</name>
+                        <role>rlast</role>
                         <direction>Input</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
@@ -8047,39 +8387,12 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>awlen</name>
-                        <role>awlen</role>
+                        <name>wdata</name>
+                        <role>wdata</role>
                         <direction>Output</direction>
-                        <width>8</width>
+                        <width>32</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>arlen</name>
-                        <role>arlen</role>
-                        <direction>Output</direction>
-                        <width>8</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>awready</name>
-                        <role>awready</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>rvalid</name>
-                        <role>rvalid</role>
-                        <direction>Input</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
@@ -8092,9 +8405,36 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>bvalid</name>
-                        <role>bvalid</role>
+                        <name>awcache</name>
+                        <role>awcache</role>
+                        <direction>Output</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>awprot</name>
+                        <role>awprot</role>
+                        <direction>Output</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>rdata</name>
+                        <role>rdata</role>
                         <direction>Input</direction>
+                        <width>32</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>awvalid</name>
+                        <role>awvalid</role>
+                        <direction>Output</direction>
                         <width>1</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC</vhdlType>
@@ -8110,80 +8450,8 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>rid</name>
-                        <role>rid</role>
-                        <direction>Input</direction>
-                        <width>4</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>arqos</name>
-                        <role>arqos</role>
-                        <direction>Output</direction>
-                        <width>4</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>arid</name>
-                        <role>arid</role>
-                        <direction>Output</direction>
-                        <width>4</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>bready</name>
-                        <role>bready</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>awlock</name>
-                        <role>awlock</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>awcache</name>
-                        <role>awcache</role>
-                        <direction>Output</direction>
-                        <width>4</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>awaddr</name>
-                        <role>awaddr</role>
-                        <direction>Output</direction>
-                        <width>30</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>wvalid</name>
-                        <role>wvalid</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>arprot</name>
-                        <role>arprot</role>
+                        <name>awsize</name>
+                        <role>awsize</role>
                         <direction>Output</direction>
                         <width>3</width>
                         <lowerBound>0</lowerBound>
@@ -8191,10 +8459,28 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>rresp</name>
-                        <role>rresp</role>
-                        <direction>Input</direction>
-                        <width>2</width>
+                        <name>wlast</name>
+                        <role>wlast</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arvalid</name>
+                        <role>arvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>awaddr</name>
+                        <role>awaddr</role>
+                        <direction>Output</direction>
+                        <width>30</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
@@ -8218,30 +8504,12 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>wready</name>
-                        <role>wready</role>
+                        <name>rresp</name>
+                        <role>rresp</role>
                         <direction>Input</direction>
-                        <width>1</width>
+                        <width>2</width>
                         <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>wlast</name>
-                        <role>wlast</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                    <port>
-                        <name>arvalid</name>
-                        <role>arvalid</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
@@ -8254,10 +8522,91 @@ the requested settings for a module instance. -->
                         <terminationValue>0</terminationValue>
                     </port>
                     <port>
-                        <name>bresp</name>
-                        <role>bresp</role>
+                        <name>bready</name>
+                        <role>bready</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>rvalid</name>
+                        <role>rvalid</role>
                         <direction>Input</direction>
-                        <width>2</width>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arsize</name>
+                        <role>arsize</role>
+                        <direction>Output</direction>
+                        <width>3</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arready</name>
+                        <role>arready</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>wvalid</name>
+                        <role>wvalid</role>
+                        <direction>Output</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arlen</name>
+                        <role>arlen</role>
+                        <direction>Output</direction>
+                        <width>8</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>arid</name>
+                        <role>arid</role>
+                        <direction>Output</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>bvalid</name>
+                        <role>bvalid</role>
+                        <direction>Input</direction>
+                        <width>1</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>wstrb</name>
+                        <role>wstrb</role>
+                        <direction>Output</direction>
+                        <width>4</width>
+                        <lowerBound>0</lowerBound>
+                        <vhdlType>STD_LOGIC_VECTOR</vhdlType>
+                        <terminationValue>0</terminationValue>
+                    </port>
+                    <port>
+                        <name>rid</name>
+                        <role>rid</role>
+                        <direction>Input</direction>
+                        <width>4</width>
                         <lowerBound>0</lowerBound>
                         <vhdlType>STD_LOGIC_VECTOR</vhdlType>
                         <terminationValue>0</terminationValue>
@@ -8389,7 +8738,7 @@ the requested settings for a module instance. -->
   <parameter name="generationInfoDefinition">
    <type>com.altera.qsys.blackboxmodule.definitions.GenerationInfoDefinition</type>
    <value><![CDATA[<generationInfoDefinition>
-    <hdlLibraryName>axi4_master_rtl_inst</hdlLibraryName>
+    <hdlLibraryName>axi4_master_test_lwh2f</hdlLibraryName>
     <fileSets>
         <fileSet>
             <fileSetName>RTL_QUARTUS_SYNTH</fileSetName>
@@ -8411,7 +8760,7 @@ the requested settings for a module instance. -->
             <fileSetFileChangeDefs>
                 <fileSetFileChangeDef>
                     <fileSource>C:/trumpf/hps_ip_agilex5/vhdl/test_lwh2f.vhd</fileSource>
-                    <fileMD5Digest>de0c8cb6d40289ea1eba6c59a095e264</fileMD5Digest>
+                    <fileMD5Digest>5ef986434fa7bea771a7c28053eeaa14</fileMD5Digest>
                     <fileChangeType>RESET</fileChangeType>
                 </fileSetFileChangeDef>
             </fileSetFileChangeDefs>
@@ -9010,82 +9359,10 @@ parameters are a RESULT of the module parameters. -->
    <span>1073741824</span>
    <isStart>true</isStart>
    <port>
-    <name>awvalid</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>awvalid</role>
-   </port>
-   <port>
-    <name>wdata</name>
-    <direction>Output</direction>
-    <width>32</width>
-    <role>wdata</role>
-   </port>
-   <port>
-    <name>awsize</name>
-    <direction>Output</direction>
-    <width>3</width>
-    <role>awsize</role>
-   </port>
-   <port>
-    <name>rdata</name>
+    <name>bresp</name>
     <direction>Input</direction>
-    <width>32</width>
-    <role>rdata</role>
-   </port>
-   <port>
-    <name>awprot</name>
-    <direction>Output</direction>
-    <width>3</width>
-    <role>awprot</role>
-   </port>
-   <port>
-    <name>awburst</name>
-    <direction>Output</direction>
     <width>2</width>
-    <role>awburst</role>
-   </port>
-   <port>
-    <name>arsize</name>
-    <direction>Output</direction>
-    <width>3</width>
-    <role>arsize</role>
-   </port>
-   <port>
-    <name>rready</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>rready</role>
-   </port>
-   <port>
-    <name>rlast</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>rlast</role>
-   </port>
-   <port>
-    <name>wstrb</name>
-    <direction>Output</direction>
-    <width>4</width>
-    <role>wstrb</role>
-   </port>
-   <port>
-    <name>arlock</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>arlock</role>
-   </port>
-   <port>
-    <name>araddr</name>
-    <direction>Output</direction>
-    <width>30</width>
-    <role>araddr</role>
-   </port>
-   <port>
-    <name>arready</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>arready</role>
+    <role>bresp</role>
    </port>
    <port>
     <name>awlen</name>
@@ -9094,10 +9371,22 @@ parameters are a RESULT of the module parameters. -->
     <role>awlen</role>
    </port>
    <port>
-    <name>arlen</name>
+    <name>wready</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>wready</role>
+   </port>
+   <port>
+    <name>arlock</name>
     <direction>Output</direction>
-    <width>8</width>
-    <role>arlen</role>
+    <width>1</width>
+    <role>arlock</role>
+   </port>
+   <port>
+    <name>awburst</name>
+    <direction>Output</direction>
+    <width>2</width>
+    <role>awburst</role>
    </port>
    <port>
     <name>awready</name>
@@ -9106,76 +9395,10 @@ parameters are a RESULT of the module parameters. -->
     <role>awready</role>
    </port>
    <port>
-    <name>rvalid</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>rvalid</role>
-   </port>
-   <port>
-    <name>awid</name>
-    <direction>Output</direction>
-    <width>4</width>
-    <role>awid</role>
-   </port>
-   <port>
-    <name>bvalid</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>bvalid</role>
-   </port>
-   <port>
-    <name>awqos</name>
-    <direction>Output</direction>
-    <width>4</width>
-    <role>awqos</role>
-   </port>
-   <port>
-    <name>rid</name>
-    <direction>Input</direction>
-    <width>4</width>
-    <role>rid</role>
-   </port>
-   <port>
     <name>arqos</name>
     <direction>Output</direction>
     <width>4</width>
     <role>arqos</role>
-   </port>
-   <port>
-    <name>arid</name>
-    <direction>Output</direction>
-    <width>4</width>
-    <role>arid</role>
-   </port>
-   <port>
-    <name>bready</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>bready</role>
-   </port>
-   <port>
-    <name>awlock</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>awlock</role>
-   </port>
-   <port>
-    <name>awcache</name>
-    <direction>Output</direction>
-    <width>4</width>
-    <role>awcache</role>
-   </port>
-   <port>
-    <name>awaddr</name>
-    <direction>Output</direction>
-    <width>30</width>
-    <role>awaddr</role>
-   </port>
-   <port>
-    <name>wvalid</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>wvalid</role>
    </port>
    <port>
     <name>arprot</name>
@@ -9184,28 +9407,76 @@ parameters are a RESULT of the module parameters. -->
     <role>arprot</role>
    </port>
    <port>
-    <name>rresp</name>
-    <direction>Input</direction>
-    <width>2</width>
-    <role>rresp</role>
-   </port>
-   <port>
-    <name>arburst</name>
+    <name>rready</name>
     <direction>Output</direction>
-    <width>2</width>
-    <role>arburst</role>
+    <width>1</width>
+    <role>rready</role>
    </port>
    <port>
-    <name>arcache</name>
+    <name>araddr</name>
     <direction>Output</direction>
-    <width>4</width>
-    <role>arcache</role>
+    <width>30</width>
+    <role>araddr</role>
    </port>
    <port>
-    <name>wready</name>
+    <name>awlock</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>awlock</role>
+   </port>
+   <port>
+    <name>rlast</name>
     <direction>Input</direction>
     <width>1</width>
-    <role>wready</role>
+    <role>rlast</role>
+   </port>
+   <port>
+    <name>wdata</name>
+    <direction>Output</direction>
+    <width>32</width>
+    <role>wdata</role>
+   </port>
+   <port>
+    <name>awid</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>awid</role>
+   </port>
+   <port>
+    <name>awcache</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>awcache</role>
+   </port>
+   <port>
+    <name>awprot</name>
+    <direction>Output</direction>
+    <width>3</width>
+    <role>awprot</role>
+   </port>
+   <port>
+    <name>rdata</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>rdata</role>
+   </port>
+   <port>
+    <name>awvalid</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>awvalid</role>
+   </port>
+   <port>
+    <name>awqos</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>awqos</role>
+   </port>
+   <port>
+    <name>awsize</name>
+    <direction>Output</direction>
+    <width>3</width>
+    <role>awsize</role>
    </port>
    <port>
     <name>wlast</name>
@@ -9220,16 +9491,94 @@ parameters are a RESULT of the module parameters. -->
     <role>arvalid</role>
    </port>
    <port>
+    <name>awaddr</name>
+    <direction>Output</direction>
+    <width>30</width>
+    <role>awaddr</role>
+   </port>
+   <port>
+    <name>arburst</name>
+    <direction>Output</direction>
+    <width>2</width>
+    <role>arburst</role>
+   </port>
+   <port>
+    <name>arcache</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>arcache</role>
+   </port>
+   <port>
+    <name>rresp</name>
+    <direction>Input</direction>
+    <width>2</width>
+    <role>rresp</role>
+   </port>
+   <port>
     <name>bid</name>
     <direction>Input</direction>
     <width>4</width>
     <role>bid</role>
    </port>
    <port>
-    <name>bresp</name>
+    <name>bready</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>bready</role>
+   </port>
+   <port>
+    <name>rvalid</name>
     <direction>Input</direction>
-    <width>2</width>
-    <role>bresp</role>
+    <width>1</width>
+    <role>rvalid</role>
+   </port>
+   <port>
+    <name>arsize</name>
+    <direction>Output</direction>
+    <width>3</width>
+    <role>arsize</role>
+   </port>
+   <port>
+    <name>arready</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>arready</role>
+   </port>
+   <port>
+    <name>wvalid</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>wvalid</role>
+   </port>
+   <port>
+    <name>arlen</name>
+    <direction>Output</direction>
+    <width>8</width>
+    <role>arlen</role>
+   </port>
+   <port>
+    <name>arid</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>arid</role>
+   </port>
+   <port>
+    <name>bvalid</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>bvalid</role>
+   </port>
+   <port>
+    <name>wstrb</name>
+    <direction>Output</direction>
+    <width>4</width>
+    <role>wstrb</role>
+   </port>
+   <port>
+    <name>rid</name>
+    <direction>Input</direction>
+    <width>4</width>
+    <role>rid</role>
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -9241,360 +9590,11 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
   </interface>
  </module>
- <module
-   name="s10_user_rst_clkgate_0"
-   kind="altera_s10_user_rst_clkgate"
-   version="19.4.9"
-   entity="HPS_QSYS_s10_user_rst_clkgate_0"
-   library="HPS_QSYS_s10_user_rst_clkgate_0"
-   path="s10_user_rst_clkgate_0"
-   hpath="s10_user_rst_clkgate_0"
-   className="altera_generic_component">
-  <!-- Describes a single module. Module parameters are
-the requested settings for a module instance. -->
-  <parameter name="componentDefinition">
-   <type>com.altera.qsys.blackboxmodule.definitions.ComponentDefinition</type>
-   <value><![CDATA[<componentDefinition>
-    <boundary>
-        <interfaces>
-            <interface>
-                <name>ninit_done</name>
-                <type>conduit</type>
-                <isStart>false</isStart>
-                <ports>
-                    <port>
-                        <name>ninit_done</name>
-                        <role>ninit_done</role>
-                        <direction>Output</direction>
-                        <width>1</width>
-                        <lowerBound>0</lowerBound>
-                        <vhdlType>STD_LOGIC</vhdlType>
-                        <terminationValue>0</terminationValue>
-                    </port>
-                </ports>
-                <assignments>
-                    <assignmentValueMap/>
-                </assignments>
-                <parameters>
-                    <parameterValueMap>
-                        <entry>
-                            <key>associatedClock</key>
-                        </entry>
-                        <entry>
-                            <key>associatedReset</key>
-                        </entry>
-                        <entry>
-                            <key>prSafe</key>
-                            <value>false</value>
-                        </entry>
-                    </parameterValueMap>
-                </parameters>
-            </interface>
-        </interfaces>
-    </boundary>
-    <originalModuleInfo>
-        <className>altera_s10_user_rst_clkgate</className>
-        <version>19.4.9</version>
-        <displayName>Reset Release IP</displayName>
-    </originalModuleInfo>
-    <systemInfoParameterDescriptors>
-        <descriptors>
-            <descriptor>
-                <parameterDefaultValue></parameterDefaultValue>
-                <parameterName>DEVICE_FAMILY</parameterName>
-                <parameterType>java.lang.String</parameterType>
-                <systemInfotype>DEVICE_FAMILY</systemInfotype>
-            </descriptor>
-        </descriptors>
-    </systemInfoParameterDescriptors>
-    <systemInfos>
-        <connPtSystemInfos/>
-    </systemInfos>
-</componentDefinition>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generationInfoDefinition">
-   <type>com.altera.qsys.blackboxmodule.definitions.GenerationInfoDefinition</type>
-   <value><![CDATA[<generationInfoDefinition>
-    <hdlLibraryName>HPS_QSYS_s10_user_rst_clkgate_0</hdlLibraryName>
-    <fileSets>
-        <fileSet>
-            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
-            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
-            <fileSetKind>QUARTUS_SYNTH</fileSetKind>
-            <fileSetFiles/>
-            <fileSetFileChangeDefs/>
-        </fileSet>
-        <fileSet>
-            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
-            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
-            <fileSetKind>SIM_VERILOG</fileSetKind>
-            <fileSetFiles/>
-            <fileSetFileChangeDefs/>
-        </fileSet>
-        <fileSet>
-            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
-            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
-            <fileSetKind>SIM_VHDL</fileSetKind>
-            <fileSetFiles/>
-            <fileSetFileChangeDefs/>
-        </fileSet>
-        <fileSet>
-            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
-            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
-            <fileSetKind>CDC</fileSetKind>
-            <fileSetFiles/>
-            <fileSetFileChangeDefs/>
-        </fileSet>
-        <fileSet>
-            <fileSetName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetName>
-            <fileSetFixedName>HPS_QSYS_s10_user_rst_clkgate_0</fileSetFixedName>
-            <fileSetKind>CDC_VHDL</fileSetKind>
-            <fileSetFiles/>
-            <fileSetFileChangeDefs/>
-        </fileSet>
-    </fileSets>
-</generationInfoDefinition>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="hlsFile">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="logicalView">
-   <type>java.lang.String</type>
-   <value>ip/HPS_QSYS/HPS_QSYS_s10_user_rst_clkgate_0.ip</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultBoundary">
-   <type>com.altera.sopcmodel.definition.BoundaryDefinition</type>
-   <value><![CDATA[<boundaryDefinition>
-    <interfaces>
-        <interface>
-            <name>ninit_done</name>
-            <type>conduit</type>
-            <isStart>false</isStart>
-            <ports>
-                <port>
-                    <name>ninit_done</name>
-                    <role>ninit_done</role>
-                    <direction>Output</direction>
-                    <width>1</width>
-                    <lowerBound>0</lowerBound>
-                    <vhdlType>STD_LOGIC</vhdlType>
-                    <terminationValue>0</terminationValue>
-                </port>
-            </ports>
-            <assignments>
-                <assignmentValueMap/>
-            </assignments>
-            <parameters>
-                <parameterValueMap>
-                    <entry>
-                        <key>associatedClock</key>
-                    </entry>
-                    <entry>
-                        <key>associatedReset</key>
-                    </entry>
-                    <entry>
-                        <key>prSafe</key>
-                        <value>false</value>
-                    </entry>
-                </parameterValueMap>
-            </parameters>
-        </interface>
-    </interfaces>
-</boundaryDefinition>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="moduleAssignmentDefinition">
-   <type>com.altera.sopcmodel.definition.AssignmentDefinition</type>
-   <value><![CDATA[<assignmentDefinition>
-    <assignmentValueMap/>
-</assignmentDefinition>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="svInterfaceDefinition">
-   <type>com.altera.qsys.blackboxmodule.definitions.ModuleSvInterfaceDefinition</type>
-   <value></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="hdlParameters">
-   <type>com.altera.qsys.blackboxmodule.definitions.HdlParameterDescriptorDefinitionList</type>
-   <value><![CDATA[<hdlParameterDescriptorDefinitionList/>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="transformParameters">
-   <type>com.altera.qsys.blackboxmodule.definitions.TransformParameterDescriptorDefinitionList</type>
-   <value><![CDATA[<transformParameterDescriptorDefinitionList/>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="cpuInfo">
-   <type>com.altera.sopcmodel.ensemble.cpuinfo.serializable.CpuInfoDefinition</type>
-   <value></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="bspCpu">
-   <type>java.lang.Boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="liveModuleName">
-   <type>java.lang.String</type>
-   <value>s10_user_rst_clkgate_0</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="cpuHashInfo">
-   <type>com.altera.sopcmodel.definition.CpuHashInfoDefinition</type>
-   <value><![CDATA[<cpuHashInfoDefinition>
-    <cpuHashInfoMap/>
-</cpuHashInfoDefinition>]]></value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="DEVICE_FAMILY">
-   <type>java.lang.String</type>
-   <value>Agilex 5</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
-  </parameter>
-  <parameter name="AUTO_DEVICE_FAMILY">
-   <type>java.lang.String</type>
-   <value>Agilex 5</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
-  </parameter>
-  <parameter name="AUTO_DEVICE">
-   <type>java.lang.String</type>
-   <value>A5EB013BB23BE4SCS</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE</sysinfo_type>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>Agilex 5</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <interface name="ninit_done" kind="conduit_end" version="25.3">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="associatedClock">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="associatedReset">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="prSafe">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>conduit</type>
-   <span>0</span>
-   <isStart>false</isStart>
-   <port>
-    <name>ninit_done</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>ninit_done</role>
-   </port>
-  </interface>
- </module>
  <connection
-   name="rtl_inst.axi_m/intel_onchip_memory_0.axi_s1"
+   name="test_lwh2f.axi_m/intel_onchip_memory_0.axi_s1"
    kind="avalon"
    version="25.3"
-   start="rtl_inst.axi_m"
+   start="test_lwh2f.axi_m"
    end="intel_onchip_memory_0.axi_s1">
   <parameter name="arbitrationPriority">
    <type>int</type>
@@ -9808,7 +9808,7 @@ parameters are a RESULT of the module parameters. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <startModule>rtl_inst</startModule>
+  <startModule>test_lwh2f</startModule>
   <startConnectionPoint>axi_m</startConnectionPoint>
   <endModule>intel_onchip_memory_0</endModule>
   <endConnectionPoint>axi_s1</endConnectionPoint>
@@ -10037,11 +10037,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>axi_s1</endConnectionPoint>
  </connection>
  <connection
-   name="iopll_0.outclk0/rtl_inst.aclk"
+   name="iopll_0.outclk0/test_lwh2f.aclk"
    kind="clock"
    version="25.3"
    start="iopll_0.outclk0"
-   end="rtl_inst.aclk">
+   end="test_lwh2f.aclk">
   <parameter name="clockRateSysInfo">
    <type>java.lang.Long</type>
    <value>200000000</value>
@@ -10096,7 +10096,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>iopll_0</startModule>
   <startConnectionPoint>outclk0</startConnectionPoint>
-  <endModule>rtl_inst</endModule>
+  <endModule>test_lwh2f</endModule>
   <endConnectionPoint>aclk</endConnectionPoint>
  </connection>
  <connection
@@ -10415,11 +10415,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>lwhps2fpga_axi_clock</endConnectionPoint>
  </connection>
  <connection
-   name="debounce.button_out/rtl_inst.read_bt"
+   name="debounce.button_out/test_lwh2f.read_bt"
    kind="port"
    version="25.3"
    start="debounce.button_out"
-   end="rtl_inst.read_bt">
+   end="test_lwh2f.read_bt">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -10438,7 +10438,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>debounce</startModule>
   <startConnectionPoint>button_out</startConnectionPoint>
-  <endModule>rtl_inst</endModule>
+  <endModule>test_lwh2f</endModule>
   <endConnectionPoint>read_bt</endConnectionPoint>
  </connection>
  <connection
@@ -10550,11 +10550,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>lwhps2fpga_axi_reset</endConnectionPoint>
  </connection>
  <connection
-   name="reset_bridge_0.out_reset/rtl_inst.aresetn"
+   name="reset_bridge_0.out_reset/test_lwh2f.aresetn"
    kind="reset"
    version="25.3"
    start="reset_bridge_0.out_reset"
-   end="rtl_inst.aresetn">
+   end="test_lwh2f.aresetn">
   <parameter name="resetDomainSysInfo">
    <type>java.lang.Integer</type>
    <value>-1</value>
@@ -10600,7 +10600,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>reset_bridge_0</startModule>
   <startConnectionPoint>out_reset</startConnectionPoint>
-  <endModule>rtl_inst</endModule>
+  <endModule>test_lwh2f</endModule>
   <endConnectionPoint>aresetn</endConnectionPoint>
  </connection>
  <connection

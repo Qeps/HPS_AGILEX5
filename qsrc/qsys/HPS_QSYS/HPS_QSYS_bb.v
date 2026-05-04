@@ -40,8 +40,8 @@ module HPS_QSYS (
 		output wire         locked_export,         //        locked.export
 		input  wire         reset_reset,           //         reset.reset
 		input  wire         in_reset_reset_n,      //      in_reset.reset_n
-		output wire         test_complete,         // test_complete.test_complete
-		output wire         ninit_done_ninit_done  //    ninit_done.ninit_done
+		output wire         ninit_done_ninit_done, //    ninit_done.ninit_done
+		output wire         test_complete          // test_complete.test_complete
 	);
 endmodule
 

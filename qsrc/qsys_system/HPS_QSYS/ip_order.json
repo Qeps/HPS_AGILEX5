@@ -23,6 +23,10 @@
         {
             "ip_name": "rtl_inst",
             "ip_order": 5
+        },
+        {
+            "ip_name": "debounce",
+            "ip_order": 6
         }
     ]
 }

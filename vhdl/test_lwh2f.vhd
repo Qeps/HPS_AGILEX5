@@ -130,6 +130,7 @@ architecture rtl of axi4_master is
     end function;
 	 
 	 constant AXI_START_ADDR : std_logic_vector(AXI_ADDR_WIDTH-1 downto 0) := (others => '0');
+	 constant AXI_BURST_INCR : std_logic_vector(1 downto 0) := "01";
 	 constant AXI_BEAT_SIZE  : std_logic_vector(2 downto 0) 					  := "010"; -- log2(32)
 
     type   read_state_t  is (READ_IDLE, READ_ADDR, READ_DATA, READ_FINISH);
@@ -151,7 +152,7 @@ begin
 	 awaddr  <= (others => '0');
 	 awlen   <= (others => '0');
 	 awsize  <= (others => '0');
-    awburst <= (others => '0'); -- FIXED
+    awburst <= AXI_BURST_INCR;
     awlock  <= '0';
     awcache <= "0011";			  -- normal non-cacheable bufferable/modifiable
 	 awprot  <= (others => '0');
@@ -168,7 +169,7 @@ begin
 	 araddr  <= r_araddr;
 	 arlen   <= (others => '0');
 	 arsize  <= AXI_BEAT_SIZE;
-    arburst <= (others => '0'); -- FIXED
+    arburst <= AXI_BURST_INCR;
     arlock  <= '0';
 	 arcache <= "0011"; 			  -- normal non-cacheable bufferable/modifiable
 	 arprot  <= (others => '0');
@@ -193,11 +194,11 @@ begin
                 when READ_IDLE =>
                     r_arvalid       <= '0';
                     r_rready        <= '0';
-                    r_test_complete <= '0';
 
                     if read_bt = '0' then
                         r_araddr   <= AXI_START_ADDR;
                         r_arvalid  <= '1';
+								r_test_complete <= '0';
                         read_state <= READ_ADDR;
                     end if;
 
