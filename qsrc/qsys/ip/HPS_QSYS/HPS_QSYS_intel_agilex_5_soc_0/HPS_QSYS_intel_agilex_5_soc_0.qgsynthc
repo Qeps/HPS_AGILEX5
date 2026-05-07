@@ -298,7 +298,7 @@
           </parameter>
           <parameter>
             <name>H2F_Address_Width</name>
-            <value>28</value>
+            <value>30</value>
           </parameter>
           <parameter>
             <name>H2F_IRQ_DMA_Enable0</name>
@@ -3164,7 +3164,7 @@ reg {
         <className>intel_agilex_5_soc</className>
         <version>13.0.0</version>
         <name>intel_agilex_5_soc_0</name>
-        <uniqueName>HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi</uniqueName>
+        <uniqueName>HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>HPS_QSYS_intel_agilex_5_soc_0.intel_agilex_5_soc_0</path>
@@ -3340,7 +3340,7 @@ reg {
               </parameter>
               <parameter>
                 <name>H2F_Address_Width</name>
-                <value>28</value>
+                <value>30</value>
               </parameter>
               <parameter>
                 <name>H2F_IRQ_DMA_Enable0</name>
@@ -5234,7 +5234,7 @@ reg {
             <className>intel_sundancemesa_hps</className>
             <version>1.0.0</version>
             <name>sm_hps</name>
-            <uniqueName>HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a</uniqueName>
+            <uniqueName>HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a</uniqueName>
             <nonce>0</nonce>
             <incidentConnections></incidentConnections>
             <path>HPS_QSYS_intel_agilex_5_soc_0.intel_agilex_5_soc_0.sm_hps</path>

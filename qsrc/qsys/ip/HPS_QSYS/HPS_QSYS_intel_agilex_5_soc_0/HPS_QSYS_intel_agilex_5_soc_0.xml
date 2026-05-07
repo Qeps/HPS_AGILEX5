@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.05.04.11:11:40"
+ date="2026.05.07.12:52:08"
  outputDirectory="C:/trumpf/hps_ip_agilex5/qsrc/qsys/ip/HPS_QSYS/HPS_QSYS_intel_agilex_5_soc_0/">
  <perimeter>
   <parameter
@@ -147,7 +147,7 @@
    <property name="issuesWRAPBursts" value="true" />
    <property name="issuesFIXEDBursts" value="true" />
    <port name="hps2fpga_awid" direction="output" role="awid" width="4" />
-   <port name="hps2fpga_awaddr" direction="output" role="awaddr" width="28" />
+   <port name="hps2fpga_awaddr" direction="output" role="awaddr" width="30" />
    <port name="hps2fpga_awlen" direction="output" role="awlen" width="8" />
    <port name="hps2fpga_awsize" direction="output" role="awsize" width="3" />
    <port name="hps2fpga_awburst" direction="output" role="awburst" width="2" />
@@ -166,7 +166,7 @@
    <port name="hps2fpga_bvalid" direction="input" role="bvalid" width="1" />
    <port name="hps2fpga_bready" direction="output" role="bready" width="1" />
    <port name="hps2fpga_arid" direction="output" role="arid" width="4" />
-   <port name="hps2fpga_araddr" direction="output" role="araddr" width="28" />
+   <port name="hps2fpga_araddr" direction="output" role="araddr" width="30" />
    <port name="hps2fpga_arlen" direction="output" role="arlen" width="8" />
    <port name="hps2fpga_arsize" direction="output" role="arsize" width="3" />
    <port name="hps2fpga_arburst" direction="output" role="arburst" width="2" />
@@ -445,14 +445,14 @@
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0"</message>
-   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi"</message>
-   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a"</message>
   </messages>
  </entity>
  <entity
    kind="intel_agilex_5_soc"
    version="13.0.0"
-   name="HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi">
+   name="HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i">
   <parameter
      name="HPS_HANDOFF_OPTION_STRING"
      value="    HPS_PRESENT: true
@@ -619,7 +619,7 @@
   <parameter name="REG_pinmux_mdio2_usefpga_sel" value="0" />
   <parameter name="REG_nocdiv_l4spclk" value="2" />
   <parameter name="LWH2F_Address_Width" value="24" />
-  <parameter name="H2F_Address_Width" value="28" />
+  <parameter name="H2F_Address_Width" value="30" />
   <parameter name="REG_pin8_sel" value="8" />
   <parameter name="FPGA_EMAC1_gtx_clk_mhz" value="125.0" />
   <parameter name="REG_io20_output_delay" value="0" />
@@ -1705,12 +1705,12 @@ reg {
   <parameter name="REG_emacactr_cnt" value="1" />
   <generatedFiles>
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_agilex_5_soc_1300\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi.v"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_agilex_5_soc_1300\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_agilex_5_soc_1300\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi.v"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_agilex_5_soc_1300\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -1859,14 +1859,14 @@ reg {
      instantiator="HPS_QSYS_intel_agilex_5_soc_0"
      as="intel_agilex_5_soc_0" />
   <messages>
-   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi"</message>
-   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a"</message>
   </messages>
  </entity>
  <entity
    kind="intel_sundancemesa_hps"
    version="1.0.0"
-   name="HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a">
+   name="HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a">
   <parameter
      name="HPS_HANDOFF_OPTION_STRING"
      value="    HPS_PRESENT: true
@@ -2056,7 +2056,7 @@ reg {
   <parameter name="hps_ioa23_opd_en" value="false" />
   <parameter name="LWH2F_Address_Width" value="24" />
   <parameter name="User1_clk_freq" value="500.0" />
-  <parameter name="H2F_Address_Width" value="28" />
+  <parameter name="H2F_Address_Width" value="30" />
   <parameter name="FPGA_I2CEMAC1_clk_mhz" value="125.0" />
   <parameter name="MPU_clk_freq_override_mhz" value="1066.67" />
   <parameter name="hps_ioa12_opd_en" value="false" />
@@ -2843,7 +2843,7 @@ reg {
   <parameter name="hps_ioa16_opd_en" value="false" />
   <generatedFiles>
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a.v"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a.v"
        attributes="" />
    <file
        path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\ready_latency\hps_axi4_ready_latency_adapter.sv"
@@ -2879,12 +2879,12 @@ reg {
        path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\ready_latency\ready_latency_reset_synchronizer.sv"
        attributes="" />
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a.sdc"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a.sdc"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a.v"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a.v"
        attributes="" />
    <file
        path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\ready_latency\hps_axi4_ready_latency_adapter.sv"
@@ -2920,7 +2920,7 @@ reg {
        path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\ready_latency\ready_latency_reset_synchronizer.sv"
        attributes="" />
    <file
-       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a.sdc"
+       path="C:\trumpf\hps_ip_agilex5\qsrc\qsys\ip\HPS_QSYS\HPS_QSYS_intel_agilex_5_soc_0\intel_sundancemesa_hps_100\synth\HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a.sdc"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
@@ -2996,10 +2996,10 @@ reg {
   </sourceFiles>
   <childSourceFiles/>
   <instantiator
-     instantiator="HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi"
+     instantiator="HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i"
      as="sm_hps" />
   <messages>
-   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a"</message>
+   <message level="Info" culprit="HPS_QSYS_intel_agilex_5_soc_0">"Generating: HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a"</message>
   </messages>
  </entity>
 </deploy>

@@ -5,7 +5,7 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 25.3.1 100 (Future versions may contain additional information.) -->
- <!-- 2026.05.04.11:11:39 -->
+ <!-- 2026.05.07.12:52:08 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -182,7 +182,7 @@
    name="intel_agilex_5_soc_0"
    kind="intel_agilex_5_soc"
    version="13.0.0"
-   entity="HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi"
+   entity="HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i"
    library="intel_agilex_5_soc_1300"
    path="intel_agilex_5_soc_0"
    hpath="intel_agilex_5_soc_0"
@@ -1214,7 +1214,7 @@ reg {
   </parameter>
   <parameter name="H2F_Address_Width">
    <type>int</type>
-   <value>28</value>
+   <value>30</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6301,7 +6301,7 @@ parameters are a RESULT of the module parameters. -->
     <valid>true</valid>
    </parameter>
    <type>axi4</type>
-   <span>268435456</span>
+   <span>1073741824</span>
    <isStart>true</isStart>
    <port>
     <name>hps2fpga_awid</name>
@@ -6312,7 +6312,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>hps2fpga_awaddr</name>
     <direction>Output</direction>
-    <width>28</width>
+    <width>30</width>
     <role>awaddr</role>
    </port>
    <port>
@@ -6426,7 +6426,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>hps2fpga_araddr</name>
     <direction>Output</direction>
-    <width>28</width>
+    <width>30</width>
     <role>araddr</role>
    </port>
    <port>

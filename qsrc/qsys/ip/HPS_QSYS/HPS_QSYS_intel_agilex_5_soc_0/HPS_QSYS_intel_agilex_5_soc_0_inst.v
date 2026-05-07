@@ -3,7 +3,7 @@
 		.hps2fpga_axi_clock_clk     (_connected_to_hps2fpga_axi_clock_clk_),     //   input,    width = 1,   hps2fpga_axi_clock.clk
 		.hps2fpga_axi_reset_reset   (_connected_to_hps2fpga_axi_reset_reset_),   //   input,    width = 1,   hps2fpga_axi_reset.reset
 		.hps2fpga_awid              (_connected_to_hps2fpga_awid_),              //  output,    width = 4,             hps2fpga.awid
-		.hps2fpga_awaddr            (_connected_to_hps2fpga_awaddr_),            //  output,   width = 28,                     .awaddr
+		.hps2fpga_awaddr            (_connected_to_hps2fpga_awaddr_),            //  output,   width = 30,                     .awaddr
 		.hps2fpga_awlen             (_connected_to_hps2fpga_awlen_),             //  output,    width = 8,                     .awlen
 		.hps2fpga_awsize            (_connected_to_hps2fpga_awsize_),            //  output,    width = 3,                     .awsize
 		.hps2fpga_awburst           (_connected_to_hps2fpga_awburst_),           //  output,    width = 2,                     .awburst
@@ -22,7 +22,7 @@
 		.hps2fpga_bvalid            (_connected_to_hps2fpga_bvalid_),            //   input,    width = 1,                     .bvalid
 		.hps2fpga_bready            (_connected_to_hps2fpga_bready_),            //  output,    width = 1,                     .bready
 		.hps2fpga_arid              (_connected_to_hps2fpga_arid_),              //  output,    width = 4,                     .arid
-		.hps2fpga_araddr            (_connected_to_hps2fpga_araddr_),            //  output,   width = 28,                     .araddr
+		.hps2fpga_araddr            (_connected_to_hps2fpga_araddr_),            //  output,   width = 30,                     .araddr
 		.hps2fpga_arlen             (_connected_to_hps2fpga_arlen_),             //  output,    width = 8,                     .arlen
 		.hps2fpga_arsize            (_connected_to_hps2fpga_arsize_),            //  output,    width = 3,                     .arsize
 		.hps2fpga_arburst           (_connected_to_hps2fpga_arburst_),           //  output,    width = 2,                     .arburst

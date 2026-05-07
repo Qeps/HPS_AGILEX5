@@ -152,7 +152,7 @@ begin
 	 awaddr  <= (others => '0');
 	 awlen   <= (others => '0');
 	 awsize  <= (others => '0');
-    awburst <= AXI_BURST_INCR; -- FIXED
+    awburst <= AXI_BURST_INCR;
     awlock  <= '0';
     awcache <= "0011";			  -- normal non-cacheable bufferable/modifiable
 	 awprot  <= (others => '0');
@@ -169,7 +169,7 @@ begin
 	 araddr  <= r_araddr;
 	 arlen   <= (others => '0');
 	 arsize  <= AXI_BEAT_SIZE;
-    arburst <= AXI_BURST_INCR; -- FIXED
+    arburst <= AXI_BURST_INCR;
     arlock  <= '0';
 	 arcache <= "0011"; 			  -- normal non-cacheable bufferable/modifiable
 	 arprot  <= (others => '0');

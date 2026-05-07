@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2026.05.04.11:11:27</td>
+    <td class="l">2026.05.07.12:51:55</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -93,6 +93,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="mmap">
    <tr>
     <td class="empty" rowspan="2"></td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_axi4_m"><b>axi4_m</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_axi4lite"><b>axi4lite</b>
+     </a>
+    </td>
     <td class="mastermodule" colspan="2">
      <a href="#module_intel_agilex_5_soc_0"><b>intel_agilex_5_soc_0</b>
      </a>
@@ -103,9 +111,38 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </td>
    </tr>
    <tr>
+    <td class="masterlr">&#160;axi_m</td>
+    <td class="masterlr">&#160;axi_m</td>
     <td class="masterl">&#160;hps2fpga</td>
     <td class="masterr">&#160;lwhps2fpga</td>
     <td class="masterlr">&#160;axi_m</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_emif_io96b_lpddr4b"><b>emif_io96b_lpddr4b</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">s0_axi4&#160;</td>
+    <td>0x0000_0000 - 0x3fff_ffff</td>
+    <td class="empty"></td>
+    <td>0x0000_0000 - 0x3fff_ffff</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">s0_axi4lite&#160;</td>
+    <td class="empty"></td>
+    <td>0x0000_0000 - 0x07ff_ffff</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -115,14 +152,174 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slaveb">axi_s1&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
     <td class="empty"></td>
     <td>0x0000_0000 - 0x0000_0fff</td>
     <td>0x0000_0000 - 0x0000_0fff</td>
    </tr>
   </table>
+  <a name="module_axi4_m"> </a>
+  <div>
+   <hr/>
+   <h2>axi4_m</h2>test_lpddr4b v2.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_iopll_0">iopll_0</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="main" rowspan="7">axi4_m</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;aclk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_axi4lite">axi4lite</a>
+      </td>
+      <td class="from">cal_done_rst_n&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;aresetn</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">axi_m&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_emif_io96b_lpddr4b">emif_io96b_lpddr4b</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_axi4</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_axi4lite"> </a>
+  <div>
+   <hr/>
+   <h2>axi4lite</h2>axil_driver_calibration_lpddr4b v2.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_iopll_0">iopll_0</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+      <td class="main" rowspan="10">axi4lite</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_reset_bridge_0">reset_bridge_0</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;rst_n</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">axi_m&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_emif_io96b_lpddr4b">emif_io96b_lpddr4b</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_axi4lite</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">cal_done_rst_n&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_axi4_m">axi4_m</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;aresetn</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_debounce"> </a>
   <div>
    <hr/>
@@ -193,6 +390,107 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_emif_io96b_lpddr4b"> </a>
+  <div>
+   <hr/>
+   <h2>emif_io96b_lpddr4b</h2>emif_io96b_lpddr4 v4.1.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_axi4_m">axi4_m</a>
+      </td>
+      <td class="from">axi_m&#160;&#160;</td>
+      <td class="main" rowspan="18">emif_io96b_lpddr4b</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_axi4</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_axi4lite">axi4lite</a>
+      </td>
+      <td class="from">axi_m&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_axi4lite</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_intel_agilex_5_soc_0">intel_agilex_5_soc_0</a>
+      </td>
+      <td class="from">hps2fpga&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_axi4</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_iopll_0">iopll_0</a>
+      </td>
+      <td class="from">outclk0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_axi4_clock_in</td>
+     </tr>
+     <tr>
+      <td class="from">outclk0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_axi4lite_clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_reset_bridge_0">reset_bridge_0</a>
+      </td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;core_init_n</td>
+     </tr>
+     <tr>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0_axi4lite_reset_n</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_intel_agilex_5_soc_0"> </a>
   <div>
    <hr/>
@@ -205,7 +503,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_iopll_0">iopll_0</a>
       </td>
       <td class="from">outclk0&#160;&#160;</td>
-      <td class="main" rowspan="6">intel_agilex_5_soc_0</td>
+      <td class="main" rowspan="9">intel_agilex_5_soc_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;hps2fpga_axi_clock</td>
@@ -215,6 +513,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="to">&#160;&#160;lwhps2fpga_axi_clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">hps2fpga&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_emif_io96b_lpddr4b">emif_io96b_lpddr4b</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_axi4</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
      </tr>
      <tr>
       <td></td>
@@ -435,7 +749,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_iopll_0">iopll_0</a>
       </td>
       <td class="from">outclk0&#160;&#160;</td>
-      <td class="main" rowspan="10">reset_bridge_0</td>
+      <td class="main" rowspan="18">reset_bridge_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -452,6 +766,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;aresetn</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_emif_io96b_lpddr4b">emif_io96b_lpddr4b</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;core_init_n</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0_axi4lite_reset_n</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -484,6 +824,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;resetn</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">out_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_axi4lite">axi4lite</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;rst_n</td>
      </tr>
     </table>
    </div>
@@ -621,7 +977,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0,02 seconds</td>
-    <td class="r">rendering took 0,14 seconds</td>
+    <td class="r">rendering took 0,11 seconds</td>
    </tr>
   </table>
  </body>

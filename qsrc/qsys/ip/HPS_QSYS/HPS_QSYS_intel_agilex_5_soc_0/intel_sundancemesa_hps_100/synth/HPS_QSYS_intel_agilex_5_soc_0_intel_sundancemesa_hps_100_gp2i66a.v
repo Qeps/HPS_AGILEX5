@@ -12,12 +12,12 @@
 
 
 
-module HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a(
+module HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_gp2i66a(
   output wire [0 : 0 ] h2f_reset
  ,input wire [0 : 0 ] hps2fpga_clk
  ,input wire [0 : 0 ] hps2fpga_rst
  ,output wire [3 : 0 ] hps2fpga_awid
- ,output wire [27 : 0 ] hps2fpga_awaddr
+ ,output wire [29 : 0 ] hps2fpga_awaddr
  ,output wire [7 : 0 ] hps2fpga_awlen
  ,output wire [2 : 0 ] hps2fpga_awsize
  ,output wire [1 : 0 ] hps2fpga_awburst
@@ -36,7 +36,7 @@ module HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a(
  ,input wire [0 : 0 ] hps2fpga_bvalid
  ,output wire [0 : 0 ] hps2fpga_bready
  ,output wire [3 : 0 ] hps2fpga_arid
- ,output wire [27 : 0 ] hps2fpga_araddr
+ ,output wire [29 : 0 ] hps2fpga_araddr
  ,output wire [7 : 0 ] hps2fpga_arlen
  ,output wire [2 : 0 ] hps2fpga_arsize
  ,output wire [1 : 0 ] hps2fpga_arburst
@@ -95,7 +95,7 @@ module HPS_QSYS_intel_agilex_5_soc_0_intel_sundancemesa_hps_100_s3hty6a(
 
 wire [ 0:0] hps2fpga_rst_intr;
 wire [ 3:0] hps2fpga_awid_intr;
-wire [ 27:0] hps2fpga_awaddr_intr;
+wire [ 29:0] hps2fpga_awaddr_intr;
 wire [ 7:0] hps2fpga_awlen_intr;
 wire [ 2:0] hps2fpga_awsize_intr;
 wire [ 1:0] hps2fpga_awburst_intr;
@@ -114,7 +114,7 @@ wire [ 1:0] hps2fpga_bresp_intr;
 wire [ 0:0] hps2fpga_bvalid_intr;
 wire [ 0:0] hps2fpga_bready_intr;
 wire [ 3:0] hps2fpga_arid_intr;
-wire [ 27:0] hps2fpga_araddr_intr;
+wire [ 29:0] hps2fpga_araddr_intr;
 wire [ 7:0] hps2fpga_arlen_intr;
 wire [ 2:0] hps2fpga_arsize_intr;
 wire [ 1:0] hps2fpga_arburst_intr;
@@ -301,7 +301,7 @@ hps_axi4_ready_latency_adp #(
         .NUM_PIPELINES(2)
         ,.LOG_DEPTH(3)
         ,.ID_WIDTH(4)
-        ,.ADDR_WIDTH(28)
+        ,.ADDR_WIDTH(30)
         ,.DATA_WIDTH(128)
         ,.STRB_WIDTH(16)
         ,.BUFFER_TYPE("MLAB")
@@ -388,7 +388,7 @@ tennm_soc_hps #(
 ,.soc_hps_wrapper_hps_a76_core_selection("HPS_A76_CORE_SELECTION_DUAL")
 ,.soc_hps_wrapper_hps_l3_memory_size("HPS_L3_MEMORY_SIZE_1_MB")
 ,.soc_hps_wrapper_powermode_freq_hz(32'b00110111101000010111110001010000)
-,.soc_hps_wrapper_h2f_addr_width(32'b00000000000000000000000000011100)
+,.soc_hps_wrapper_h2f_addr_width(32'b00000000000000000000000000011110)
 ,.soc_hps_wrapper_h2f_data_width(32'b00000000000000000000000010000000)
 ,.soc_hps_wrapper_lwh2f_addr_width(32'b00000000000000000000000000011000)
 ,.soc_hps_wrapper_lwh2f_data_width(32'b00000000000000000000000000100000)

@@ -1,8 +1,13 @@
 <sld_project_info>
   <sld_infos>
-    <sld_info hpath="u0|iopll_0" library="HPS_QSYS_iopll_0" name="iopll_0">
+    <sld_info hpath="u0|intel_agilex_5_soc_0" library="HPS_QSYS_intel_agilex_5_soc_0" name="intel_agilex_5_soc_0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME HPS_QSYS_iopll_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
+        <assignment_value text="QSYS_NAME HPS_QSYS_intel_agilex_5_soc_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="u0|intel_onchip_memory_0" library="HPS_QSYS_intel_onchip_memory_0" name="intel_onchip_memory_0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME HPS_QSYS_intel_onchip_memory_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="u0|s10_user_rst_clkgate_0" library="HPS_QSYS_s10_user_rst_clkgate_0" name="s10_user_rst_clkgate_0">
@@ -15,9 +20,14 @@
         <assignment_value text="QSYS_NAME HPS_QSYS_reset_bridge_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="u0|intel_onchip_memory_0" library="HPS_QSYS_intel_onchip_memory_0" name="intel_onchip_memory_0">
+    <sld_info hpath="u0|iopll_0" library="HPS_QSYS_iopll_0" name="iopll_0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME HPS_QSYS_intel_onchip_memory_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
+        <assignment_value text="QSYS_NAME HPS_QSYS_iopll_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
+      </assignment_values>
+    </sld_info>
+    <sld_info hpath="u0|emif_io96b_lpddr4b" library="HPS_QSYS_emif_io96b_lpddr4b" name="emif_io96b_lpddr4b">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME HPS_QSYS_emif_io96b_lpddr4b HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="u0" library="HPS_QSYS" name="u0">
@@ -25,14 +35,9 @@
         <assignment_value text="QSYS_NAME HPS_QSYS HAS_SOPCINFO 1 GENERATION_ID 0"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="u0|intel_agilex_5_soc_0" library="HPS_QSYS_intel_agilex_5_soc_0" name="intel_agilex_5_soc_0">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME HPS_QSYS_intel_agilex_5_soc_0 HAS_SOPCINFO 1 GENERATION_ID 0"/>
-      </assignment_values>
-    </sld_info>
     <sld_info hpath="auto_fab_0" library="alt_sld_fab_0" name="auto_fab_0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME alt_sld_fab_0 HAS_SOPCINFO 1 GENERATION_ID 0 ENTITY_NAME alt_sld_fab SLD_FAB 1 DESIGN_HASH 12f7c6ade3e40142882d"/>
+        <assignment_value text="QSYS_NAME alt_sld_fab_0 HAS_SOPCINFO 1 GENERATION_ID 0 ENTITY_NAME alt_sld_fab SLD_FAB 1 DESIGN_HASH bb937b70db67a7e5e3bc"/>
       </assignment_values>
     </sld_info>
   </sld_infos>

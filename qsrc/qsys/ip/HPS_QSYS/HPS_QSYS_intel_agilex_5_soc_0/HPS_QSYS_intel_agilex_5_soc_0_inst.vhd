@@ -4,7 +4,7 @@
 			hps2fpga_axi_clock_clk     : in    std_logic                      := 'X';             -- clk
 			hps2fpga_axi_reset_reset   : in    std_logic                      := 'X';             -- reset
 			hps2fpga_awid              : out   std_logic_vector(3 downto 0);                      -- awid
-			hps2fpga_awaddr            : out   std_logic_vector(27 downto 0);                     -- awaddr
+			hps2fpga_awaddr            : out   std_logic_vector(29 downto 0);                     -- awaddr
 			hps2fpga_awlen             : out   std_logic_vector(7 downto 0);                      -- awlen
 			hps2fpga_awsize            : out   std_logic_vector(2 downto 0);                      -- awsize
 			hps2fpga_awburst           : out   std_logic_vector(1 downto 0);                      -- awburst
@@ -23,7 +23,7 @@
 			hps2fpga_bvalid            : in    std_logic                      := 'X';             -- bvalid
 			hps2fpga_bready            : out   std_logic;                                         -- bready
 			hps2fpga_arid              : out   std_logic_vector(3 downto 0);                      -- arid
-			hps2fpga_araddr            : out   std_logic_vector(27 downto 0);                     -- araddr
+			hps2fpga_araddr            : out   std_logic_vector(29 downto 0);                     -- araddr
 			hps2fpga_arlen             : out   std_logic_vector(7 downto 0);                      -- arlen
 			hps2fpga_arsize            : out   std_logic_vector(2 downto 0);                      -- arsize
 			hps2fpga_arburst           : out   std_logic_vector(1 downto 0);                      -- arburst

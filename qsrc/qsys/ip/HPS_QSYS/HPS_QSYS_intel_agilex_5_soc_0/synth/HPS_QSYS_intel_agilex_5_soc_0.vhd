@@ -13,7 +13,7 @@ entity HPS_QSYS_intel_agilex_5_soc_0 is
 		hps2fpga_axi_clock_clk     : in    std_logic                      := '0';             --   hps2fpga_axi_clock.clk,     Clock from a single source in the FPGA.
 		hps2fpga_axi_reset_reset   : in    std_logic                      := '0';             --   hps2fpga_axi_reset.reset,   Async reset to the Bridge logic. This signal is active-HIGH.
 		hps2fpga_awid              : out   std_logic_vector(3 downto 0);                      --             hps2fpga.awid,    Identification tag for a write transaction.
-		hps2fpga_awaddr            : out   std_logic_vector(27 downto 0);                     --                     .awaddr,  The address of the first transfer in a write transaction.
+		hps2fpga_awaddr            : out   std_logic_vector(29 downto 0);                     --                     .awaddr,  The address of the first transfer in a write transaction.
 		hps2fpga_awlen             : out   std_logic_vector(7 downto 0);                      --                     .awlen,   The exact number of data transfers in a write transaction.
 		hps2fpga_awsize            : out   std_logic_vector(2 downto 0);                      --                     .awsize,  The number of bytes in each data transfer in a write transaction.
 		hps2fpga_awburst           : out   std_logic_vector(1 downto 0);                      --                     .awburst, Indicates how address changes between each transfer in a write transaction.
@@ -32,7 +32,7 @@ entity HPS_QSYS_intel_agilex_5_soc_0 is
 		hps2fpga_bvalid            : in    std_logic                      := '0';             --                     .bvalid,  Indicates that the write response channel signals are valid.
 		hps2fpga_bready            : out   std_logic;                                         --                     .bready,  Indicates that a transfer on the write response channel can be accepted.
 		hps2fpga_arid              : out   std_logic_vector(3 downto 0);                      --                     .arid,    Transaction identifier for the read transaction.
-		hps2fpga_araddr            : out   std_logic_vector(27 downto 0);                     --                     .araddr,  The address of the first transfer in a read transaction.
+		hps2fpga_araddr            : out   std_logic_vector(29 downto 0);                     --                     .araddr,  The address of the first transfer in a read transaction.
 		hps2fpga_arlen             : out   std_logic_vector(7 downto 0);                      --                     .arlen,   The exact number of data transfers in a read transaction.
 		hps2fpga_arsize            : out   std_logic_vector(2 downto 0);                      --                     .arsize,  The number of bytes in each data transfer in a read transaction.
 		hps2fpga_arburst           : out   std_logic_vector(1 downto 0);                      --                     .arburst, Indicates how address changes between each transfer in a read transaction.
@@ -89,13 +89,13 @@ entity HPS_QSYS_intel_agilex_5_soc_0 is
 end entity HPS_QSYS_intel_agilex_5_soc_0;
 
 architecture rtl of HPS_QSYS_intel_agilex_5_soc_0 is
-	component HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi_cmp is
+	component HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i_cmp is
 		port (
 			h2f_reset_reset            : out   std_logic;                                         -- reset
 			hps2fpga_axi_clock_clk     : in    std_logic                      := 'X';             -- clk
 			hps2fpga_axi_reset_reset   : in    std_logic                      := 'X';             -- reset
 			hps2fpga_awid              : out   std_logic_vector(3 downto 0);                      -- awid
-			hps2fpga_awaddr            : out   std_logic_vector(27 downto 0);                     -- awaddr
+			hps2fpga_awaddr            : out   std_logic_vector(29 downto 0);                     -- awaddr
 			hps2fpga_awlen             : out   std_logic_vector(7 downto 0);                      -- awlen
 			hps2fpga_awsize            : out   std_logic_vector(2 downto 0);                      -- awsize
 			hps2fpga_awburst           : out   std_logic_vector(1 downto 0);                      -- awburst
@@ -114,7 +114,7 @@ architecture rtl of HPS_QSYS_intel_agilex_5_soc_0 is
 			hps2fpga_bvalid            : in    std_logic                      := 'X';             -- bvalid
 			hps2fpga_bready            : out   std_logic;                                         -- bready
 			hps2fpga_arid              : out   std_logic_vector(3 downto 0);                      -- arid
-			hps2fpga_araddr            : out   std_logic_vector(27 downto 0);                     -- araddr
+			hps2fpga_araddr            : out   std_logic_vector(29 downto 0);                     -- araddr
 			hps2fpga_arlen             : out   std_logic_vector(7 downto 0);                      -- arlen
 			hps2fpga_arsize            : out   std_logic_vector(2 downto 0);                      -- arsize
 			hps2fpga_arburst           : out   std_logic_vector(1 downto 0);                      -- arburst
@@ -168,13 +168,13 @@ architecture rtl of HPS_QSYS_intel_agilex_5_soc_0 is
 			lwhps2fpga_rready          : out   std_logic;                                         -- rready
 			hps_io_gpio41              : inout std_logic                      := 'X'              -- gpio41
 		);
-	end component HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi_cmp;
+	end component HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i_cmp;
 
-	for intel_agilex_5_soc_0 : HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi_cmp
-		use entity intel_agilex_5_soc_1300.HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi;
+	for intel_agilex_5_soc_0 : HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i_cmp
+		use entity intel_agilex_5_soc_1300.HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i;
 begin
 
-	intel_agilex_5_soc_0 : component HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_qrfuhsi_cmp
+	intel_agilex_5_soc_0 : component HPS_QSYS_intel_agilex_5_soc_0_intel_agilex_5_soc_1300_rg5tn2i_cmp
 		port map (
 			h2f_reset_reset            => h2f_reset_reset,            --            h2f_reset.reset
 			hps2fpga_axi_clock_clk     => hps2fpga_axi_clock_clk,     --   hps2fpga_axi_clock.clk
