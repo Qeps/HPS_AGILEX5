@@ -1,31 +1,29 @@
-# Quartus generated
+# --- Quartus / Intel FPGA temporary files ---
+db/
+incremental_db/
 qdb/
-tmp-clearbox/
-
-# Imported / helper metadata
-dni/
-output_files/ipg_report
-
-# Logs, reports, backups
-*.log
-*.rpt
-*.summary
-*.smsg
-*.qmsg
-*.bak
-*.history
-*.txt
-
-# Programming outputs
-*.pof
-*.jic
-*.rbf
+tmp/
 *.done
+*.jdi
 *.pin
 *.sld
+*.summary
+*.qws
 
-# Local helper/info files
-board.info
-serv_req_info.txt
-golden_top_final_save_view.txt
-IpUpgradeLog.xml
+# --- Project specific generated files ---
+# We don't ignore the whole output_files/ directory 
+# because we want to keep scripts (.sh) and README.md.
+# Instead, we ignore large binaries and logs inside it.
+output_files/*.sof
+output_files/*.rbf
+output_files/*.hex
+output_files/dummy.hex
+output_files/serv_req_info.txt
+
+# --- System & Editor files ---
+.DS_Store
+*.swp
+*~
+
+u-boot-socfpga/
+arm-trusted-firmware/
