@@ -27,3 +27,7 @@ output_files/serv_req_info.txt
 
 u-boot-socfpga/
 arm-trusted-firmware/
+
+# --- Exceptions 
+!output_files/terasic_official_spl.hex
+!output_files/golden_top.sof
