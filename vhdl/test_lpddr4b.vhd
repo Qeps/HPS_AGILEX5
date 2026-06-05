@@ -2,6 +2,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- Port names follow the Platform Designer auto-recognition convention:
+--   <interface type prefix>_<interface name>_<signal type>
+--   clk        -> clock sink (single clock, name omitted)
+--   reset_n    -> reset sink, active-low (single reset, name omitted)
+--   axi_m_*    -> AXI4 manager interface "axi_m"
+--   coe_*      -> conduit (exported signal)
 entity test_lpddr4b is
     generic (
         AXI_ADDR_WIDTH     : integer                       := 30;
@@ -9,120 +15,67 @@ entity test_lpddr4b is
         AXI_ID_WIDTH       : integer                       := 6
     );
     port (
-        aclk    : in std_logic;
-        aresetn : in std_logic;
+        -- Clock sink / reset sink (active-low)
+        clk     : in std_logic;
+        reset_n : in std_logic;
 
         -- AXI4 write address channel
-        awaddr  : out std_logic_vector(AXI_ADDR_WIDTH-1 downto 0);     -- Start burst address
-        awburst : out std_logic_vector(1 downto 0);                    -- Burst type
-		  awcache : out std_logic_vector(3 downto 0);
-        awid    : out std_logic_vector(AXI_ID_WIDTH-1 downto 0);       -- Transaction ID
-        awlen   : out std_logic_vector(7 downto 0);                    -- Number of writes
-        awlock  : out std_logic;                                       -- Atomic Access, 0 - Normal Access, 1 - Exclusive Access
-        awqos   : out std_logic_vector(3 downto 0);                    -- User defined QOS
-        awsize  : out std_logic_vector(2 downto 0);                    -- Size of single write (log2 - number of bytes)
-        awvalid : out std_logic;                                       -- Address write valid from master
-        awuser  : out std_logic_vector(13 downto 0);                   -- User defined value
-        awprot  : out std_logic_vector(2 downto 0);                    -- Access Protections
-        awready : in  std_logic;                                       -- Ready to accept write address from slave
+        axi_m_awaddr  : out std_logic_vector(AXI_ADDR_WIDTH-1 downto 0);     -- Start burst address
+        axi_m_awburst : out std_logic_vector(1 downto 0);                    -- Burst type
+        axi_m_awcache : out std_logic_vector(3 downto 0);
+        axi_m_awid    : out std_logic_vector(AXI_ID_WIDTH-1 downto 0);       -- Transaction ID
+        axi_m_awlen   : out std_logic_vector(7 downto 0);                    -- Number of writes
+        axi_m_awlock  : out std_logic;                                       -- Atomic Access, 0 - Normal Access, 1 - Exclusive Access
+        axi_m_awqos   : out std_logic_vector(3 downto 0);                    -- User defined QOS
+        axi_m_awsize  : out std_logic_vector(2 downto 0);                    -- Size of single write (log2 - number of bytes)
+        axi_m_awvalid : out std_logic;                                       -- Address write valid from master
+        axi_m_awuser  : out std_logic_vector(13 downto 0);                   -- User defined value
+        axi_m_awprot  : out std_logic_vector(2 downto 0);                    -- Access Protections
+        axi_m_awready : in  std_logic;                                       -- Ready to accept write address from slave
 
         -- AXI4 read address channel
-        araddr  : out std_logic_vector(AXI_ADDR_WIDTH-1 downto 0);     -- Read address, base address for burst
-		arburst : out std_logic_vector(1 downto 0);                    -- Burst type
-		arcache : out std_logic_vector(3 downto 0);
-		arid    : out std_logic_vector(AXI_ID_WIDTH-1 downto 0);       -- Transaction ID
-		arlen   : out std_logic_vector(7 downto 0);                    -- Number of reads
-		arlock  : out std_logic;                                       -- Atomic Access
-		arqos   : out std_logic_vector(3 downto 0);                    -- User defined QOS
-		arsize  : out std_logic_vector(2 downto 0);                    -- Size of single read (log2 - number of bytes)
-		arvalid : out std_logic;                                       -- Address read valid from master
-		aruser  : out std_logic_vector(13 downto 0);                   -- User defined value
-		arprot  : out std_logic_vector(2 downto 0);                    -- Access Protections
-		arready : in  std_logic;                                       -- Ready to accept read address from slave
+        axi_m_araddr  : out std_logic_vector(AXI_ADDR_WIDTH-1 downto 0);     -- Read address, base address for burst
+        axi_m_arburst : out std_logic_vector(1 downto 0);                    -- Burst type
+        axi_m_arcache : out std_logic_vector(3 downto 0);
+        axi_m_arid    : out std_logic_vector(AXI_ID_WIDTH-1 downto 0);       -- Transaction ID
+        axi_m_arlen   : out std_logic_vector(7 downto 0);                    -- Number of reads
+        axi_m_arlock  : out std_logic;                                       -- Atomic Access
+        axi_m_arqos   : out std_logic_vector(3 downto 0);                    -- User defined QOS
+        axi_m_arsize  : out std_logic_vector(2 downto 0);                    -- Size of single read (log2 - number of bytes)
+        axi_m_arvalid : out std_logic;                                       -- Address read valid from master
+        axi_m_aruser  : out std_logic_vector(13 downto 0);                   -- User defined value
+        axi_m_arprot  : out std_logic_vector(2 downto 0);                    -- Access Protections
+        axi_m_arready : in  std_logic;                                       -- Ready to accept read address from slave
 
         -- AXI4 write data channel
-        wdata   : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);     -- The write Data
-        wstrb   : out std_logic_vector((AXI_DATA_WIDTH/8)-1 downto 0); -- Identifies which bytes of the data are valid, one bit for each byte
-        wlast   : out std_logic;                                       -- Last word of the burst
-        wvalid  : out std_logic;                                       -- Write data valid from master
-        wready  : in  std_logic;                                       -- Slave ready to accept data
+        axi_m_wdata   : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);     -- The write Data
+        axi_m_wstrb   : out std_logic_vector((AXI_DATA_WIDTH/8)-1 downto 0); -- Identifies which bytes of the data are valid, one bit for each byte
+        axi_m_wlast   : out std_logic;                                       -- Last word of the burst
+        axi_m_wvalid  : out std_logic;                                       -- Write data valid from master
+        axi_m_wready  : in  std_logic;                                       -- Slave ready to accept data
 
         -- AXI4 write response channel
-        bready : out std_logic;                                        -- Master ready to accept data
-		bid    : in  std_logic_vector(AXI_ID_WIDTH-1 downto 0);        -- Transaction ID
-		bresp  : in  std_logic_vector(1 downto 0);                     -- Response info from Slave, 00 - OK, 01 - Exclusive Access is OK, 10 - Error (address in range), 11 - Address not in range
-		bvalid : in  std_logic;                                        -- Write response is valid, from slave
+        axi_m_bready  : out std_logic;                                       -- Master ready to accept data
+        axi_m_bid     : in  std_logic_vector(AXI_ID_WIDTH-1 downto 0);       -- Transaction ID
+        axi_m_bresp   : in  std_logic_vector(1 downto 0);                    -- Response info from Slave
+        axi_m_bvalid  : in  std_logic;                                       -- Write response is valid, from slave
 
         -- AXI4 read data channel
-        rready : out std_logic;                                        -- Master is ready to accept read data
-		rdata  : in  std_logic_vector(AXI_DATA_WIDTH-1 downto 0);      -- Read data from slave
-		rid    : in  std_logic_vector(AXI_ID_WIDTH-1 downto 0);        -- Transaction ID
-		rlast  : in  std_logic;                                        -- Last word of the burst
-		rresp  : in  std_logic_vector(1 downto 0);                     -- Response info from Slave, 00 - OK, 01 - Exclusive Access is OK, 10 - Error (address in range), 11 - Address not in range
-		rvalid : in  std_logic;                                        -- Read data from slave is valid
+        axi_m_rready  : out std_logic;                                       -- Master is ready to accept read data
+        axi_m_rdata   : in  std_logic_vector(AXI_DATA_WIDTH-1 downto 0);     -- Read data from slave
+        axi_m_rid     : in  std_logic_vector(AXI_ID_WIDTH-1 downto 0);       -- Transaction ID
+        axi_m_rlast   : in  std_logic;                                       -- Last word of the burst
+        axi_m_rresp   : in  std_logic_vector(1 downto 0);                    -- Response info from Slave
+        axi_m_rvalid  : in  std_logic;                                       -- Read data from slave is valid
 
-        -- Output signal on LED
-        test_complete : out std_logic
+        -- Conduit (exported) - output signal on LED
+        coe_test_complete : out std_logic
     );
-	 
-	 -- Visual Designer Studio interface metadata
-    attribute altera_ip : string;
-    attribute altera_ip of test_lpddr4b : entity is "user.com:ip:test_lpddr4b:1.0";
-
-    attribute altera_interface : string;
-
-    attribute altera_interface of aclk    : signal is "altera.com:interfaces:altera_clock:1.0 in aclk clk";
-    attribute altera_interface of aresetn : signal is "altera.com:interfaces:altera_reset:1.0 in aresetn reset_n";
-
-    attribute altera_port : string;
-    attribute altera_port of awaddr : signal is "clockref:aclk, resetref:aresetn";
-
-    -- AXI4 memory-mapped manager interface: axi_m
-    attribute altera_interface of awaddr : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awaddr";
-    attribute altera_interface of awburst: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awburst";
-    attribute altera_interface of awcache: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awcache";
-    attribute altera_interface of awid   : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awid";
-    attribute altera_interface of awlen  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awlen";
-    attribute altera_interface of awlock : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awlock";
-    attribute altera_interface of awqos  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awqos";
-    attribute altera_interface of awsize : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awsize";
-    attribute altera_interface of awvalid: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awvalid";
-    attribute altera_interface of awuser : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awuser";
-    attribute altera_interface of awprot : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awprot";
-    attribute altera_interface of awready: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m awready";
-    attribute altera_interface of araddr : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m araddr";
-    attribute altera_interface of arburst: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arburst";
-    attribute altera_interface of arcache: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arcache";
-    attribute altera_interface of arid   : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arid";
-    attribute altera_interface of arlen  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arlen";
-    attribute altera_interface of arlock : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arlock";
-    attribute altera_interface of arqos  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arqos";
-    attribute altera_interface of arsize : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arsize";
-    attribute altera_interface of arvalid: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arvalid";
-    attribute altera_interface of aruser : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m aruser";
-    attribute altera_interface of arprot : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arprot";
-    attribute altera_interface of arready: signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m arready";
-    attribute altera_interface of wdata  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m wdata";
-    attribute altera_interface of wstrb  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m wstrb";
-    attribute altera_interface of wlast  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m wlast";
-    attribute altera_interface of wvalid : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m wvalid";
-    attribute altera_interface of wready : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m wready";
-    attribute altera_interface of bready : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m bready";
-    attribute altera_interface of bid    : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m bid";
-    attribute altera_interface of bresp  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m bresp";
-    attribute altera_interface of bvalid : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m bvalid";
-    attribute altera_interface of rready : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m rready";
-    attribute altera_interface of rdata  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m rdata";
-    attribute altera_interface of rid    : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m rid";
-    attribute altera_interface of rlast  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m rlast";
-    attribute altera_interface of rresp  : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m rresp";
-    attribute altera_interface of rvalid : signal is "altera.com:interfaces:altera_axi4:1.0 manager axi_m rvalid";
-    
 end entity;
 
 architecture rtl of test_lpddr4b is
-	 
-	 constant AXI_START_ADDR : std_logic_vector(AXI_ADDR_WIDTH-1 downto 0) := (others => '0');
+
+    constant AXI_START_ADDR : std_logic_vector(AXI_ADDR_WIDTH-1 downto 0) := (others => '0');
 
     function clog2(n : positive) return natural is
         variable tmp : natural := 1;
@@ -134,11 +87,11 @@ architecture rtl of test_lpddr4b is
         end loop;
         return res;
     end function;
- 
+
     constant BURST_BEATS    : natural                       := 8;
     constant LAST_INDEX     : natural                       := BURST_BEATS - 1;
     constant AXI_BEAT_SIZE  : std_logic_vector(2 downto 0)  := std_logic_vector(to_unsigned(clog2(AXI_DATA_WIDTH/8), 3));
-	 
+
     subtype word_t is std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     type word_array_t is array (0 to LAST_INDEX) of word_t;
     constant TEST_DATA     : word_array_t := (
@@ -180,42 +133,42 @@ architecture rtl of test_lpddr4b is
 begin
 
 -- Constants
-    awburst <= "01";            -- INCR
-    awid    <= (others => '0');
-    awlen   <= std_logic_vector(to_unsigned(BURST_BEATS - 1, 8));
-    awlock  <= '0';
-    awqos   <= (others => '0');
-    awsize  <= AXI_BEAT_SIZE;
-    awuser  <= (others => '0');
-    awprot  <= (others => '0');
-    arburst <= "01";            -- INCR
-    arid    <= (others => '0');
-    arlen   <= std_logic_vector(to_unsigned(BURST_BEATS - 1, 8));
-    arlock  <= '0';
-    arqos   <= (others => '0');
-    arsize  <= AXI_BEAT_SIZE;
-    aruser  <= (others => '0');
-    arprot  <= (others => '0');
-    wstrb   <= (others => '1');
-	 awcache <= "0011";  -- normal non-cacheable bufferable/modifiable
-	 arcache <= "0011";
+    axi_m_awburst <= "01";            -- INCR
+    axi_m_awid    <= (others => '0');
+    axi_m_awlen   <= std_logic_vector(to_unsigned(BURST_BEATS - 1, 8));
+    axi_m_awlock  <= '0';
+    axi_m_awqos   <= (others => '0');
+    axi_m_awsize  <= AXI_BEAT_SIZE;
+    axi_m_awuser  <= (others => '0');
+    axi_m_awprot  <= (others => '0');
+    axi_m_arburst <= "01";            -- INCR
+    axi_m_arid    <= (others => '0');
+    axi_m_arlen   <= std_logic_vector(to_unsigned(BURST_BEATS - 1, 8));
+    axi_m_arlock  <= '0';
+    axi_m_arqos   <= (others => '0');
+    axi_m_arsize  <= AXI_BEAT_SIZE;
+    axi_m_aruser  <= (others => '0');
+    axi_m_arprot  <= (others => '0');
+    axi_m_wstrb   <= (others => '1');
+    axi_m_awcache <= "0011";  -- normal non-cacheable bufferable/modifiable
+    axi_m_arcache <= "0011";
 
 --  Registered outputs
-    awaddr        <= r_awaddr;
-    awvalid       <= r_awvalid;
-    araddr        <= r_araddr;
-    arvalid       <= r_arvalid;
-    wvalid        <= r_wvalid;
-    bready        <= r_bready;
-    rready        <= r_rready;
-    test_complete <= r_test_complete;
+    axi_m_awaddr      <= r_awaddr;
+    axi_m_awvalid     <= r_awvalid;
+    axi_m_araddr      <= r_araddr;
+    axi_m_arvalid     <= r_arvalid;
+    axi_m_wvalid      <= r_wvalid;
+    axi_m_bready      <= r_bready;
+    axi_m_rready      <= r_rready;
+    coe_test_complete <= r_test_complete;
 
-    wdata   <= TEST_DATA(write_index);
-    wlast   <= '1' when (write_state = WRITE_DATA and write_index = LAST_INDEX) else '0';
+    axi_m_wdata   <= TEST_DATA(write_index);
+    axi_m_wlast   <= '1' when (write_state = WRITE_DATA and write_index = LAST_INDEX) else '0';
 
-    lpddr4_write_fsm : process(aclk, aresetn) 
+    lpddr4_write_fsm : process(clk, reset_n)
     begin
-        if aresetn = '0' then
+        if reset_n = '0' then
             write_state <= WRITE_IDLE;
             r_awvalid   <= '0';
             r_awaddr    <= AXI_START_ADDR;
@@ -224,7 +177,7 @@ begin
             write_index <= 0;
             write_done  <= '0';
 
-        elsif rising_edge(aclk) then
+        elsif rising_edge(clk) then
             case write_state is
                 when WRITE_IDLE =>
                     r_awaddr    <= AXI_START_ADDR;
@@ -234,7 +187,7 @@ begin
                     write_state <= WRITE_ADDR;
 
                 when WRITE_ADDR =>
-                    if awready = '1' then
+                    if axi_m_awready = '1' then
                         r_awvalid   <= '0';
                         r_wvalid    <= '1';
                         write_index <= 0;
@@ -242,7 +195,7 @@ begin
                     end if;
 
                 when WRITE_DATA =>
-                    if wready = '1' then
+                    if axi_m_wready = '1' then
                         if write_index = LAST_INDEX then
                             r_wvalid    <= '0';
                             write_state <= WRITE_RESP;
@@ -252,8 +205,8 @@ begin
                     end if;
 
                 when WRITE_RESP =>
-                    if bvalid = '1' then
-                        if bresp = "00" or bresp = "01" then
+                    if axi_m_bvalid = '1' then
+                        if axi_m_bresp = "00" or axi_m_bresp = "01" then
                             write_done          <= '1';
                             write_state <= WRITE_FINISH;
                         else
@@ -271,11 +224,11 @@ begin
             end case;
         end if;
     end process;
-            
-    lpddr4_read_fsm : process(aclk, aresetn)
+
+    lpddr4_read_fsm : process(clk, reset_n)
         variable beat_ok : std_logic;
     begin
-        if aresetn = '0' then
+        if reset_n = '0' then
             read_state      <= READ_IDLE;
             r_arvalid       <= '0';
             r_araddr        <= AXI_START_ADDR;
@@ -284,7 +237,7 @@ begin
             compare_error   <= '0';
             r_test_complete <= '0';
 
-        elsif rising_edge(aclk) then
+        elsif rising_edge(clk) then
             beat_ok := '0';
 
             case read_state is
@@ -301,7 +254,7 @@ begin
                     end if;
 
                 when READ_ADDR =>
-                    if arready = '1' then
+                    if axi_m_arready = '1' then
                         r_arvalid  <= '0';
                         r_rready   <= '1';
                         read_index <= 0;
@@ -309,23 +262,23 @@ begin
                     end if;
 
                 when READ_DATA =>
-                    if rvalid = '1' then
+                    if axi_m_rvalid = '1' then
                         beat_ok := '1';
 
-                        if rdata /= TEST_DATA(read_index) then
+                        if axi_m_rdata /= TEST_DATA(read_index) then
                             beat_ok := '0';
                         end if;
 
-                        if rresp /= "00" then
+                        if axi_m_rresp /= "00" then
                             beat_ok := '0';
                         end if;
 
                         if read_index = LAST_INDEX then
-                            if rlast /= '1' then
+                            if axi_m_rlast /= '1' then
                                 beat_ok := '0';
                             end if;
                         else
-                            if rlast = '1' then
+                            if axi_m_rlast = '1' then
                                 beat_ok := '0';
                             end if;
                         end if;

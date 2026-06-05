@@ -11,7 +11,7 @@ use ieee.numeric_std.all;
 entity emif_calib is
     generic (
         STATUS_REGISTER_ADDRESS   : natural  := 16#05000400#;
-        AXIL_DRIVER_ADDRESS_WIDTH : integer := 27
+        AXIL_DRIVER_ADDRESS_WIDTH : positive := 27
     );
     port (
         -- Clock sink
