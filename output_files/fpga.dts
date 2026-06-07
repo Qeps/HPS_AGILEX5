@@ -1,0 +1,10 @@
+/dts-v1/;
+/plugin/;
+/ {
+    fragment@0 {
+        target-path = "/fpga-region";  /* <-- NO /proc/device-tree prefix! */
+        __overlay__ {
+            firmware-name = "bitstream_live.rbf";
+        };
+    };
+};
