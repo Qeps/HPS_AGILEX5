@@ -768,7 +768,6 @@ set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_125MHZ
 set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
 set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
 set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-12"
-set_global_assignment -name BOARD default
 
 #============================================================
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
@@ -783,10 +782,15 @@ set_global_assignment -name SDC_FILE golden_top.sdc
 set_global_assignment -name VHDL_FILE vhdl/emif_calib.vhd
 set_global_assignment -name VHDL_FILE vhdl/test_lpddr4b.vhd
 set_global_assignment -name QSYS_FILE platform_designer/HPS_QSYS.qsys
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_reset_in.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_iopll_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_io96b_lpddr4_0.ip
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name HPS_INITIALIZATION "HPS FIRST"
+set_global_assignment -name BOARD default
+set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_intel_agilex_5_soc_0.ip
 set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_clock_in.ip
+set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_io96b_hps_0.ip
+set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_iopll_0.ip
+set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_reset_in.ip
 set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_test_lpddr4b_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_s10_user_rst_clkgate_0.ip
 set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_calib.ip
+set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_io96b_lpddr4_0.ip
+set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_s10_user_rst_clkgate_0.ip

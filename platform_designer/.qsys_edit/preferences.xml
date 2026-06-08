@@ -7,6 +7,11 @@
    showResetDomains="0"
    showClockDomains="0"
    showAvalonDomains="0" />
- <library expandedCategories="Project,Existing IP Variants,Library" />
- <generation path="" synthesis="VHDL" block_symbol_file="1" clear_previous="1" />
+ <library expandedCategories="Existing IP Variants,Project,Library" />
+ <generation
+   path=""
+   synthesis="VHDL"
+   block_symbol_file="1"
+   clear_previous="1"
+   documentation="1" />
 </preferences>
