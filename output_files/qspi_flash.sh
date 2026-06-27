@@ -6,7 +6,7 @@ echo "================================================================"
 
 # Define your file names
 SOF_FILE="golden_top.sof"
-HEX_FILE="u-boot-spl-dtb.hex"
+HEX_FILE="terasic_official_spl.hex" 
 STITCHED_SOF="golden_top_complete.sof"
 JIC_FILE="golden_top_hps.jic"
 
