@@ -6,9 +6,9 @@ echo "================================================================"
 
 # Define your file names
 SOF_FILE="golden_top.sof"
-HEX_FILE="terasic_official_spl.hex"
+HEX_FILE="u-boot-spl-dtb.hex"
 STITCHED_SOF="golden_top_complete.sof"
-JIC_FILE="custom_boot.jic"
+JIC_FILE="golden_top_hps.jic"
 
 echo "=> [1/4] Verifying required files..."
 if [ ! -f "$SOF_FILE" ]; then
