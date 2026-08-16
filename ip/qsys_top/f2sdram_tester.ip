@@ -1287,6 +1287,11 @@ https://fpgasoftware.intel.com/eula.-->
           <ipxact:displayName>AXI_ID_WIDTH</ipxact:displayName>
           <ipxact:value>4</ipxact:value>
         </ipxact:parameter>
+        <ipxact:parameter parameterId="START_DELAY_CYCLES" type="int">
+          <ipxact:name>START_DELAY_CYCLES</ipxact:name>
+          <ipxact:displayName>START_DELAY_CYCLES</ipxact:displayName>
+          <ipxact:value>1000000000</ipxact:value>
+        </ipxact:parameter>
       </ipxact:parameters>
     </altera:altera_module_parameters>
     <altera:altera_system_parameters>

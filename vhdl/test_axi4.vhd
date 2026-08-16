@@ -6,7 +6,13 @@ entity test_axi4 is
     generic (
         AXI_ADDR_WIDTH     : integer                       := 30;
         AXI_DATA_WIDTH     : integer                       := 256;
-        AXI_ID_WIDTH       : integer                       := 6
+        AXI_ID_WIDTH       : integer                       := 6;
+        -- Number of clk cycles to wait after reset release before the first AXI
+        -- transaction is issued. Gives the HPS / EMIF side time to come up.
+        -- 1_000_000_000 cycles = 10 s at 100 MHz. Must be >= 1.
+        -- Kept in sync with START_DELAY_CYCLES in golden_top.vhd, which drives
+        -- the "tests armed" LED.
+        START_DELAY_CYCLES : natural                       := 1000000000
     );
     port (
         -- Clock sink / reset sink (active-low)
@@ -117,6 +123,13 @@ architecture rtl of test_axi4 is
     signal r_bready  : std_logic                                   := '1';
     signal r_rready  : std_logic                                   := '0';
 
+    -- Start delay: holds both FSMs off until the counter has expired
+    constant START_DELAY_LAST  : natural := START_DELAY_CYCLES - 1;
+    constant START_DELAY_WIDTH : natural := clog2(START_DELAY_CYCLES + 1);
+
+    signal start_counter : unsigned(START_DELAY_WIDTH-1 downto 0) := (others => '0');
+    signal test_enable   : std_logic                              := '0';
+
     -- Test stages signals
     signal write_done    : std_logic := '0';
     signal compare_error : std_logic := '0';
@@ -160,6 +173,24 @@ begin
     wdata   <= TEST_DATA(write_index);
     wlast   <= '1' when (write_state = WRITE_DATA and write_index = LAST_INDEX) else '0';
 
+    -- Counts up once after reset release and then latches test_enable high.
+    -- The counter stops at its terminal value, so test_enable never drops back
+    -- to '0' and the tests run exactly once per reset.
+    start_delay_proc : process(clk, reset_n)
+    begin
+        if reset_n = '0' then
+            start_counter <= (others => '0');
+            test_enable   <= '0';
+
+        elsif rising_edge(clk) then
+            if start_counter = to_unsigned(START_DELAY_LAST, START_DELAY_WIDTH) then
+                test_enable <= '1';
+            else
+                start_counter <= start_counter + 1;
+            end if;
+        end if;
+    end process;
+
     lpddr4_write_fsm : process(clk, reset_n)
     begin
         if reset_n = '0' then
@@ -175,10 +206,14 @@ begin
             case write_state is
                 when WRITE_IDLE =>
                     r_awaddr    <= AXI_START_ADDR;
-                    r_awvalid   <= '1';
                     r_wvalid    <= '0';
                     write_done  <= '0';
-                    write_state <= WRITE_ADDR;
+
+                    -- Hold off the first burst until the start delay expired
+                    if test_enable = '1' then
+                        r_awvalid   <= '1';
+                        write_state <= WRITE_ADDR;
+                    end if;
 
                 when WRITE_ADDR =>
                     if awready = '1' then
@@ -241,7 +276,7 @@ begin
                     compare_error   <= '0';
                     r_test_complete <= '0';
 
-                    if write_done = '1' then
+                    if test_enable = '1' and write_done = '1' then
                         r_araddr   <= AXI_START_ADDR;
                         r_arvalid  <= '1';
                         read_state <= READ_ADDR;

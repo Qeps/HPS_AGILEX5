@@ -255,6 +255,14 @@ architecture rtl of golden_top is
    signal f2h_test_complete       : std_logic;
    signal f2sdram_test_complete   : std_logic;
 
+   -- Start delay before the AXI testers issue their first transaction.
+   constant START_DELAY_CYCLES    : natural := 1000000000;  -- 10 s at 100 MHz
+   constant START_DELAY_LAST      : natural := START_DELAY_CYCLES - 1;
+   constant START_DELAY_WIDTH     : natural := 30;          -- ceil(log2(1e9))
+
+   signal start_counter           : unsigned(START_DELAY_WIDTH-1 downto 0);
+   signal tests_armed             : std_logic;
+
 begin
 
    --=======================================================
@@ -264,11 +272,14 @@ begin
    system_clk_50   <= CLOCK2_50;
 
    -- LEDs are active low: '0' lights the LED, '1' turns it off.
-   -- LED(0) = f2h bridge tester result, LED(1) = f2sdram bridge tester result,
-   -- all other LEDs stay off.
+   -- LED(0) = f2h bridge tester passed, LED(1) = f2sdram bridge tester passed,
+   -- LED(2) = start delay expired / testers armed, all other LEDs stay off.
+   -- LED(2) dark means the testers have not started yet; LED(2) lit with
+   -- LED(0)/LED(1) dark means a test ran and failed.
    LED(0)          <= not f2h_test_complete;
    LED(1)          <= not f2sdram_test_complete;
-   LED(7 downto 2) <= (others => '1');
+   LED(2)          <= not tests_armed;
+   LED(7 downto 3) <= (others => '1');
    fpga_dipsw_pio  <= SW;
    fpga_button_pio <= KEY;
    heartbeat_led   <= not heartbeat_count(24);
@@ -380,6 +391,22 @@ begin
          data_in  => fpga_button_pio,
          data_out => fpga_debounced_buttons
       );
+
+   -- Mirrors the start delay counter inside each axi4 tester so the board shows
+   -- when the transactions were released.
+   start_delay_proc : process (system_clk_100_internal, system_reset_n)
+   begin
+      if system_reset_n = '0' then
+         start_counter <= (others => '0');
+         tests_armed   <= '0';
+      elsif rising_edge(system_clk_100_internal) then
+         if start_counter = to_unsigned(START_DELAY_LAST, START_DELAY_WIDTH) then
+            tests_armed <= '1';
+         else
+            start_counter <= start_counter + 1;
+         end if;
+      end if;
+   end process start_delay_proc;
 
    heartbeat_proc : process (system_clk_100_internal, system_reset_n)
    begin
