@@ -1,0 +1,23 @@
+IP Ports Diff Report for emif_io96b_hps
+Fri Jun 26 21:35:10 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; IP Information                                                                                               ;
++----------------------+---------------------------------------------------------------------------------------+
+; IP Variation Name    ; emif_io96b_hps                                                                        ;
+; Prior Version        ; 4.0.0                                                                                 ;
+; New Version          ; 4.1.1                                                                                 ;
+; New File             ; C:/trumpf/ghrd_base/GHRD/hps_subsys/ip/qsys_top/emif_io96b_hps/synth/emif_io96b_hps.v ;
+; Has Port Differences ; No                                                                                    ;
++----------------------+---------------------------------------------------------------------------------------+
+
+

@@ -1,0 +1,23 @@
+IP Ports Diff Report for sysid
+Fri Jun 26 21:35:10 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++------------------------------------------------------------------------------------------------------------+
+; IP Information                                                                                             ;
++----------------------+-------------------------------------------------------------------------------------+
+; IP Variation Name    ; sysid                                                                               ;
+; Prior Version        ; 19.1.8                                                                              ;
+; New Version          ; 20.0.0                                                                              ;
+; New File             ; C:/trumpf/ghrd_base/GHRD/peripheral_subsys/ip/peripheral_subsys/sysid/synth/sysid.v ;
+; Has Port Differences ; No                                                                                  ;
++----------------------+-------------------------------------------------------------------------------------+
+
+

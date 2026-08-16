@@ -1,0 +1,23 @@
+IP Ports Diff Report for qsys_top_ace5lite_cache_coherency_translator_0
+Fri Jun 26 21:35:10 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; IP Information                                                                                                                                                    ;
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; IP Variation Name    ; qsys_top_ace5lite_cache_coherency_translator_0                                                                                             ;
+; Prior Version        ; 2.1.1                                                                                                                                      ;
+; New Version          ; 2.1.4                                                                                                                                      ;
+; New File             ; C:/trumpf/ghrd_base/GHRD/ip/qsys_top/qsys_top_ace5lite_cache_coherency_translator_0/synth/qsys_top_ace5lite_cache_coherency_translator_0.v ;
+; Has Port Differences ; No                                                                                                                                         ;
++----------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+

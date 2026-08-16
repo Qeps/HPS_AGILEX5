@@ -1,41 +1,20 @@
-# -------------------------------------------------------------------------- #
-#
-# Copyright (C) 2025  Altera Corporation. All rights reserved.
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and any partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, the Altera Quartus Prime License Agreement,
-# the Altera IP License Agreement, or other applicable license
-# agreement, including, without limitation, that your use is for
-# the sole purpose of programming logic devices manufactured by
-# Altera and sold by Altera or its authorized distributors.  Please
-# refer to the Altera Software License Subscription Agreements 
-# on the Quartus Prime software download page.
-#
-# -------------------------------------------------------------------------- #
-#
-# Quartus Prime
-# Version 25.3.1 Build 100 12/19/2025 SC Pro Edition
-# Date created = 16:23:18  April 21, 2026
-#
-# -------------------------------------------------------------------------- #
+#============================================================
+# Build by Terasic V2.1.0
+#============================================================
+
 set_global_assignment -name FAMILY "Agilex 5"
 set_global_assignment -name DEVICE A5EB013BB23BE4SCS
 set_global_assignment -name TOP_LEVEL_ENTITY golden_top
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 25.3.1
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:23:17  APRIL 21, 2026"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "25.1.0 Pro Edition"
 set_global_assignment -name LAST_QUARTUS_VERSION "25.3.1 Pro Edition"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "Tue May  6 11:16:28 2025"
 set_global_assignment -name DEVICE_FILTER_PACKAGE VPBGA
-
 #============================================================
 # CLOCK
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.1-V" -to CLOCK0_50 -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLOCK1_50 -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLOCK2_50 -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.1-V" -to CLOCK0_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLOCK1_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CLOCK2_50
 set_location_assignment PIN_DJ35 -to CLOCK0_50
 set_location_assignment PIN_V16  -to CLOCK1_50
 set_location_assignment PIN_BF23 -to CLOCK2_50
@@ -43,18 +22,18 @@ set_location_assignment PIN_BF23 -to CLOCK2_50
 #============================================================
 # KEY
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY[1] -entity golden_top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to KEY[1]
 set_location_assignment PIN_C8   -to KEY[0]
 set_location_assignment PIN_C11  -to KEY[1]
 
 #============================================================
 # SW
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[3] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[0]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[1]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[2]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to SW[3]
 set_location_assignment PIN_DK24 -to SW[0]
 set_location_assignment PIN_DD24 -to SW[1]
 set_location_assignment PIN_DD27 -to SW[2]
@@ -63,14 +42,14 @@ set_location_assignment PIN_DF27 -to SW[3]
 #============================================================
 # LED
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[7] -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[0]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[1]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[2]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[3]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[4]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[5]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[6]
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LED[7]
 set_location_assignment PIN_DF35 -to LED[0]
 set_location_assignment PIN_DJ32 -to LED[1]
 set_location_assignment PIN_DN22 -to LED[2]
@@ -83,46 +62,46 @@ set_location_assignment PIN_DP30 -to LED[7]
 #============================================================
 # SDRAM
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CKE -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_BA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_BA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[13] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[14] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[15] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_LDQM -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_UDQM -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CS_n[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CS_n[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_WE_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CAS_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_RAS_n -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CLK
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CKE
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[0]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[1]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[2]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[3]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[4]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[5]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[6]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[7]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[8]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[9]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[10]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[11]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_ADDR[12]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_BA[0]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_BA[1]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[0]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[1]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[2]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[3]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[4]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[5]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[6]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[7]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[8]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[9]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[10]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[11]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[12]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[13]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[14]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_DQ[15]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_LDQM
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_UDQM
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CS_n[0]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CS_n[1]
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_WE_n
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_CAS_n
+set_instance_assignment -name IO_STANDARD "1.8-V LVCMOS" -to DRAM_RAS_n
 set_location_assignment PIN_R11  -to DRAM_CLK
 set_location_assignment PIN_AE8  -to DRAM_CKE
 set_location_assignment PIN_AC1  -to DRAM_ADDR[0]
@@ -167,63 +146,63 @@ set_location_assignment PIN_V6   -to DRAM_RAS_n
 #============================================================
 # LPDDR4A
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.1-V TRUE DIFFERENTIAL SIGNALING" -to LPDDR4A_REFCLK_p -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CS_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_CK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CKE -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_CK_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[13] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[14] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[15] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[16] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[17] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[18] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[19] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[20] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[21] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[22] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[23] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[24] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[25] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[26] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[27] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[28] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[29] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[30] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[31] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_RESET_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LPDDR4A_RZQ -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.1-V TRUE DIFFERENTIAL SIGNALING" -to LPDDR4A_REFCLK_p
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CS_n
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[0]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[1]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[2]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[4]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CA[5]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_CK
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_CKE
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_CK_n
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[0]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[1]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[2]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DM[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[0]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[1]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[2]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[4]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[5]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[6]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[7]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[8]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[9]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[10]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[11]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[12]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[13]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[14]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[15]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[16]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[17]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[18]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[19]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[20]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[21]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[22]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[23]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[24]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[25]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[26]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[27]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[28]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[29]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[30]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_DQ[31]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS[3]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4A_DQS_n[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4A_RESET_n
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LPDDR4A_RZQ
 set_location_assignment PIN_B55  -to LPDDR4A_REFCLK_p
 set_location_assignment PIN_B58  -to LPDDR4A_CS_n
 set_location_assignment PIN_B66  -to LPDDR4A_CA[0]
@@ -285,63 +264,63 @@ set_location_assignment PIN_T48  -to LPDDR4A_RZQ
 #============================================================
 # LPDDR4B
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.1-V TRUE DIFFERENTIAL SIGNALING" -to LPDDR4B_REFCLK_p -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CS_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_CK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CKE -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_CK_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[13] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[14] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[15] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[16] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[17] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[18] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[19] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[20] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[21] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[22] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[23] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[24] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[25] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[26] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[27] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[28] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[29] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[30] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[31] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_RESET_n -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to LPDDR4B_RZQ -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.1-V TRUE DIFFERENTIAL SIGNALING" -to LPDDR4B_REFCLK_p
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CS_n
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[0]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[1]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[2]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[4]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CA[5]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_CK
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_CKE
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_CK_n
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[0]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[1]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[2]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DM[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[0]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[1]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[2]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[4]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[5]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[6]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[7]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[8]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[9]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[10]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[11]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[12]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[13]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[14]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[15]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[16]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[17]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[18]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[19]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[20]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[21]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[22]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[23]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[24]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[25]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[26]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[27]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[28]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[29]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[30]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_DQ[31]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS[3]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[0]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[1]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.1-V LVSTL" -to LPDDR4B_DQS_n[3]
+set_instance_assignment -name IO_STANDARD "1.1-V LVSTL" -to LPDDR4B_RESET_n
+set_instance_assignment -name IO_STANDARD "1.1-V" -to LPDDR4B_RZQ
 set_location_assignment PIN_DK39 -to LPDDR4B_REFCLK_p
 set_location_assignment PIN_DD42 -to LPDDR4B_CS_n
 set_location_assignment PIN_DJ51 -to LPDDR4B_CA[0]
@@ -403,41 +382,41 @@ set_location_assignment PIN_DP58 -to LPDDR4B_RZQ
 #============================================================
 # HDMI
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_LRCLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_MCLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_SCLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to HDMI_TX_CLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_HS -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_VS -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[13] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[14] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[15] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[16] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[17] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[18] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[19] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[20] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[21] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[22] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[23] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_DE -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2C_SCL -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2C_SDA -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_INT -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2S -entity golden_top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_LRCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_MCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_SCLK
+set_instance_assignment -name IO_STANDARD "1.1-V" -to HDMI_TX_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_HS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_VS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_D[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_DE
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2C_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_TX_INT
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HDMI_I2S
 set_location_assignment PIN_BR6  -to HDMI_LRCLK
 set_location_assignment PIN_CF1  -to HDMI_MCLK
 set_location_assignment PIN_BW1  -to HDMI_SCLK
@@ -477,16 +456,16 @@ set_location_assignment PIN_CB2  -to HDMI_I2S
 #============================================================
 # CAM
 #============================================================
-set_instance_assignment -name IO_STANDARD DPHY -to CAM_CLK_p -entity golden_top
-set_instance_assignment -name IO_STANDARD DPHY -to CAM_CLK_n -entity golden_top
-set_instance_assignment -name IO_STANDARD DPHY -to CAM_D_p[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD DPHY -to CAM_D_p[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD DPHY -to CAM_D_n[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD DPHY -to CAM_D_n[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAM_I2C_SCL -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAM_I2C_SDA -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAM_GPIO -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.1-V" -to CAM_RZQ1 -entity golden_top
+set_instance_assignment -name IO_STANDARD "DPHY" -to CAM_CLK_p
+set_instance_assignment -name IO_STANDARD "DPHY" -to CAM_CLK_n
+set_instance_assignment -name IO_STANDARD "DPHY" -to CAM_D_p[0]
+set_instance_assignment -name IO_STANDARD "DPHY" -to CAM_D_p[1]
+set_instance_assignment -name IO_STANDARD "DPHY" -to CAM_D_n[0]
+set_instance_assignment -name IO_STANDARD "DPHY" -to CAM_D_n[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAM_I2C_SCL
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAM_I2C_SDA
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to CAM_GPIO
+set_instance_assignment -name IO_STANDARD "1.1-V" -to CAM_RZQ1
 set_location_assignment PIN_DP33 -to CAM_CLK_p
 set_location_assignment PIN_DN30 -to CAM_CLK_n
 set_location_assignment PIN_DP36 -to CAM_D_p[0]
@@ -501,18 +480,18 @@ set_location_assignment PIN_DD35 -to CAM_RZQ1
 #============================================================
 # FPGA UART
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to FPGA_UART_TX -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to FPGA_UART_RX -entity golden_top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to FPGA_UART_TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to FPGA_UART_RX
 set_location_assignment PIN_CJ1  -to FPGA_UART_TX
 set_location_assignment PIN_BR19 -to FPGA_UART_RX
 
 #============================================================
 # ADC
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_SCK -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_SDO -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_SDI -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_CS_n -entity golden_top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_SCK
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_SDO
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_SDI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ADC_CS_n
 set_location_assignment PIN_CH6  -to ADC_SCK
 set_location_assignment PIN_CH19 -to ADC_SDO
 set_location_assignment PIN_CR8  -to ADC_SDI
@@ -521,78 +500,78 @@ set_location_assignment PIN_CE19 -to ADC_CS_n
 #============================================================
 # GPIO
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[13] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[14] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[15] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[16] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[17] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[18] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[19] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[20] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[21] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[22] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[23] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[24] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[25] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[26] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[27] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[28] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[29] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[30] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[31] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[32] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[33] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[34] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[35] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[8] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[9] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[10] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[11] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[12] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[13] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[14] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[15] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[16] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[17] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[18] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[19] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[20] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[21] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[22] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[23] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[24] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[25] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[26] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[27] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[28] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[29] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[30] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[31] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[32] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[33] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[34] -entity golden_top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[35] -entity golden_top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[34]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO0_D[35]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[34]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to GPIO1_D[35]
 set_location_assignment PIN_H16  -to GPIO0_D[0]
 set_location_assignment PIN_Y1   -to GPIO0_D[1]
 set_location_assignment PIN_C2   -to GPIO0_D[2]
@@ -669,47 +648,47 @@ set_location_assignment PIN_BV16 -to GPIO1_D[35]
 #============================================================
 # HPS
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_CLK_25 -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_MDC -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_MDIO -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_CLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_CTL -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_CLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_CTL -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_GSENSOR_I2C_EN -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_GSENSOR_INT -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_I2C_SCL -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_I2C_SDA -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_KEY -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_LED -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_CLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_CMD -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_UART_RX -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_UART_TX -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_CLK -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[0] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[1] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[2] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[3] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[4] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[5] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[6] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[7] -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DIR -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_NXT -entity golden_top
-set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_STP -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_CLK_25
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_MDC
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_MDIO
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_CLK
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_CTL
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[0]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[1]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[2]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_RX_DATA[3]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_CLK
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_CTL
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[0]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[1]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[2]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_ENET_TX_DATA[3]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_GSENSOR_I2C_EN
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_GSENSOR_INT
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_I2C_SCL
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_I2C_SDA
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_KEY
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_LED
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_CLK
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_CMD
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[0]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[1]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[2]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_SD_DATA[3]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_UART_RX
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_UART_TX
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_CLK
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[0]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[1]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[2]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[3]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[4]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[5]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[6]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DATA[7]
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_DIR
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_NXT
+set_instance_assignment -name IO_STANDARD "1.8-V" -to HPS_USB_STP
 set_location_assignment PIN_AN67 -to HPS_CLK_25
 set_location_assignment PIN_D71  -to HPS_ENET_MDC
 set_location_assignment PIN_C74  -to HPS_ENET_MDIO
@@ -755,7 +734,7 @@ set_location_assignment PIN_BC67 -to HPS_USB_STP
 #============================================================
 # FAN
 #============================================================
-set_instance_assignment -name IO_STANDARD "1.1-V" -to FAN_ALERT_n -entity golden_top
+set_instance_assignment -name IO_STANDARD "1.1-V" -to FAN_ALERT_n
 set_location_assignment PIN_DK32 -to FAN_ALERT_n
 
 #============================================================
@@ -768,29 +747,40 @@ set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_125MHZ
 set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
 set_global_assignment -name PWRMGT_VOLTAGE_OUTPUT_FORMAT "LINEAR FORMAT"
 set_global_assignment -name PWRMGT_LINEAR_FORMAT_N "-12"
+set_global_assignment -name BOARD default
 
 #============================================================
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
-set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
-set_global_assignment -name SOURCE_FILE golden_top.qsf
+set_global_assignment -name VHDL_FILE vhdl/test_axi4.vhd
+set_global_assignment -name VERILOG_FILE custom_ip/debounce/debounce.v
+set_global_assignment -name SDC_FILE ghrd_timing.sdc
 set_global_assignment -name VHDL_FILE golden_top.vhd
-set_instance_assignment -name PARTITION_COLOUR 4294961828 -to golden_top -entity golden_top
-set_global_assignment -name SDC_FILE golden_top.sdc
-set_global_assignment -name VHDL_FILE vhdl/emif_calib.vhd
-set_global_assignment -name VHDL_FILE vhdl/test_lpddr4b.vhd
-set_global_assignment -name QSYS_FILE platform_designer/HPS_QSYS.qsys
-set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
-set_global_assignment -name HPS_INITIALIZATION "HPS FIRST"
-set_global_assignment -name BOARD default
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_intel_agilex_5_soc_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_clock_in.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_io96b_hps_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_iopll_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_reset_in.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_test_lpddr4b_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_calib.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_emif_io96b_lpddr4_0.ip
-set_global_assignment -name IP_FILE platform_designer/ip/HPS_QSYS/HPS_QSYS_s10_user_rst_clkgate_0.ip
+set_global_assignment -name QSYS_FILE qsys_top.qsys
+set_global_assignment -name QSYS_FILE hps_subsys/hps_subsys.qsys
+set_global_assignment -name QSYS_FILE jtag_subsys/jtag_subsys.qsys
+set_global_assignment -name QSYS_FILE peripheral_subsys/peripheral_subsys.qsys
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/dipsw_pio.ip
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/periph_rst_in.ip
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/sysid.ip
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/pb_cpu_0.ip
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/periph_clk.ip
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/led_pio.ip
+set_global_assignment -name IP_FILE peripheral_subsys/ip/peripheral_subsys/button_pio.ip
+set_global_assignment -name IP_FILE hps_subsys/ip/hps_subsys/agilex_hps.ip
+set_global_assignment -name IP_FILE hps_subsys/ip/qsys_top/emif_io96b_hps.ip
+set_global_assignment -name IP_FILE jtag_subsys/ip/jtag_subsys/jtag_clk.ip
+set_global_assignment -name IP_FILE jtag_subsys/ip/jtag_subsys/jtag_rst_in.ip
+set_global_assignment -name IP_FILE jtag_subsys/ip/jtag_subsys/fpga_m.ip
+set_global_assignment -name IP_FILE jtag_subsys/ip/jtag_subsys/hps_m.ip
+set_global_assignment -name IP_FILE jtag_subsys/ip/jtag_subsys/hps_f2sdram.ip
+set_global_assignment -name IP_FILE ip/pll.ip
+set_global_assignment -name IP_FILE ip/qsys_top/rst_in.ip
+set_global_assignment -name IP_FILE ip/qsys_top/user_rst_clkgate_0.ip
+set_global_assignment -name IP_FILE ip/qsys_top/clk_100.ip
+set_global_assignment -name IP_FILE ip/qsys_top/ext_hps_f2sdram_master.ip
+set_global_assignment -name IP_FILE ip/qsys_top/ocm.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_ace5lite_cache_coherency_translator_0.ip
+set_global_assignment -name IP_FILE ip/qsys_top/qsys_top_emif_io96b_lpddr4_0.ip
+set_global_assignment -name IP_FILE ip/qsys_top/f2h_bridge_tester.ip
+set_global_assignment -name IP_FILE ip/qsys_top/f2sdram_tester.ip

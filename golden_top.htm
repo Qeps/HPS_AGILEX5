@@ -1,0 +1,2183 @@
+<html>
+<body>
+<title>golden top Board Configuration</title>
+<h2 align="center">golden top Board Configuration</h2>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a href="http://www.terasic.com">
+        <img src="http://www.terasic.com.cn/theme/2012/images/top_menu_03.jpg" />
+     </a>
+     <a href="http://www.terasic.com">www.terasic.com</a>
+     <br>
+     </br>
+     <span style="font-family:arial;">Copyright &copy 2003-2025 Terasic Inc. All Rights Reserved. </span>
+<br />
+<br />
+<h3 align="left">Pin Assignments:</h3>
+
+<style>
+#nav30 { position:fixed;right:30%;top:12%; }
+</style>
+   <div id="nav30">
+   <nav>
+    <a href="#CLOCK"><li>CLOCK</li></a>
+    <a href="#KEY"><li>KEY</li></a>
+    <a href="#SW"><li>SW</li></a>
+    <a href="#LED"><li>LED</li></a>
+    <a href="#SDRAM"><li>SDRAM</li></a>
+    <a href="#LPDDR4A"><li>LPDDR4A</li></a>
+    <a href="#LPDDR4B"><li>LPDDR4B</li></a>
+    <a href="#HDMI"><li>HDMI</li></a>
+    <a href="#CAM"><li>CAM</li></a>
+    <a href="#FPGA UART"><li>FPGA UART</li></a>
+    <a href="#ADC"><li>ADC</li></a>
+    <a href="#GPIO"><li>GPIO</li></a>
+    <a href="#HPS"><li>HPS</li></a>
+    <a href="#FAN"><li>FAN</li></a>
+   </nav>
+   </div>
+<h2><a name="CLOCK"></a></h2><table border="3">
+<caption>CLOCK</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">CLOCK0_50</td>
+   <td align="left">DJ35</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">CLOCK1_50</td>
+   <td align="left">V16</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">CLOCK2_50</td>
+   <td align="left">BF23</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="KEY"></a></h2><table border="3">
+<caption>KEY</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">KEY[0]</td>
+   <td align="left">C8</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">KEY[1]</td>
+   <td align="left">C11</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="SW"></a></h2><table border="3">
+<caption>SW</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">SW[0]</td>
+   <td align="left">DK24</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">SW[1]</td>
+   <td align="left">DD24</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">SW[2]</td>
+   <td align="left">DD27</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">SW[3]</td>
+   <td align="left">DF27</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+</table>
+<h2><a name="LED"></a></h2><table border="3">
+<caption>LED</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">LED[0]</td>
+   <td align="left">DF35</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[1]</td>
+   <td align="left">DJ32</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[2]</td>
+   <td align="left">DN22</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[3]</td>
+   <td align="left">DP23</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[4]</td>
+   <td align="left">DN25</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[5]</td>
+   <td align="left">DP25</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[6]</td>
+   <td align="left">DJ27</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">LED[7]</td>
+   <td align="left">DP30</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+</table>
+<h2><a name="SDRAM"></a></h2><table border="3">
+<caption>SDRAM</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">DRAM_CLK</td>
+   <td align="left">R11</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_CKE</td>
+   <td align="left">AE8</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[0]</td>
+   <td align="left">AC1</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[1]</td>
+   <td align="left">AH6</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[2]</td>
+   <td align="left">AC2</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[3]</td>
+   <td align="left">R8</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[4]</td>
+   <td align="left">AE11</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[5]</td>
+   <td align="left">AH14</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[6]</td>
+   <td align="left">V4</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[7]</td>
+   <td align="left">AG26</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[8]</td>
+   <td align="left">AG23</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[9]</td>
+   <td align="left">V11</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[10]</td>
+   <td align="left">BE8</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[11]</td>
+   <td align="left">R6</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_ADDR[12]</td>
+   <td align="left">AH11</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_BA[0]</td>
+   <td align="left">AT6</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_BA[1]</td>
+   <td align="left">AV4</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[0]</td>
+   <td align="left">AU1</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[1]</td>
+   <td align="left">AJ1</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[2]</td>
+   <td align="left">BA1</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[3]</td>
+   <td align="left">AP1</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[4]</td>
+   <td align="left">AM2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[5]</td>
+   <td align="left">BL1</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[6]</td>
+   <td align="left">AJ2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[7]</td>
+   <td align="left">AP2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[8]</td>
+   <td align="left">BH4</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[9]</td>
+   <td align="left">AH4</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[10]</td>
+   <td align="left">BH6</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[11]</td>
+   <td align="left">AU2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[12]</td>
+   <td align="left">BE6</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[13]</td>
+   <td align="left">BD2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[14]</td>
+   <td align="left">BG2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_DQ[15]</td>
+   <td align="left">BL2</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_LDQM</td>
+   <td align="left">BD1</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_UDQM</td>
+   <td align="left">AT8</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_CS_n[0]</td>
+   <td align="left">AF1</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_CS_n[1]</td>
+   <td align="left">AE14</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_WE_n</td>
+   <td align="left">AV6</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_CAS_n</td>
+   <td align="left">AE6</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">DRAM_RAS_n</td>
+   <td align="left">V6</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="LPDDR4A"></a></h2><table border="3">
+<caption>LPDDR4A</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_REFCLK_p</td>
+   <td align="left">B55</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V TRUE DIFFERENTIAL SIGNALING</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CS_n</td>
+   <td align="left">B58</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CA[0]</td>
+   <td align="left">B66</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CA[1]</td>
+   <td align="left">A68</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CA[2]</td>
+   <td align="left">B68</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CA[3]</td>
+   <td align="left">A70</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CA[4]</td>
+   <td align="left">B63</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CA[5]</td>
+   <td align="left">A66</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CK</td>
+   <td align="left">J42</td>
+   <td align="left">output</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CKE</td>
+   <td align="left">A61</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_CK_n</td>
+   <td align="left">G42</td>
+   <td align="left">output</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DM[0]</td>
+   <td align="left">J59</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DM[1]</td>
+   <td align="left">T59</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DM[2]</td>
+   <td align="left">J27</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DM[3]</td>
+   <td align="left">A25</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[0]</td>
+   <td align="left">T62</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[1]</td>
+   <td align="left">T56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[2]</td>
+   <td align="left">G56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[3]</td>
+   <td align="left">E56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[4]</td>
+   <td align="left">G65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[5]</td>
+   <td align="left">J65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[6]</td>
+   <td align="left">M56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[7]</td>
+   <td align="left">M62</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[8]</td>
+   <td align="left">W62</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[9]</td>
+   <td align="left">M65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[10]</td>
+   <td align="left">M51</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[11]</td>
+   <td align="left">T51</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[12]</td>
+   <td align="left">AB48</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[13]</td>
+   <td align="left">W48</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[14]</td>
+   <td align="left">T65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[15]</td>
+   <td align="left">AB62</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[16]</td>
+   <td align="left">G24</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[17]</td>
+   <td align="left">E24</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[18]</td>
+   <td align="left">J35</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[19]</td>
+   <td align="left">T32</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[20]</td>
+   <td align="left">M32</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[21]</td>
+   <td align="left">T24</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[22]</td>
+   <td align="left">G35</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[23]</td>
+   <td align="left">M24</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[24]</td>
+   <td align="left">A22</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[25]</td>
+   <td align="left">A23</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[26]</td>
+   <td align="left">A33</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[27]</td>
+   <td align="left">B33</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[28]</td>
+   <td align="left">B30</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[29]</td>
+   <td align="left">A36</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[30]</td>
+   <td align="left">A20</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQ[31]</td>
+   <td align="left">B22</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS[0]</td>
+   <td align="left">G62</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS[1]</td>
+   <td align="left">AB56</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS[2]</td>
+   <td align="left">G32</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS[3]</td>
+   <td align="left">B28</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS_n[0]</td>
+   <td align="left">E62</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS_n[1]</td>
+   <td align="left">W56</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS_n[2]</td>
+   <td align="left">E32</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_DQS_n[3]</td>
+   <td align="left">A30</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_RESET_n</td>
+   <td align="left">M48</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4A_RZQ</td>
+   <td align="left">T48</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+</table>
+<h2><a name="LPDDR4B"></a></h2><table border="3">
+<caption>LPDDR4B</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_REFCLK_p</td>
+   <td align="left">DK39</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V TRUE DIFFERENTIAL SIGNALING</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CS_n</td>
+   <td align="left">DD42</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CA[0]</td>
+   <td align="left">DJ51</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CA[1]</td>
+   <td align="left">DF51</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CA[2]</td>
+   <td align="left">DD51</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CA[3]</td>
+   <td align="left">DD48</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CA[4]</td>
+   <td align="left">DK48</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CA[5]</td>
+   <td align="left">DJ48</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CK</td>
+   <td align="left">DP47</td>
+   <td align="left">output</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CKE</td>
+   <td align="left">DJ42</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_CK_n</td>
+   <td align="left">DN45</td>
+   <td align="left">output</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DM[0]</td>
+   <td align="left">DJ59</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DM[1]</td>
+   <td align="left">DP66</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DM[2]</td>
+   <td align="left">DP10</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DM[3]</td>
+   <td align="left">DJ12</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[0]</td>
+   <td align="left">DJ65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[1]</td>
+   <td align="left">DF65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[2]</td>
+   <td align="left">DD59</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[3]</td>
+   <td align="left">DJ56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[4]</td>
+   <td align="left">DD56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[5]</td>
+   <td align="left">DK56</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[6]</td>
+   <td align="left">DD65</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[7]</td>
+   <td align="left">DD62</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[8]</td>
+   <td align="left">DN73</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[9]</td>
+   <td align="left">DN74</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[10]</td>
+   <td align="left">DP60</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[11]</td>
+   <td align="left">DN58</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[12]</td>
+   <td align="left">DN61</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[13]</td>
+   <td align="left">DP61</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[14]</td>
+   <td align="left">DN68</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[15]</td>
+   <td align="left">DP70</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[16]</td>
+   <td align="left">DN10</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[17]</td>
+   <td align="left">DN17</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[18]</td>
+   <td align="left">DP20</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[19]</td>
+   <td align="left">DN20</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[20]</td>
+   <td align="left">DP7</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[21]</td>
+   <td align="left">DP22</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[22]</td>
+   <td align="left">DN3</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[23]</td>
+   <td align="left">DN7</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[24]</td>
+   <td align="left">DD9</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[25]</td>
+   <td align="left">DD12</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[26]</td>
+   <td align="left">DJ21</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[27]</td>
+   <td align="left">DD21</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[28]</td>
+   <td align="left">DF21</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[29]</td>
+   <td align="left">DD18</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[30]</td>
+   <td align="left">DJ9</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQ[31]</td>
+   <td align="left">DK9</td>
+   <td align="left">inout</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS[0]</td>
+   <td align="left">DK62</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS[1]</td>
+   <td align="left">DP68</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS[2]</td>
+   <td align="left">DP15</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS[3]</td>
+   <td align="left">DK18</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS_n[0]</td>
+   <td align="left">DJ62</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS_n[1]</td>
+   <td align="left">DN66</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS_n[2]</td>
+   <td align="left">DN15</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_DQS_n[3]</td>
+   <td align="left">DJ18</td>
+   <td align="left">inout</td>
+   <td align="left">DIFFERENTIAL 1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_RESET_n</td>
+   <td align="left">DN55</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V LVSTL</td>
+</tr>
+<tr>
+   <td align="left">LPDDR4B_RZQ</td>
+   <td align="left">DP58</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+</table>
+<h2><a name="HDMI"></a></h2><table border="3">
+<caption>HDMI</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">HDMI_LRCLK</td>
+   <td align="left">BR6</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_MCLK</td>
+   <td align="left">CF1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_SCLK</td>
+   <td align="left">BW1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_CLK</td>
+   <td align="left">DJ24</td>
+   <td align="left">output</td>
+   <td align="left">1.1-V</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_HS</td>
+   <td align="left">BR11</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_VS</td>
+   <td align="left">BR14</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[0]</td>
+   <td align="left">AV19</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[1]</td>
+   <td align="left">AT11</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[2]</td>
+   <td align="left">BE11</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[3]</td>
+   <td align="left">AV14</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[4]</td>
+   <td align="left">AT19</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[5]</td>
+   <td align="left">AT14</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[6]</td>
+   <td align="left">AV16</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[7]</td>
+   <td align="left">AV11</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[8]</td>
+   <td align="left">BH11</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[9]</td>
+   <td align="left">BE14</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[10]</td>
+   <td align="left">BE19</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[11]</td>
+   <td align="left">BH14</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[12]</td>
+   <td align="left">BV6</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[13]</td>
+   <td align="left">BJ23</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[14]</td>
+   <td align="left">BV4</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[15]</td>
+   <td align="left">BU23</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[16]</td>
+   <td align="left">BH16</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[17]</td>
+   <td align="left">DA1</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[18]</td>
+   <td align="left">BH19</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[19]</td>
+   <td align="left">CP2</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[20]</td>
+   <td align="left">CM1</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[21]</td>
+   <td align="left">DA2</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[22]</td>
+   <td align="left">CP1</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_D[23]</td>
+   <td align="left">CU2</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_DE</td>
+   <td align="left">CJ2</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_I2C_SCL</td>
+   <td align="left">BT1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_I2C_SDA</td>
+   <td align="left">BW2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_TX_INT</td>
+   <td align="left">CF2</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">HDMI_I2S</td>
+   <td align="left">CB2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="CAM"></a></h2><table border="3">
+<caption>CAM</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">CAM_CLK_p</td>
+   <td align="left">DP33</td>
+   <td align="left">input</td>
+   <td align="left">DPHY</td>
+</tr>
+<tr>
+   <td align="left">CAM_CLK_n</td>
+   <td align="left">DN30</td>
+   <td align="left">input</td>
+   <td align="left">DPHY</td>
+</tr>
+<tr>
+   <td align="left">CAM_D_p[0]</td>
+   <td align="left">DP36</td>
+   <td align="left">input</td>
+   <td align="left">DPHY</td>
+</tr>
+<tr>
+   <td align="left">CAM_D_p[1]</td>
+   <td align="left">DP38</td>
+   <td align="left">input</td>
+   <td align="left">DPHY</td>
+</tr>
+<tr>
+   <td align="left">CAM_D_n[0]</td>
+   <td align="left">DN33</td>
+   <td align="left">input</td>
+   <td align="left">DPHY</td>
+</tr>
+<tr>
+   <td align="left">CAM_D_n[1]</td>
+   <td align="left">DN38</td>
+   <td align="left">input</td>
+   <td align="left">DPHY</td>
+</tr>
+<tr>
+   <td align="left">CAM_I2C_SCL</td>
+   <td align="left">BP2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">CAM_I2C_SDA</td>
+   <td align="left">BP1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">CAM_GPIO</td>
+   <td align="left">BR8</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">CAM_RZQ1</td>
+   <td align="left">DD35</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+</table>
+<h2><a name="FPGA UART"></a></h2><table border="3">
+<caption>FPGA UART</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">FPGA_UART_TX</td>
+   <td align="left">CJ1</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">FPGA_UART_RX</td>
+   <td align="left">BR19</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="ADC"></a></h2><table border="3">
+<caption>ADC</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">ADC_SCK</td>
+   <td align="left">CH6</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">ADC_SDO</td>
+   <td align="left">CH19</td>
+   <td align="left">input</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">ADC_SDI</td>
+   <td align="left">CR8</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">ADC_CS_n</td>
+   <td align="left">CE19</td>
+   <td align="left">output</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="GPIO"></a></h2><table border="3">
+<caption>GPIO</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[0]</td>
+   <td align="left">H16</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[1]</td>
+   <td align="left">Y1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[2]</td>
+   <td align="left">C2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[3]</td>
+   <td align="left">P1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[4]</td>
+   <td align="left">Y2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[5]</td>
+   <td align="left">U2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[6]</td>
+   <td align="left">L1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[7]</td>
+   <td align="left">F2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[8]</td>
+   <td align="left">P2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[9]</td>
+   <td align="left">B3</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[10]</td>
+   <td align="left">H4</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[11]</td>
+   <td align="left">H14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[12]</td>
+   <td align="left">C6</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[13]</td>
+   <td align="left">H6</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[14]</td>
+   <td align="left">B5</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[15]</td>
+   <td align="left">H11</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[16]</td>
+   <td align="left">C14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[17]</td>
+   <td align="left">B10</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[18]</td>
+   <td align="left">A15</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[19]</td>
+   <td align="left">A10</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[20]</td>
+   <td align="left">B17</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[21]</td>
+   <td align="left">B15</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[22]</td>
+   <td align="left">AH16</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[23]</td>
+   <td align="left">A13</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[24]</td>
+   <td align="left">AE19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[25]</td>
+   <td align="left">C19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[26]</td>
+   <td align="left">H19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[27]</td>
+   <td align="left">AH19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[28]</td>
+   <td align="left">R19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[29]</td>
+   <td align="left">R14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[30]</td>
+   <td align="left">V19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[31]</td>
+   <td align="left">V14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[32]</td>
+   <td align="left">AG31</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[33]</td>
+   <td align="left">AL31</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[34]</td>
+   <td align="left">AL37</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO0_D[35]</td>
+   <td align="left">AL34</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[0]</td>
+   <td align="left">BV14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[1]</td>
+   <td align="left">CG26</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[2]</td>
+   <td align="left">DM2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[3]</td>
+   <td align="left">CD23</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[4]</td>
+   <td align="left">CG23</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[5]</td>
+   <td align="left">CE14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[6]</td>
+   <td align="left">CA23</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[7]</td>
+   <td align="left">CH16</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[8]</td>
+   <td align="left">CV16</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[9]</td>
+   <td align="left">CH14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[10]</td>
+   <td align="left">CR6</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[11]</td>
+   <td align="left">CH11</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[12]</td>
+   <td align="left">CV6</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[13]</td>
+   <td align="left">CR14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[14]</td>
+   <td align="left">CR19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[15]</td>
+   <td align="left">CR11</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[16]</td>
+   <td align="left">CV19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[17]</td>
+   <td align="left">CV11</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[18]</td>
+   <td align="left">CV14</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[19]</td>
+   <td align="left">DJ3</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[20]</td>
+   <td align="left">DF3</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[21]</td>
+   <td align="left">DN2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[22]</td>
+   <td align="left">CV4</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[23]</td>
+   <td align="left">DD3</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[24]</td>
+   <td align="left">CE11</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[25]</td>
+   <td align="left">CE8</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[26]</td>
+   <td align="left">DE1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[27]</td>
+   <td align="left">DH1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[28]</td>
+   <td align="left">DH2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[29]</td>
+   <td align="left">CH4</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[30]</td>
+   <td align="left">DC2</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[31]</td>
+   <td align="left">DC1</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[32]</td>
+   <td align="left">BV19</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[33]</td>
+   <td align="left">CE6</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[34]</td>
+   <td align="left">BV11</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+<tr>
+   <td align="left">GPIO1_D[35]</td>
+   <td align="left">BV16</td>
+   <td align="left">inout</td>
+   <td align="left">3.3-V LVCMOS</td>
+</tr>
+</table>
+<h2><a name="HPS"></a></h2><table border="3">
+<caption>HPS</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">HPS_CLK_25</td>
+   <td align="left">AN67</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_MDC</td>
+   <td align="left">D71</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_MDIO</td>
+   <td align="left">C74</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_RX_CLK</td>
+   <td align="left">BL75</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_RX_CTL</td>
+   <td align="left">AP74</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_RX_DATA[0]</td>
+   <td align="left">BD74</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_RX_DATA[1]</td>
+   <td align="left">AN71</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_RX_DATA[2]</td>
+   <td align="left">AJ74</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_RX_DATA[3]</td>
+   <td align="left">AJ75</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_TX_CLK</td>
+   <td align="left">BP75</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_TX_CTL</td>
+   <td align="left">BL74</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_TX_DATA[0]</td>
+   <td align="left">BG74</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_TX_DATA[1]</td>
+   <td align="left">AP75</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_TX_DATA[2]</td>
+   <td align="left">BD75</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_ENET_TX_DATA[3]</td>
+   <td align="left">AM74</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_GSENSOR_I2C_EN</td>
+   <td align="left">P75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_GSENSOR_INT</td>
+   <td align="left">Y75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_I2C_SCL</td>
+   <td align="left">N72</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_I2C_SDA</td>
+   <td align="left">L75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_KEY</td>
+   <td align="left">F75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_LED</td>
+   <td align="left">AD71</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_SD_CLK</td>
+   <td align="left">AC74</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_SD_CMD</td>
+   <td align="left">AK69</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_SD_DATA[0]</td>
+   <td align="left">AF75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_SD_DATA[1]</td>
+   <td align="left">AC75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_SD_DATA[2]</td>
+   <td align="left">AN64</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_SD_DATA[3]</td>
+   <td align="left">Y74</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_UART_RX</td>
+   <td align="left">AD72</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_UART_TX</td>
+   <td align="left">N71</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_CLK</td>
+   <td align="left">BC64</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[0]</td>
+   <td align="left">AN72</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[1]</td>
+   <td align="left">AY69</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[2]</td>
+   <td align="left">BC71</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[3]</td>
+   <td align="left">AU74</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[4]</td>
+   <td align="left">AY71</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[5]</td>
+   <td align="left">AU75</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[6]</td>
+   <td align="left">BC72</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DATA[7]</td>
+   <td align="left">BP74</td>
+   <td align="left">inout</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_DIR</td>
+   <td align="left">AY67</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_NXT</td>
+   <td align="left">BA75</td>
+   <td align="left">input</td>
+   <td align="left">1.8-V</td>
+</tr>
+<tr>
+   <td align="left">HPS_USB_STP</td>
+   <td align="left">BC67</td>
+   <td align="left">output</td>
+   <td align="left">1.8-V</td>
+</tr>
+</table>
+<h2><a name="FAN"></a></h2><table border="3">
+<caption>FAN</caption>
+<tr>
+   <th align="left" bgcolor="Khaki">Name</th>
+   <th align="left" bgcolor="Khaki">Location</th>
+   <th align="left" bgcolor="Khaki">Direction</th>
+   <th align="left" bgcolor="Khaki">IO Standard</th>
+</tr>
+<tr>
+   <td align="left">FAN_ALERT_n</td>
+   <td align="left">DK32</td>
+   <td align="left">input</td>
+   <td align="left">1.1-V</td>
+</tr>
+</table>
+<br>
+</br>
+</html>
+</body>

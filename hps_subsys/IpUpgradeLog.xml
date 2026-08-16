@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ip name="Hard Processor System IP">
+ <timestamp>2026-06-26T21:26:49.554727600</timestamp>
+ <file></file>
+ <old_version>9.0.0</old_version>
+ <new_version>13.0.0</new_version>
+ <changes>
+  <change>10.0.0</change>
+  <change>Modify default PLL clock configurations for speed grade 1, 2 and 3 devices to optimal configurations.</change>
+  <change>Add several RTL tie-offs to unused inputs.</change>
+  <change>11.1.0</change>
+  <change>Fix internal tieoff causing HPS peripheral operation to fail.</change>
+  <change>Remove internal tieoffs for hardened and unmapped ports which cannot be driven to GND or VCC.</change>
+  <change>Added error checking for inconsistencies between several PinMux related parameters.</change>
+  <change>12.0.0</change>
+  <change>Manually limit reset fanout for fpga2hps, f2sdram, hps2fpga, and lwhps2fpga bridge ready latency logic to improve timing closure</change>
+  <change>13.0.0</change>
+  <change>Added new parameters to FPGA-to-HPS Input Clocks to enable disabling of fabric-facing EMAC TX and PTP reference clock</change>
+  <change>Added legality checking for limited number of FPGA-to-HPS clocks for certain HPS interfaces. Displays parameter error message if limit is exceeded by HPS configuration.</change>
+ </changes>
+</ip>
+
+<ip name="System ID Peripheral IP">
+ <timestamp>2026-06-26T21:26:50.733384100</timestamp>
+ <file></file>
+ <old_version>19.1.8</old_version>
+ <new_version>20.0.0</new_version>
+ <changes>
+  <change>20.0.0</change>
+  <change> Added option to choose either live timestamp or fixed timestamp</change>
+  <change> Added option to choose either manual ID or auto generated HASH as ID </change>
+ </changes>
+</ip>
+
+<ip name="ACE5-Lite Cache Coherency Translator">
+ <timestamp>2026-06-26T21:26:51.404398300</timestamp>
+ <file></file>
+ <old_version>2.1.1</old_version>
+ <new_version>2.1.4</new_version>
+</ip>
+
+<ip name="External Memory Interfaces for HPS IP">
+ <timestamp>2026-06-26T21:27:28.787271300</timestamp>
+ <file></file>
+ <old_version>4.0.0</old_version>
+ <new_version>4.1.1</new_version>
+ <changes>
+  <change>4.1.1</change>
+  <change>Improved debug support</change>
+  <change>VHDL support</change>
+  <change>NOTE: The top-level RTL hierarchy of the IP has been modified</change>
+  <change>GUI display bug fixes</change>
+  <change>EMIF size will now be included in HPS reports</change>
+ </changes>
+</ip>
+
+<ip name="IOPLL IP">
+ <timestamp>2026-06-26T21:27:33.359051300</timestamp>
+ <file></file>
+ <old_version>20.0.0</old_version>
+ <new_version>21.0.0</new_version>
+</ip>
